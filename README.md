@@ -48,7 +48,7 @@
 
 
 # ERD
-
+![](images/ERDimage.PNG)
 
 
 # Wire-frames
