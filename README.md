@@ -55,27 +55,27 @@
 
 * Signup page
 
-![](images/signup.png)
+![](images/wireframes/signup.png)
 
 * Login Page
 
-![](images/login.png)
+![](images/wireframes/login.png)
 
 * Index Page
 
-![](images/indexpage.png)
+![](images/wireframes/indexpage.png)
 
 * Show Page
 
-![](images/showpage.png)
+![](images/wireframes/showpage.png)
 
 * Updating course
 
-![](images/updatepage.png)
+![](images/wireframes/updatepage.png)
 
 * My courses
 
-![](images/minecourses.png)
+![](images/wireframes/minecourses.png)
 
 
 
