@@ -52,11 +52,17 @@
 
 
 # Wire-frames
+
 ![](images/signup.png)
+
 ![](images/login.png)
+
 ![](images/indexpage.png)
+
 ![](images/showpage.png)
+
 ![](images/updatepage.png)
+
 ![](images/minecourses.png)
 
 
