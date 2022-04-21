@@ -71,7 +71,7 @@
 
 * Updating course
 
-![](images/wireframes/updatepage.png)
+![](images/wireframes/updatepage.jpg)
 
 * My courses
 
