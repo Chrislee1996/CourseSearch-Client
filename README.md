@@ -20,6 +20,10 @@
 
 * As a user, I want to be able to delete my own course that I added just in case the course is no longer offered. 
 
+* As a user, I want to be able to click on the course I am interested in and add it to my profile to save for later
+
+* As a user, I want to be able to share what courses I am taking to other users and share my journey
+
 ## MVPs of this project
 
 * Users should be able to sign-up, login and logout
@@ -30,13 +34,20 @@
 
 * Creator of the course and update/delete the course
 
-* Users can comment on the course on their experience so far/after
+* Users can comment on the course regarding their thoughts of the course/professor(s)
 
 * Users can filter courses that they added themselves
+
+* Users can add courses that they want to do to their profile and they can browse through these courses via their profile
 
 * Users can filter out if the courses are from a college insitute or not
 
 * A category bar that will filter courses by subject (ex. math, arts, buisness, etc..)
+
+* As a user, I want to be able to share my success stories with other users online and tell them what courses I took to lead me success
+
+
+
 
 
 # Stretch goals 
