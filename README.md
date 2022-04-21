@@ -60,15 +60,15 @@
 
 * Login Page
 
-![](images/wireframes/login.PNG)
+![](images/wireframes/login.png)
 
 * Index Page
 
-![](images/wireframes/indexpage.PNG)
+![](images/wireframes/indexpage.png)
 
 * Show Page
 
-![](images/wireframes/showpage.PNG)
+![](images/wireframes/showpage.png)
 
 * Updating course
 
