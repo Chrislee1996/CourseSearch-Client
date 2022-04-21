@@ -53,15 +53,27 @@
 
 # Wire-frames
 
+* Signup page
+
 ![](images/signup.png)
+
+* Login Page
 
 ![](images/login.png)
 
+* Index Page
+
 ![](images/indexpage.png)
+
+* Show Page
 
 ![](images/showpage.png)
 
+* Updating course
+
 ![](images/updatepage.png)
+
+* My courses
 
 ![](images/minecourses.png)
 
