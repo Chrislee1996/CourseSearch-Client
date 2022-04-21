@@ -1,6 +1,6 @@
 # CourseSearch-Frontend
 
-> Back-end link of project can be found here: https://github.com/Chrislee1996/CourseSearch-Backend
+> Back-end link of project can be found here: https://github.com/Chrislee1996/CourseSearch-API
 
 # User story
 
@@ -36,11 +36,12 @@
 
 * Users can filter out if the courses are from a college insitute or not
 
+* A category bar that will filter courses by subject (ex. math, arts, buisness, etc..)
+
+
 # Stretch goals 
 
 * Users being able to upload pictures proof that they attended the course via comments
-
-* A category bar that will filter courses by subject (ex. math, arts, buisness, etc..)
 
 * Search bar that will filter courses by school
 
@@ -81,13 +82,15 @@
 
 # Tech Stack 
 
+* Mongoose 
+
+* Express.js
+
 * React.js
 
-* Javascript
+* Node.js
 
-* Python
+* CSS
 
-* Django 
-
-* PostgresSQL
+* Bootstrap
 
