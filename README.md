@@ -37,11 +37,11 @@
 
 * Users can filter courses that they added themselves
 
-* Users can add courses that they want to do to their profile and they can browse through these courses via their profile
-
 * Users can filter out if the courses are from a college insitute or not
 
-* A category bar that will filter courses by subject (ex. math, arts, buisness, etc..)
+* A tag bar that will filter courses by subject (ex. math, arts, buisness, etc..)
+
+* Users of the course should be able to leave a review and other users can comment on the review if they argree or not
 
 
 
