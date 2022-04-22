@@ -22,7 +22,6 @@
 
 * As a user, I want to be able to click on the course I am interested in and add it to my profile to save for later
 
-* As a user, I want to be able to share what courses I am taking to other users and share my journey
 
 ## MVPs of this project
 
@@ -43,9 +42,6 @@
 * Users can filter out if the courses are from a college insitute or not
 
 * A category bar that will filter courses by subject (ex. math, arts, buisness, etc..)
-
-* As a user, I want to be able to share my success stories with other users online and tell them what courses I took to lead me success
-
 
 
 
