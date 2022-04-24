@@ -36,8 +36,8 @@ const IndexCourses = (props) => {
                 <Card.Header>{course.courseName}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <Link to ={`/courses/${course.id}`}> <h4> {course.courseInstitute} </h4></Link>
-                        <Link to ={`/courses/${course.id}`}><img src={`${course.image}`} width='250' height='300'/></Link>
+                        <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
+                        <Link to ={`/courses/${course._id}`}><img src={`${course.image}`} width='250' height='300'/></Link>
                         <p>{course.subject}</p>
                     </Card.Text>
                 </Card.Body>

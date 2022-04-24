@@ -7,6 +7,6 @@ export const getAllCourses = () => {
 }
 
 //show function
-// export const showCurrentCourse = (courseId) => {
-//     return axios(`${apiUrl}/courses/${courseId}`)
-// }
+export const showCurrentCourse = (courseId) => {
+    return axios(`${apiUrl}/courses/${courseId}`)
+}
