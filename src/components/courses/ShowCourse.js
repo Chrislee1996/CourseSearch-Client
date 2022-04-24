@@ -37,7 +37,7 @@ const ShowCourse = (props) => {
         <Container className='fluid'> 
             <Card className='text-info bg-dark'>
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
-                <Card.Header><img src={`${course.image}`} width='250' height='300'/></Card.Header>
+                <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image}`} width='250' height='300'/></a></Card.Header>
                 <Card.Body>
                     <Card.Text>
                         <a href = {course.courseLink} target="_blank">Go to Course</a>
