@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowCourse from './components/courses/ShowCourse'
+import CreateCourse from './components/courses/CreateCourse'
 
 const App = () => {
 
@@ -69,6 +70,13 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+			<Route
+				path='/addCourse'
+				element={
+				<RequireAuth user={user}>
+					<CreateAnime msgAlert={msgAlert} user={user} />
+				</RequireAuth>}
+			/>
 			<Route
 				path='/courses/:id'
 				element={<ShowCourse msgAlert={msgAlert} user={user} />}

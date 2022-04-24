@@ -46,7 +46,7 @@ const ShowCourse = (props) => {
                         <Card.Header>Location: {course.location}</Card.Header><br/>
                         <Card.Header>Days of Course: {course.daysOfCourse}</Card.Header><br/>
                         <Card.Header>Time of Course: {course.timeOfCourse}</Card.Header><br/>
-                        <Card.Header>Credits if appliable : {course.credit}</Card.Header><br/>
+                        <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
                         
                     </Card.Text>
                         {/* <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
