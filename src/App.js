@@ -74,7 +74,7 @@ const App = () => {
 				path='/addCourse'
 				element={
 				<RequireAuth user={user}>
-					<CreateAnime msgAlert={msgAlert} user={user} />
+					<CreateCourse msgAlert={msgAlert} user={user} />
 				</RequireAuth>}
 			/>
 			<Route
