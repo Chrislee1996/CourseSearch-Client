@@ -3,6 +3,7 @@ import {showCurrentCourse, updateCourse, removeCourse} from '../../api/courses'
 import {useParams, useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Spinner,Container,Card, Button} from 'react-bootstrap'
+import EditCourseModal from './EditCourseModal'
 
 const ShowCourse = (props) => {
 
@@ -78,6 +79,9 @@ const ShowCourse = (props) => {
                             <Button onClick={() => deleteCourse()} className="m-2" variant="danger">
                                 Delete Course
                             </Button>
+                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
+                                Edit Course
+                            </Button>
                         </>
                         :
                         null
@@ -93,23 +97,18 @@ const ShowCourse = (props) => {
                         <Card.Header>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
-                        
                     </Card.Text>
-                        {/* <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
-                            Edit Anime
-                        </Button>
-                        {/* delete button */}
                 </Card.Body>
             </Card>
         </Container>
-        {/* <EditAnimesModel 
-                anime={anime}
+        <EditCourseModal 
+                course={course}
                 show={modalOpen}
                 user={user}
                 triggerRefresh={() => setUpdated(prev => !prev)}
-                updateAnime={updateAnime}
+                updateCourse={updateCourse}
                 handleClose={() => setModalOpen(false)}
-            /> */}
+            />
         </>
         
     )
