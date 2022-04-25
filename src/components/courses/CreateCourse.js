@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const CreateCourse = (props) => {
     const navigate = useNavigate()
-    const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'', courseLink:"", courseSubject:'',teacher:'', location:'', startDate:'', endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true})
+    const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop', courseLink:"", courseSubject:'',teacher:'', location:'', startDate:'', endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true})
     const {user} = props
 
     const handleChange = (e) => {
