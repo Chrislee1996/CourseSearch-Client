@@ -80,7 +80,6 @@ const CourseForm = (props) => {
                         <option value="Literature">Literature</option>
                         <option value="Law">Law</option>
                         <option value="Math">Math</option>
-                        <option value="Medicine">Medicine</option>
                         <option value="Programming">Physics</option>
                         <option value="Science">Science</option>
                         <option value="Social Science">Social Science</option>

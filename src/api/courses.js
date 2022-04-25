@@ -108,12 +108,8 @@ export const getMath = () => {
     return axios(`${apiUrl}/courses/math`)
 }
 
-export const getMedicine = () => {
-    return axios(`${apiUrl}/courses/medicine`)
-}
-
 export const getProgramming = () => {
-    return axios(`${apiUrl}/courses/programming`)
+    return axios(`${apiUrl}/courses/computerprogramming`)
 }
 
 export const getScience = () => {

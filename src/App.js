@@ -28,7 +28,6 @@ import Language from './components/subjects/Language'
 import Law from './components/subjects/Law'
 import Literature from './components/subjects/Literature'
 import Math from './components/subjects/Math'
-import Medicine from './components/subjects/Medicine'
 import Programming from './components/subjects/Programming'
 import Science from './components/subjects/Science'
 import SocialScience from './components/subjects/SocialScience'
@@ -156,10 +155,6 @@ const App = () => {
 			<Route
 				path='/courses/math'
 				element={<Math msgAlert={msgAlert} user={user} />}
-			/>	
-			<Route
-				path='/courses/medicine'
-				element={<Medicine msgAlert={msgAlert} user={user} />}
 			/>	
 			<Route
 				path='/courses/programming'

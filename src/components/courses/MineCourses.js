@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Card, Dropdown, Button } from 'react-bootstrap'
+import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 import { getMyCourses } from '../../api/courses'
 
@@ -7,6 +7,11 @@ const cardContainerLayout = {
     display: 'flex',
     justifyContent: 'center',
     flexFlow: 'row wrap'
+}
+
+const categoryLinks = {
+    color: 'black',
+    textDecoration: 'none'
 }
 
 const MineCourses = (props) => {
@@ -58,8 +63,25 @@ const MineCourses = (props) => {
 
     return (
         <div className='bg-dark'>
-        
             <h3 className='titleText'>Browse My Courses</h3>
+            <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">  
+                <Dropdown.Item><Link to='/courses/art' style={categoryLinks}>Arts</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/business' style={categoryLinks}>Business</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/dataanalysis' style={categoryLinks}>Data Analysis</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/design' style={categoryLinks}>Design</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/education' style={categoryLinks}>Education</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/engineering' style={categoryLinks}>Engineering</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/healthcare' style={categoryLinks}>Healthcare</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/history' style={categoryLinks}>History</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/language' style={categoryLinks}>Language</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/law' style={categoryLinks}>Law</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/literature' style={categoryLinks}>Literature</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/math' style={categoryLinks}>Math</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/medicine' style={categoryLinks}>Medicine</Link></Dropdown.Item>   
+                <Dropdown.Item><Link to='/courses/computerprogramming' style={categoryLinks}>Programming</Link></Dropdown.Item>                      
+                <Dropdown.Item><Link to='/courses/science' style={categoryLinks}>Science</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
+			</DropdownButton>
             <Dropdown>
                 <Dropdown.Toggle id="dropdown-basic-button-2">
                     Categories
