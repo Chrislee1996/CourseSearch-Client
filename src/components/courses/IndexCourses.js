@@ -47,7 +47,7 @@ const IndexCourses = (props) => {
 
     return (
         <div className='bg-dark'>
-            <h3 className='titleText'>Browse Some Products</h3>
+            <h3 className='titleText'>Browse Some Courses</h3>
             <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">              
 			</DropdownButton>
             <h3 class='text-center text-info'>Courses</h3>

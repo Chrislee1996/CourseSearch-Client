@@ -9,6 +9,11 @@ const linkStyle = {
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
+			<Link to='/courses/mine' style={linkStyle}>
+				My Courses
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-2'>
 			<Link to='addCourse' style={linkStyle}>
 				Add a New Course
 			</Link>

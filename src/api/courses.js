@@ -11,6 +11,17 @@ export const showCurrentCourse = (courseId) => {
     return axios(`${apiUrl}/courses/${courseId}`)
 }
 
+//GET -> MINE index
+export const getMyCourses = (user) => {
+    return axios({
+        url:`${apiUrl}/courses/mine`,
+        method: 'GET',
+        headers: {
+            Authorization:`Token token=${user.token}`
+        }
+    })
+}
+
 //POST -> create function
 export const createCourse = (user, newCourse) => {
     return axios({
