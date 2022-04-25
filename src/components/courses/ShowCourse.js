@@ -4,13 +4,13 @@ import {useParams, useNavigate} from 'react-router-dom'
 import { Spinner,Container,Card, Button} from 'react-bootstrap'
 import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
+import GiveReview from '../reviews/GiveReview'
 
 
 const ShowCourse = (props) => {
     const [modalOpen, setModalOpen] = useState(false)
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
-    // const [reviews, setReviews] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
@@ -18,8 +18,8 @@ const ShowCourse = (props) => {
 
     useEffect(() => {
         showCurrentCourse(id)
-            .then(course => {
-                setCourse(course.data.course)
+            .then(res => {
+                setCourse(res.data.course)
             })
             .catch(console.error)
     },[updated])
@@ -110,8 +110,16 @@ const ShowCourse = (props) => {
                         <Card.Header>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
+                        <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
                         <h3 className class='text-primary'>Reviews:</h3>
                         {reviews}
+                        <GiveReview
+                            user={user}
+                            show= {reviewModalOpen}
+                            course={course}
+                            triggerRefresh={() => setUpdated(prev => !prev)}
+                            handleClose={()=> setReviewModalOpen(false)}
+                        />
                     </Card.Text>
                 </Card.Body>
             </Card>
