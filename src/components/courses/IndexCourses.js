@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import { getAllCourses } from '../../api/courses'
 import { Link } from 'react-router-dom'
-import { Card } from 'react-bootstrap'
+import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
 
 const cardContainerLayout = {
     display: 'flex',
@@ -47,7 +47,10 @@ const IndexCourses = (props) => {
 
     return (
         <div className='bg-dark'>
-            <h3 class='text-center'>Courses</h3>
+            <h3 className='titleText'>Browse Some Products</h3>
+            <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">              
+			</DropdownButton>
+            <h3 class='text-center text-info'>Courses</h3>
             <div style={cardContainerLayout}>
                 {courseCards}
             </div>
