@@ -56,3 +56,71 @@ export const removeCourse = (user, courseId) => {
         }
     })
 }
+
+
+
+//Routes for all our subjects
+export const getArt = () => {
+    return axios(`${apiUrl}/courses/art`)
+}
+
+export const getBusiness = () => {
+    return axios(`${apiUrl}/courses/business`)
+}
+
+export const getDataAnalysis = () => {
+    return axios(`${apiUrl}/courses/dataanalysis`)
+}
+
+export const getDesign = () => {
+    return axios(`${apiUrl}/courses/design`)
+}
+
+export const getEducation = () => {
+    return axios(`${apiUrl}/courses/education`)
+}
+
+export const getEngineering = () => {
+    return axios(`${apiUrl}/courses/engineering`)
+}
+
+export const getHealthcare = () => {
+    return axios(`${apiUrl}/courses/healthcare`)
+}
+
+export const getHistory = () => {
+    return axios(`${apiUrl}/courses/history`)
+}
+
+export const getLanguage = () => {
+    return axios(`${apiUrl}/courses/language`)
+}
+
+export const getLaw = () => {
+    return axios(`${apiUrl}/courses/law`)
+}
+
+export const getLiterature = () => {
+    return axios(`${apiUrl}/courses/literature`)
+}
+
+export const getMath = () => {
+    return axios(`${apiUrl}/courses/math`)
+}
+
+export const getMedicine = () => {
+    return axios(`${apiUrl}/courses/medicine`)
+}
+
+export const getProgramming = () => {
+    return axios(`${apiUrl}/courses/programming`)
+}
+
+export const getScience = () => {
+    return axios(`${apiUrl}/courses/science`)
+}
+
+export const getSocialScience = () => {
+    return axios(`${apiUrl}/courses/socialscience`)
+}
+
