@@ -25,12 +25,27 @@ const ShowReview = (props) => {
                         <h4>Overall experience: {review.note}<br/></h4>
                         <h4>Course Rating: {review.courseRating}<br/></h4>
                         <h4>Professor Rating:{review.professorRating}<br/></h4>
-                    <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
-                        Delete Review    
-                    </Button>
-                    <Button variant="outline-warning" onClick={() => setShowEditModal(true)}>
-                        Edit Review
-                    </Button>
+                        {/* {
+                            user && (user._id === review.owner)
+                            ?
+                            <>
+                                <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
+                                    Delete Review    
+                                </Button>
+                                <Button variant="outline-warning" onClick={() => setShowEditModal(true)}>
+                                    Edit Review
+                                </Button>
+                            </>
+                            :
+                            null
+                        } */}
+
+                        <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
+                            Delete Review    
+                        </Button>
+                        <Button variant="outline-warning" onClick={() => setShowEditModal(true)}>
+                            Edit Review
+                        </Button>
         </Card.Body>
     </Card>
     <EditReviewModal 

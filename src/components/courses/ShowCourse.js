@@ -112,7 +112,7 @@ const ShowCourse = (props) => {
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
                         <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
                         <h3 className class='text-primary'>Reviews:</h3>
-                        {reviews}
+                        <p>{reviews}</p>
                         <GiveReview
                             user={user}
                             show= {reviewModalOpen}
