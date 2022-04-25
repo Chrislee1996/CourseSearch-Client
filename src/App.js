@@ -105,11 +105,11 @@ const App = () => {
 				}
 			/>
 {/* subjects */}
+
 			<Route
 				path='/courses/art'
 				element={<Art msgAlert={msgAlert} user={user} />}
 			/>
-
 			<Route
 				path='/courses/business'
 				element={<Business msgAlert={msgAlert} user={user} />}
