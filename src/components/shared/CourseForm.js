@@ -69,8 +69,6 @@ const CourseForm = (props) => {
                     >
                         <option>Select a Subject</option>
                         <option value="Art">Art</option>
-                        <option value="Biology">Biology</option>
-                        <option value="Chemistry">Chemistry</option>
                         <option value="Business">Business</option>
                         <option value="Data Analysis">Data Analysis</option>
                         <option value="Design">Design</option>
@@ -83,8 +81,8 @@ const CourseForm = (props) => {
                         <option value="Law">Law</option>
                         <option value="Math">Math</option>
                         <option value="Medicine">Medicine</option>
-                        <option value="Physics">Physics</option>
                         <option value="Programming">Physics</option>
+                        <option value="Science">Science</option>
                         <option value="Social Science">Social Science</option>
                     </Form.Control>
                     </Form.Group>

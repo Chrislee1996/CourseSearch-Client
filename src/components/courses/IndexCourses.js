@@ -9,6 +9,11 @@ const cardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
+const categoryLinks = {
+    color: 'black',
+    textDecoration: 'none'
+}
+
 const IndexCourses = (props) => {
     const [courses, setCourses] = useState(null)
 
@@ -48,7 +53,23 @@ const IndexCourses = (props) => {
     return (
         <div className='bg-dark'>
             <h3 className='titleText'>Browse Some Courses</h3>
-            <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">              
+            <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">  
+                <Dropdown.Item><Link to='/courses/art' style={categoryLinks}>Art</Link></Dropdown.Item>
+                <Dropdown.Item><Link to='/courses/business' style={categoryLinks}>Business</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/dataanalysis' style={categoryLinks}>Data Analysis</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/design' style={categoryLinks}>Design</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/education' style={categoryLinks}>Education</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/engineering' style={categoryLinks}>Engineering</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/healthcare' style={categoryLinks}>Healthcare</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/history' style={categoryLinks}>History</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/language' style={categoryLinks}>Language</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/law' style={categoryLinks}>Law</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/literature' style={categoryLinks}>Literature</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/math' style={categoryLinks}>Math</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/medicine' style={categoryLinks}>Medicine</Link></Dropdown.Item>   
+                <Dropdown.Item><Link to='/courses/programming' style={categoryLinks}>Programming</Link></Dropdown.Item>                      
+                <Dropdown.Item><Link to='/courses/science' style={categoryLinks}>Science</Link></Dropdown.Item>            
+                <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
 			</DropdownButton>
             <h3 class='text-center text-info'>Courses</h3>
             <div style={cardContainerLayout}>
