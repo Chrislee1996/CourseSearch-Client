@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import {showCurrentCourse, updateCourse, removeCourse} from '../../api/courses'
 import {useParams, useNavigate} from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import { Spinner,Container,Card, Button} from 'react-bootstrap'
 import EditCourseModal from './EditCourseModal'
+import ShowReview from '../reviews/ShowReview'
+
 
 const ShowCourse = (props) => {
-
     const [modalOpen, setModalOpen] = useState(false)
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
+    // const [reviews, setReviews] = useState(null)
+    const [reviewModalOpen, setReviewModalOpen] = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
@@ -61,7 +63,18 @@ const ShowCourse = (props) => {
         return `${hours}:${minutes} ${amPM}`
     }
 
-   
+    let reviews
+    
+    if(course) {
+        if(course.reviews.length>0){
+            reviews = course.reviews.map(review=> (
+                <ShowReview key={review._id} updated={updated} review={review} course={course} user={user}
+                triggerRefresh={()=> setUpdated(prev=> !prev)}
+                />
+            ))
+        }
+    }
+
 
     return (
         <>
@@ -97,6 +110,8 @@ const ShowCourse = (props) => {
                         <Card.Header>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
+                        <h3 className class='text-primary'>Reviews:</h3>
+                        {reviews}
                     </Card.Text>
                 </Card.Body>
             </Card>

@@ -52,7 +52,21 @@ const IndexCourses = (props) => {
 
     return (
         <div className='bg-dark'>
-            <h3 className='titleText'>Browse Some Courses</h3>
+            <h3 className='text-primary'>Browse Some Courses</h3>
+            <Link to={`/courses/`}><button className='viewI'>Algebra</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Web Development</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Chemistry</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Statistics</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>UX Design</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Nutrition</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Animation</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Spanish</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Biology</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Computer Science</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Accounting</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Higher Education</button></Link>
+            <Link to={`/courses/`}><button className='viewI'>Mechanical Engineering</button></Link>
+            
             <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">  
                 <Dropdown.Item><Link to='/courses/art' style={categoryLinks}>Arts and Culture </Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/business' style={categoryLinks}>Business</Link></Dropdown.Item>            
