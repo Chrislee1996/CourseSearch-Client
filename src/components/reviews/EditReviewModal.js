@@ -34,20 +34,9 @@ const EditReviewModal = (props) => {
             // if create is successful, we should navigate to the show page
             .then(() => handleClose())
             // then we send a success message
-            .then(() =>
-                msgAlert({
-                    heading: 'Review updated!',
-                    message: 'Review Updated',
-                    variant: 'success',
-                }))
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
-            .catch(() =>
-                msgAlert({
-                    heading: 'Oh No!',
-                    message: 'Something went Wrong!',
-                    variant: 'danger',
-                }))
+            .then(() => handleClose())
     }
 
     return (

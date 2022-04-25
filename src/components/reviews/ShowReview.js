@@ -31,14 +31,6 @@ const ShowReview = (props) => {
                     <Button variant="outline-warning" onClick={() => setShowEditModal(true)}>
                         Edit Review
                     </Button>
-                    {
-                        user && (user.id === course.owner.id)
-                        ?
-                        <>
-                    </>
-        :
-        null
-        }
         </Card.Body>
     </Card>
     <EditReviewModal 
