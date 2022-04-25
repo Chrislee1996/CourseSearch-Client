@@ -44,8 +44,11 @@ const ShowCourse = (props) => {
                         <Card.Header>Subject: {course.courseSubject}</Card.Header><br/>
                         <Card.Header>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>
                         <Card.Header>Location: {course.location}</Card.Header><br/>
-                        <Card.Header>Days of Course: {course.daysOfCourse}</Card.Header><br/>
-                        <Card.Header>Time of Course: {course.timeOfCourse}</Card.Header><br/>
+                        <Card.Header>Days of Course: {course.courseDates}</Card.Header><br/>
+                        <Card.Header>Start Date of Course: {course.startDate}</Card.Header><br/>
+                        <Card.Header>End Date of Course: {course.endDate}</Card.Header><br/>
+                        <Card.Header>Start Time of Course: {course.startTime}</Card.Header><br/>
+                        <Card.Header>End Time of Course: {course.endTime}</Card.Header><br/>
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
                         
                     </Card.Text>
