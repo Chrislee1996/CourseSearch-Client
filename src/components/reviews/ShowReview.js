@@ -19,7 +19,10 @@ const ShowReview = (props) => {
         <>
             <Card className="m-2">
                 <Card.Body>
-                        <h4>{review.note}<br/></h4>
+                        <h4>Overall experience: {review.note}<br/></h4>
+                        <h4>Course Rating: {review.courseRating}<br/></h4>
+                        <h4>Professor Rating:{review.professorRating}<br/></h4>
+
                     {
                         user && (user.id === product.owner.id)
                         ?
