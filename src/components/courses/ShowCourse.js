@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {showCurrentCourse} from '../../api/courses'
+import {showCurrentCourse, updateCourse, removeCourse} from '../../api/courses'
 import {useParams, useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Spinner,Container,Card, Button} from 'react-bootstrap'
@@ -21,6 +21,26 @@ const ShowCourse = (props) => {
             .catch(console.error)
     },[updated])
 
+
+    const deleteCourse = () => {
+        removeCourse(user, course.id)
+        .then(() => {
+            msgAlert({
+                heading: 'Course Removed!',
+                message: 'Course Successfully deleted',
+                variant: 'success',
+            })
+        })
+            .then(()=> {navigate('/')})
+            .catch(() => {
+                msgAlert({
+                    heading: 'Something Went Wrong',
+                    message: 'Unable to delete',
+                    variant: 'danger',
+                })
+            })
+    }
+
     if(!course) {
         return (
             <Container>
@@ -40,14 +60,28 @@ const ShowCourse = (props) => {
         return `${hours}:${minutes} ${amPM}`
     }
 
+   
 
     return (
         <>
-        <Container className='fluid'> 
+        <Container className='fluid'>
+
             <Card className='text-info bg-dark'>
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
+    
                 <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image}`} width='250' height='300'/></a></Card.Header>
                 <Card.Body>
+                    {
+                        user && (course.owner == user._id)
+                        ?
+                        <>
+                            <Button onClick={() => deleteCourse()} className="m-2" variant="danger">
+                                Delete Course
+                            </Button>
+                        </>
+                        :
+                        null
+                    }
                     <Card.Text>
                         <a href = {course.courseLink} target="_blank">Go to Course</a>
                         <Card.Header>Subject: {course.courseSubject}</Card.Header><br/>
@@ -65,9 +99,6 @@ const ShowCourse = (props) => {
                             Edit Anime
                         </Button>
                         {/* delete button */}
-                        {/* <Button onClick={() => deleteAnime()} className="m-2" variant="danger">
-                            Delete Anime
-                        </Button> */} 
                 </Card.Body>
             </Card>
         </Container>

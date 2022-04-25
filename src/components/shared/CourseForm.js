@@ -40,11 +40,21 @@ const CourseForm = (props) => {
                             name='daysOfCourse'
                             onChange={handleChange}
                     />
+                    
+                    {/* <Form.Label>Monday</Form.Label>
+                        <Form.Check
+                            placeholder="Days Of Courses"
+                            value={course.daysOfCourse}
+                            name='daysOfCourse'
+                            onChange={handleChange}
+                    >
+                    </Form.Check> */}
+
 
                     <Form.Label>Submit a logo if desired </Form.Label>
                         <Form.Control
                             placeholder="Upload an Image"
-                            value=""
+                            value={course.image}
                             name='image'
                             onChange={handleChange}
                     />
@@ -78,6 +88,21 @@ const CourseForm = (props) => {
                         <option value="Social Science">Social Science</option>
                     </Form.Control>
                     </Form.Group>
+
+
+                    <Form.Group controlId="forBasicSelect">
+                    <Form.Label>Remote or In Person?</Form.Label>
+                    <Form.Control as='select'
+                        placeholder="location"
+                        value={course.location}
+                        name='location'
+                        onChange={handleChange}
+                    >
+                        <option></option>
+                        <option value="Remote">Remote</option>
+                        <option value="In Person">In Person</option>
+                    </Form.Control>
+                    </Form.Group>  
                     
                     <Form.Group controlId="date">
                     <Form.Label>Start Date of Course(Leave blank if not appliable):</Form.Label>
@@ -127,20 +152,6 @@ const CourseForm = (props) => {
                             name='teacher'
                             onChange={handleChange}
                     />
-
-                    <Form.Group controlId="forBasicSelect">
-                    <Form.Label>Remote or In Person?</Form.Label>
-                    <Form.Control as='select'
-                        placeholder="location"
-                        value={course.location}
-                        name='location'
-                        onChange={handleChange}
-                    >
-                        <option></option>
-                        <option value="Remote">Remote</option>
-                        <option value="In Person">In Person</option>
-                    </Form.Control>
-                    </Form.Group>  
 
                     <Form.Check
                         label='Does this offer college credits?'
