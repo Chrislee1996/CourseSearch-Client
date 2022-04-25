@@ -15,6 +15,10 @@ import ChangePassword from './components/auth/ChangePassword'
 import ShowCourse from './components/courses/ShowCourse'
 import CreateCourse from './components/courses/CreateCourse'
 import MineCourses from './components/courses/MineCourses'
+//subjects
+import Art from './components/subjects/Art'
+import Business from './components/subjects/Business'
+
 
 const App = () => {
 
@@ -86,6 +90,17 @@ const App = () => {
 					</RequireAuth>
 				}
 			/>
+{/* subjects */}
+			<Route
+				path='/courses/art'
+				element={<Art msgAlert={msgAlert} user={user} />}
+			/>
+
+			<Route
+				path='/courses/business'
+				element={<Business msgAlert={msgAlert} user={user} />}
+			/>
+
 			<Route
 				path='/courses/:id'
 				element={<ShowCourse msgAlert={msgAlert} user={user} />}
