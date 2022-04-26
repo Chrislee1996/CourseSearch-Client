@@ -33,6 +33,8 @@ import Science from './components/subjects/Science'
 import SocialScience from './components/subjects/SocialScience'
 import EditReviewModal from './components/reviews/EditReviewModal'
 import GiveReviewModal from './components/reviews/GiveReview'
+import GiveCommentModal from './components/comments/GiveComment'
+
 
 //tags
 import IndexOnlineCourses from './components/tag/OnlineCourse'
@@ -263,6 +265,15 @@ const App = () => {
 				element={
 					<RequireAuth user={user}>
 						<GiveReviewModal msgAlert={msgAlert} user={user}/>
+					</RequireAuth>
+				}
+			/>
+
+			<Route
+				path="/comments/:courseId/:reviewId"
+				element={
+					<RequireAuth user={user}>
+						<GiveCommentModal msgAlert={msgAlert} user={user}/>
 					</RequireAuth>
 				}
 			/>

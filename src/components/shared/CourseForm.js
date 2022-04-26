@@ -45,7 +45,9 @@ const CourseForm = (props) => {
                         <Form.Check
                         inline
                         label='Online Course'
-                        name='Online Courses'
+                        name='details'
+                        value={course.details}
+                        onChange={handleChange}
                         />
 
                        <Form.Check

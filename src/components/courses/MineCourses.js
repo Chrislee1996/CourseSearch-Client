@@ -83,10 +83,6 @@ const MineCourses = (props) => {
                 <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
 			</DropdownButton>
             <Dropdown>
-                <Dropdown.Toggle id="dropdown-basic-button-2">
-                    Categories
-                </Dropdown.Toggle>
-
                 <Dropdown.Menu>
                 </Dropdown.Menu>
             </Dropdown>

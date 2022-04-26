@@ -5,6 +5,8 @@ import { Spinner,Container,Card, Button} from 'react-bootstrap'
 import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
+import ShowComment from '../comments/ShowComment'
+
 
 
 const ShowCourse = (props) => {
@@ -64,8 +66,8 @@ const ShowCourse = (props) => {
     }
 
     let reviews
-    
-    if(course) {
+    let comments    
+    if(course){
         if(course.reviews.length>0){
             reviews = course.reviews.map(review=> (
                 <ShowReview key={review._id} updated={updated} review={review} course={course} user={user}
@@ -73,8 +75,16 @@ const ShowCourse = (props) => {
                 />
             ))
         }
-    }
+        // if(course.comments.length > 0){
+        //     comments = course.comments.map(comment=> (
+        //         <ShowComment key={comment._id} updated={updated} comment={comment} course={course} user={user}
+        //         triggerRefresh={()=> setUpdated(prev=> !prev)}
+        //         />  
+        //     ))
+        // }
+    }  
 
+    
     return (
         <>
         <Container className='fluid'>
@@ -115,6 +125,7 @@ const ShowCourse = (props) => {
                         <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
                         <h3 className class='text-primary'>Reviews:</h3>
                         <p>{reviews}</p>
+                        <small>{comments}</small>
                         <GiveReview
                             user={user}
                             show= {reviewModalOpen}

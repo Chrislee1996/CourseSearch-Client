@@ -28,7 +28,7 @@ console.log(review)
                         <h4>Overall experience: {review.note}<br/></h4>
                         <h4>Course Rating: {review.courseRating}<br/></h4>
                         <h4>Professor Rating:{review.professorRating}<br/></h4>
-                        {/* {
+                        {
                             user && (user._id === review.owner)
                             ?
                             <>
@@ -41,14 +41,14 @@ console.log(review)
                             </>
                             :
                             null
-                        } */}
+                        }
 
-                        <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
+                        {/* <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
                             Delete Review    
                         </Button>
                         <Button variant="outline-warning" onClick={() => setShowEditModal(true)}>
                             Edit Review
-                        </Button>
+                        </Button> */}
         </Card.Body>
     </Card>
     <EditReviewModal 

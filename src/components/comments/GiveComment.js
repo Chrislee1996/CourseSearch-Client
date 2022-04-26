@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
 import {Modal} from 'react-bootstrap'
-import ReviewForm from '../shared/ReviewForm'
-import {addReview} from '../../api/reviews.js'
+import CommentForm from '../shared/CommentForm'
+import {addComment} from '../../api/comments.js'
 
-const GiveReviewModal = (props) => {
+const GiveCommentModal = (props) => {
     const { user, course, show, handleClose, msgAlert, triggerRefresh } = props
-    const [review, setReview] = useState({})
+    const [comment, setComment] = useState({})
 
     const handleChange = (e) => {
         // e === event
         e.persist()
 
-        addUsertoReview()
         
-        setReview(prevReview => {
+        setComment(prevComment => {
             const name = e.target.name
             let value = e.target.value
     
 
             const updatedValue = { [name]: value }
 
-            return {...prevReview, ...updatedValue}
+            return {...prevComment, ...updatedValue}
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        addReview(user, course._id, review)
+        addComment(user, course._id, comment)
             // if create is successful, we should navigate to the show page
             .then(() => handleClose())
             
@@ -36,26 +35,20 @@ const GiveReviewModal = (props) => {
             .catch(console.error)
     }
 
-    const addUsertoReview = () => {
-        setReview(prevReview => {
-            const updatedValue = {'owner': user._id}
-            return {...prevReview , ...updatedValue}
-        })
-    }
 
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
-                <ReviewForm
-                    review={review}
+                <CommentForm
+                    comment={comment}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    heading="Review Course"
+                    heading="Comment on Review"
                 />
             </Modal.Body>
         </Modal>
     )
 }
 
-export default GiveReviewModal
+export default GiveCommentModal
