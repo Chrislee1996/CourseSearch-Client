@@ -18,6 +18,7 @@ export const addReview = (user, courseId, newReview) => {
 
 // PATCH -> update function
 export const updateReview = (user, courseId, reviewId, updatedReview) => {
+
     return axios({
         url: `${apiUrl}/reviews/${courseId}/${reviewId}`,
         method: 'PATCH',
@@ -43,7 +44,7 @@ export const removeReview = (user, courseId, reviewId) => {
 export const addComment = (user, courseId, reviewId, newComment) => {
     console.log('user in comment axios', user)
     console.log('comment in comment axios', newComment)
-    console.log('our review Id in comment', reviewId)
+    console.log('our review Id', reviewId)
     return axios({
         url: `${apiUrl}/comments/${courseId}/${reviewId}`,
         method: 'POST',

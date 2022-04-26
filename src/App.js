@@ -35,6 +35,11 @@ import EditReviewModal from './components/reviews/EditReviewModal'
 import GiveReviewModal from './components/reviews/GiveReview'
 import GiveCommentModal from './components/comments/GiveComment'
 
+//college and non college courses
+import College from './components/colleges/IndexCollegeCourses'
+import NonCollegeCourses from './components/colleges/IndexNonCollegeCourses'
+
+
 
 //tags
 import IndexOnlineCourses from './components/tag/OnlineCourse'
@@ -188,6 +193,19 @@ const App = () => {
 				element={<SocialScience msgAlert={msgAlert} user={user} />}
 			/>	
 			{/* end of subjects */}
+
+			{/* college vs non college */}
+			<Route
+				path='/courses/collegecourses'
+				element={<College msgAlert={msgAlert} user={user} />}
+			/>	
+
+			<Route
+				path='/courses/noncollegecourses'
+				element={<NonCollegeCourses msgAlert={msgAlert} user={user} />}
+			/>	
+			
+
 			{/* tags */}
 			<Route
 				path='/tags/onlinecourses'

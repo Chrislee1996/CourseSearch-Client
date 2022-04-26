@@ -33,7 +33,7 @@ const GiveReviewModal = (props) => {
             
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
-            .catch(console.error)   
+            .catch(console.error) 
     }
 
     const addUsertoReview = () => {

@@ -40,6 +40,7 @@ const CourseForm = (props) => {
                             name='daysOfCourse'
                             onChange={handleChange}
                     />
+
                     
                     <Form.Label>Tags:</Form.Label><br/>
                         <Form.Check
