@@ -51,8 +51,6 @@ import IndexToughGrader from './components/tag/ToughGrader'
 import IndexLectureHeavy from './components/tag/LectureHeavy'
 
 
-
-
 const App = () => {
 
   const [user, setUser] = useState(null)

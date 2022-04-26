@@ -5,57 +5,57 @@ export const getOnlineCourses = () => {
     return axios(`${apiUrl}/tags/onlinecourses`)
 }
 
-// export const getCollegeCourses = () => {
-//     return axios(`${apiUrl}/tags/collegecourses`)
-// }
+export const getCollegeCourses = () => {
+    return axios(`${apiUrl}/tags/collegecourses`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getNonCollegeCourses = () => {
+    return axios(`${apiUrl}/tags/noncollegecourses`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getInpersonCourses = () => {
+    return axios(`${apiUrl}/tags/inpersoncourses`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getMandatory = () => {
+    return axios(`${apiUrl}/tags/mandatoryattendence`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getHomework = () => {
+    return axios(`${apiUrl}/tags/homework`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getTestheavy = () => {
+    return axios(`${apiUrl}/tags/testheavy`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getGroupprojects = () => {
+    return axios(`${apiUrl}/tags/groupprojects`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getFeedback = () => {
+    return axios(`${apiUrl}/tags/feedback`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getMaterial = () => {
+    return axios(`${apiUrl}/tags/material`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getCaring = () => {
+    return axios(`${apiUrl}/tags/caring`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getTextbook = () => {
+    return axios(`${apiUrl}/tags/textbook`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getToughgrader = () => {
+    return axios(`${apiUrl}/tags/toughgrader`)
+}
 
-// export const getOnlineCourses = () => {
-//     return axios(`${apiUrl}/tags/onlinecourses`)
-// }
+export const getLectureheavy = () => {
+    return axios(`${apiUrl}/tags/lectureheavy`)
+}
 
 
 
