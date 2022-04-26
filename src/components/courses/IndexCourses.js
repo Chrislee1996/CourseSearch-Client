@@ -54,19 +54,19 @@ const IndexCourses = (props) => {
         <div className='bg-dark'>
             <h3 className='text-primary'>Browse Some Courses</h3>
             <Link to={`/tags/onlinecourses`}><Button variant='outline-light' className='viewI '>Online Courses</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>College Courses</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Non-College Courses</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>In person Courses</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Mandatory Attendence</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Lots of Homework</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Test Heavy</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Group Projects</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Good Feedback</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Cares About the Material</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Caring</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Text-book Mandatory</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Tough Grader</Button></Link>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Lecture Heavy</Button></Link>
+            <Link to={`/tags/collegecourses`}><Button variant='outline-light' className='viewI'>College Courses</Button></Link>
+            <Link to={`/tags/noncollegecourses`}><Button variant='outline-light' className='viewI'>Non-College Courses</Button></Link>
+            <Link to={`/tags/inpersoncourses`}><Button variant='outline-light' className='viewI'>In person Courses</Button></Link>
+            <Link to={`/tags/mandatoryattendence`}><Button variant='outline-light' className='viewI'>Mandatory Attendence</Button></Link>
+            <Link to={`/tags/lotsofhomework`}><Button variant='outline-light' className='viewI'>Lots of Homework</Button></Link>
+            <Link to={`/tags/testheavy'`}><Button variant='outline-light' className='viewI'>Test Heavy</Button></Link>
+            <Link to={`/tags/groupprojects`}><Button variant='outline-light' className='viewI'>Group Projects</Button></Link>
+            <Link to={`/tags/goodfeedback`}><Button variant='outline-light' className='viewI'>Good Feedback</Button></Link>
+            <Link to={`/tags/material'`}><Button variant='outline-light' className='viewI'>Cares About the Material</Button></Link>
+            <Link to={`/tags/caring`}><Button variant='outline-light' className='viewI'>Caring</Button></Link>
+            <Link to={`/tags/textbook`}><Button variant='outline-light' className='viewI'>Text-book Mandatory</Button></Link>
+            <Link to={`/tags/toughgrader`}><Button variant='outline-light' className='viewI'>Tough Grader</Button></Link>
+            <Link to={`/tags/lectureheavy`}><Button variant='outline-light' className='viewI'>Lecture Heavy</Button></Link>
 
             
             <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">  
