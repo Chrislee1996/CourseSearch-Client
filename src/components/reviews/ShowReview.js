@@ -17,10 +17,6 @@ const ShowReview = (props) => {
             .catch(console.error)
     }
 
-console.log(review.owner, 'via showreview')
-console.log(review)
-
-
     return (
         <>
             <Card className="m-2">

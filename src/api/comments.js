@@ -2,9 +2,11 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 
-export const addComment = (user, courseId, reviewId,newComment) => {
+export const addComment = (user, courseId, reviewId, newComment) => {
     console.log('user in comment axios', user)
-    console.log('review in comment axios', newComment)
+    console.log('comment in comment axios', newComment)
+    console.log(reviewId, 'reviewID')
+    console.log(courseId, 'courseId')
     return axios({
         url: `${apiUrl}/reviews/${courseId}/${reviewId}`,
         method: 'POST',

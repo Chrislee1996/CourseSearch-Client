@@ -27,15 +27,6 @@ const ShowComment = (props) => {
                         </Button>
                 </Card.Body>
             </Card>
-    {/* <EditReviewModal 
-                user={user}
-                course={course}
-                review={review}
-                show={showEditModal}
-                handleClose={() => setShowEditModal(false)}
-                msgAlert={msgAlert}
-                triggerRefresh={triggerRefresh}
-            /> */}
     </>
     )
 }

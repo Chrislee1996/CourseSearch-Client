@@ -6,6 +6,7 @@ import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
 import ShowComment from '../comments/ShowComment'
+import GiveComment from '../comments/GiveComment'
 
 
 
@@ -14,6 +15,7 @@ const ShowCourse = (props) => {
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
+    const [commentModalOpen, setCommentModalOpen] = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
@@ -110,6 +112,9 @@ const ShowCourse = (props) => {
                     }
                     <Card.Text>
                         <a href = {course.courseLink} target="_blank">Go to Course</a>
+                        <Card.Header>{course.tags.map(tag=> (
+                        <small>Tags: {tag.details}</small>
+                        ))} </Card.Header>
                         <Card.Header>Subject: {course.courseSubject}</Card.Header><br/>
                         <Card.Header>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>
                         <Card.Header>Location: {course.location}</Card.Header><br/>
@@ -119,12 +124,11 @@ const ShowCourse = (props) => {
                         <Card.Header>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
-                        {course.tags.map(tag=> (
-                        <small>Tags: {tag.details}</small>
-                        ))}
+
                         <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
                         <h3 className class='text-primary'>Reviews:</h3>
                         <p>{reviews}</p>
+                        <button className="comment" onClick={()=> setCommentModalOpen(true)}> Comment on Review Above</button>
                         <small>{comments}</small>
                         <GiveReview
                             user={user}
@@ -132,6 +136,13 @@ const ShowCourse = (props) => {
                             course={course}
                             triggerRefresh={() => setUpdated(prev => !prev)}
                             handleClose={()=> setReviewModalOpen(false)}
+                        />
+                        <GiveComment
+                            user={user}
+                            show= {commentModalOpen}
+                            course={course}
+                            triggerRefresh={() => setUpdated(prev => !prev)}
+                            handleClose={()=> setCommentModalOpen(false)}
                         />
                     </Card.Text>
                 </Card.Body>
