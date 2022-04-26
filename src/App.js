@@ -186,11 +186,62 @@ const App = () => {
 				element={<SocialScience msgAlert={msgAlert} user={user} />}
 			/>	
 			{/* end of subjects */}
-
 			{/* tags */}
 			<Route
 				path='/tags/onlinecourses'
 				element={<IndexOnlineCourses msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/collegecourses'
+				element={<IndexCollegeCourses msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/noncollegecourses'
+				element={<IndexNonCollegeCourses msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/inpersoncourses'
+				element={<IndexInpersonCourses msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/mandatoryattendence'
+				element={<IndexMandatoryAttendence msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/lotsofhomework'
+				element={<IndexLotsOfHomework msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/testheavy'
+				element={<IndexTestHeavy msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/groupprojects'
+				element={<IndexGroupprojects msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/goodfeedback'
+				element={<IndexGoodFeedback msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/material'
+				element={<IndexMaterial msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/caring'
+				element={<IndexCaring msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/textbook'
+				element={<IndexTextbook msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/toughgrader'
+				element={<IndexToughGrader msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/lectureheavy'
+				element={<IndexLectureHeavy msgAlert={msgAlert} user={user} />}
 			/>				
 			{/* end of tags */}
 
