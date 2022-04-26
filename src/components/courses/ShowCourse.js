@@ -85,7 +85,7 @@ const ShowCourse = (props) => {
                 <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image}`} width='250' height='300'/></a></Card.Header>
                 <Card.Body>
                     {
-                        user && (course.owner == user._id)
+                        user && (course.owner._id === user._id)
                         ?
                         <>
                             <Button onClick={() => deleteCourse()} className="m-2" variant="danger">

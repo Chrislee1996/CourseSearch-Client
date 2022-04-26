@@ -34,30 +34,6 @@ export const createCourse = (user, newCourse) => {
     })
 }
 
-//PATCH -> update function
-export const updateCourse = (user, updatedCourse) => {
-    return axios({
-        url:`${apiUrl}/courses/${updatedCourse.id}`,
-        method:'PATCH',
-        headers:{
-            Authorization: `Token token=${user.token}`
-        },
-        data:{course: updatedCourse}
-    })
-}
-
-//DELETE -> Delete function
-export const removeCourse = (user, courseId) => {
-    return axios({
-        url:`${apiUrl}/courses/${courseId}`,
-        method:'DELETE',
-        headers:{
-            Authorization: `Token token=${user.token}`
-        }
-    })
-}
-
-
 
 //Routes for all our subjects
 export const getArt = () => {
@@ -120,3 +96,26 @@ export const getSocialScience = () => {
     return axios(`${apiUrl}/courses/socialscience`)
 }
 
+
+//PATCH -> update function
+export const updateCourse = (user, updatedCourse) => {
+    return axios({
+        url:`${apiUrl}/courses/${updatedCourse.id}`,
+        method:'PATCH',
+        headers:{
+            Authorization: `Token token=${user.token}`
+        },
+        data:{course: updatedCourse}
+    })
+}
+
+//DELETE -> Delete function
+export const removeCourse = (user, courseId) => {
+    return axios({
+        url:`${apiUrl}/courses/${courseId}`,
+        method:'DELETE',
+        headers:{
+            Authorization: `Token token=${user.token}`
+        }
+    })
+}
