@@ -69,6 +69,7 @@ const ShowCourse = (props) => {
 
     let reviews
     let comments    
+
     if(course){
         if(course.reviews.length>0){
             reviews = course.reviews.map(review=> (
@@ -85,7 +86,9 @@ const ShowCourse = (props) => {
         //     ))
         // }
     }  
+    console.log(comments,'our comment')
 
+    console.log(reviews, 'our reviews')
     
     return (
         <>
@@ -113,8 +116,9 @@ const ShowCourse = (props) => {
                     <Card.Text>
                         <a href = {course.courseLink} target="_blank">Go to Course</a>
                         <Card.Header>{course.tags.map(tag=> (
-                        <small>Tags: {tag.details}</small>
-                        ))} </Card.Header>
+                        <small><li>{tag.details} </li></small>
+                        ))} 
+                        </Card.Header>
                         <Card.Header>Subject: {course.courseSubject}</Card.Header><br/>
                         <Card.Header>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>
                         <Card.Header>Location: {course.location}</Card.Header><br/>
@@ -126,10 +130,9 @@ const ShowCourse = (props) => {
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
 
                         <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
-                        <h3 className class='text-primary'>Reviews:</h3>
+                        <h3 className class='text-primary'>Reviews:</h3> 
                         <p>{reviews}</p>
                         <button className="comment" onClick={()=> setCommentModalOpen(true)}> Comment on Review Above</button>
-                        <small>{comments}</small>
                         <GiveReview
                             user={user}
                             show= {reviewModalOpen}

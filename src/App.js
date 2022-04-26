@@ -261,6 +261,15 @@ const App = () => {
 			/>
 
 			<Route
+				path="/comments/:courseId/:reviewId/:reviewId"
+				element={
+					<RequireAuth user={user}>
+						<ShowCourse msgAlert={msgAlert} user={user}/>
+					</RequireAuth>
+				}
+			/>
+
+			<Route
 				path="/reviews/:id/"
 				element={
 					<RequireAuth user={user}>

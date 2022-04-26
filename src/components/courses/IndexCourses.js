@@ -41,7 +41,7 @@ const IndexCourses = (props) => {
                 <Card.Header>{course.courseName}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        Subject: {course.courseSubject}
+                        Subject: {course.courseSubject}<br/>
                         {course.tags.map(tag=> (
                         <small>Tags: {tag.details}</small>
                         ))}

@@ -38,3 +38,18 @@ export const removeReview = (user, courseId, reviewId) => {
         }
     })
 }
+
+
+export const addComment = (user, courseId, reviewId, newComment) => {
+    console.log('user in comment axios', user)
+    console.log('comment in comment axios', newComment)
+    console.log('our review Id in comment', reviewId)
+    return axios({
+        url: `${apiUrl}/comments/${courseId}/${reviewId}`,
+        method: 'POST',
+        header: {
+            Authorization:`Token token=${user.token}`
+        },
+        data: { comment: newComment }
+    })
+}

@@ -5,10 +5,9 @@ import axios from 'axios'
 export const addComment = (user, courseId, reviewId, newComment) => {
     console.log('user in comment axios', user)
     console.log('comment in comment axios', newComment)
-    console.log(reviewId, 'reviewID')
-    console.log(courseId, 'courseId')
+    console.log('our review Id', reviewId)
     return axios({
-        url: `${apiUrl}/reviews/${courseId}/${reviewId}`,
+        url: `${apiUrl}/comments/${courseId}/${reviewId}`,
         method: 'POST',
         header: {
             Authorization:`Token token=${user.token}`

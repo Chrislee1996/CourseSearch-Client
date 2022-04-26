@@ -2,11 +2,11 @@ import IndexCourses from "./courses/IndexCourses"
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
-	console.log('props in home', props)
+	const {user, msgAlert} = props
 
 	return (
 		<>
-			<IndexCourses/>
+			<IndexCourses user={user} msgAlert={msgAlert}/>
 		</>
 	)
 }
