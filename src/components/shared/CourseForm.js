@@ -46,24 +46,25 @@ const CourseForm = (props) => {
                         inline
                         label='Online Course'
                         name='tags'
-                        value="62670afd0c8a3731ea1954c7"
+                        value="626844ec0cc0b2149abd4290"
                         onChange={handleChange}
                         />
+
 
                        <Form.Check
                         inline
                         label='College Course'
                         name='tags'
-                        value="62670afd0c8a3731ea1954c8"
+                        value="626844ec0cc0b2149abd4291"
                         onChange = {handleChange}
                         />                        
-                    <br/>
+
 
                     <Form.Check
                         inline
                         label='Non College Course'
                         name='tags'
-                        value="62670afd0c8a3731ea1954c9"
+                        value="626844ec0cc0b2149abd4292"
                         onChange = {handleChange}
                         />                        
                     <br/>
@@ -72,25 +73,25 @@ const CourseForm = (props) => {
                         inline
                         label='In Person Course'
                         name='tags'
-                        value="62670afd0c8a3731ea1954ca"
+                        value="626844ec0cc0b2149abd4293"
                         onChange = {handleChange}
                         />                        
-                    <br/>
+
 
                     <Form.Check
                         inline
                         label='Mandatory Attendence'
                         name='tags'
-                        value="62670afd0c8a3731ea1954cb"
+                        value="626844ec0cc0b2149abd4294"
                         onChange = {handleChange}
                         />                        
-                    <br/>
+
 
                     <Form.Check
                         inline
                         label='Lots of Homework'
                         name='tags'
-                        value="62670afd0c8a3731ea1954cc"
+                        value="626844ec0cc0b2149abd4295"
                         onChange = {handleChange}
                         />                        
                     <br/>
@@ -99,25 +100,25 @@ const CourseForm = (props) => {
                         inline
                         label='Test Heavy'
                         name='tags'
-                        value="62670afd0c8a3731ea1954cd"
+                        value="626844ec0cc0b2149abd4296"
                         onChange = {handleChange}
                         />                        
-                    <br/>
+
 
                         <Form.Check
                         inline
                         label='Group Projects'
                         name='tags'
-                        value="62670afd0c8a3731ea1954ce"
+                        value="626844ec0cc0b2149abd4297"
                         onChange = {handleChange}
                         />                        
-                    <br/>
+
 
                     <Form.Check
                         inline
                         label='Instructor provides good Feedback'
                         name='tags'
-                        value="62670afd0c8a3731ea1954cf"
+                        value="626844ec0cc0b2149abd4298"
                         onChange = {handleChange}
                         />                        
                     <br/>
@@ -126,34 +127,25 @@ const CourseForm = (props) => {
                         inline
                         label='Cares about the Material'
                         name='tags'
-                        value="62670afd0c8a3731ea1954d0"
+                        value="626844ec0cc0b2149abd4299"
                         onChange = {handleChange}
                         />                        
-                    <br/>
 
-                    <Form.Check
-                        inline
-                        label='College Course'
-                        name='tags'
-                        value="62670afd0c8a3731ea1954c8"
-                        onChange = {handleChange}
-                        />                        
-                    <br/>
 
                     <Form.Check
                         inline
                         label='Professor is caring'
                         name='tags'
-                        value="62670afd0c8a3731ea1954d1"
+                        value="626844ec0cc0b2149abd429a"
                         onChange = {handleChange}
                         />                        
-                    <br/>
+
 
                     <Form.Check
                         inline
                         label='Text book is Mandatory'
                         name='tags'
-                        value="62670afd0c8a3731ea1954d2"
+                        value="626844ec0cc0b2149abd429b"
                         onChange = {handleChange}
                         />                        
                     <br/>
@@ -162,16 +154,16 @@ const CourseForm = (props) => {
                         inline
                         label='Tough Grader'
                         name='tags'
-                        value="62670afd0c8a3731ea1954d3"
+                        value="626844ec0cc0b2149abd429c"
                         onChange = {handleChange}
                         />                        
-                    <br/>
+
 
                     <Form.Check
                         inline
                         label='Lecture Heavy'
                         name='tags'
-                        value="62670afd0c8a3731ea1954d4"
+                        value="626844ec0cc0b2149abd429d"
                         onChange = {handleChange}
                         />                        
                     <br/>
