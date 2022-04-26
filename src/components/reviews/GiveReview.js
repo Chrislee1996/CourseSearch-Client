@@ -11,6 +11,8 @@ const GiveReviewModal = (props) => {
         // e === event
         e.persist()
 
+        addUsertoReview()
+        
         setReview(prevReview => {
             const name = e.target.name
             let value = e.target.value
@@ -32,6 +34,13 @@ const GiveReviewModal = (props) => {
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
             .catch(console.error)
+    }
+
+    const addUsertoReview = () => {
+        setReview(prevReview => {
+            const updatedValue = {'owner': user._ud}
+            return {...prevReview , ...updatedValue}
+        })
     }
 
     return (

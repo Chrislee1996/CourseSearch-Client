@@ -6,7 +6,7 @@ import EditReviewModal from './EditReviewModal'
 
 const ShowReview = (props) => {
     // most of these are simply to pass to edit modal
-    const {review,id, user, triggerRefresh, msgAlert, course} = props
+    const {review, user, triggerRefresh, msgAlert, course} = props
 
     const [showEditModal, setShowEditModal] = useState(false)
     
@@ -16,6 +16,9 @@ const ShowReview = (props) => {
             // if there is an error, we'll send an error message
             .catch(console.error)
     }
+
+console.log(review.owner, 'via showreview')
+console.log(review)
 
 
     return (

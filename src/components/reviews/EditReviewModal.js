@@ -11,6 +11,8 @@ const EditReviewModal = (props) => {
         // e === event
         e.persist()
 
+        addUsertoReview()
+
         setReview(prevReview => {
             const name = e.target.name
             let value = e.target.value
@@ -39,6 +41,13 @@ const EditReviewModal = (props) => {
             .then(() => handleClose())
     }
 
+    const addUsertoReview = () => {
+        setReview(prevReview => {
+            const updatedValue = {'owner': user._ud}
+            return {...prevReview , ...updatedValue}
+        })
+    }
+    
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>

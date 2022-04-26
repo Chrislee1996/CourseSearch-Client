@@ -4,6 +4,8 @@ import axios from 'axios'
 
 // POST -> create function
 export const addReview = (user, courseId, newReview) => {
+    console.log('user in review axios', user)
+    console.log('review in review axios', newReview)
     return axios({
         url: `${apiUrl}/reviews/${courseId}`,
         method: 'POST',

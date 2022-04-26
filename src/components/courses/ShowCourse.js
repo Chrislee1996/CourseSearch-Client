@@ -75,7 +75,6 @@ const ShowCourse = (props) => {
         }
     }
 
-
     return (
         <>
         <Container className='fluid'>
@@ -110,6 +109,7 @@ const ShowCourse = (props) => {
                         <Card.Header>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
+                        <Card.Header>Tags : {course.details}</Card.Header><br/>
                         <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
                         <h3 className class='text-primary'>Reviews:</h3>
                         <p>{reviews}</p>

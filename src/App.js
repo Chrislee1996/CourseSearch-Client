@@ -31,6 +31,25 @@ import Math from './components/subjects/Math'
 import Programming from './components/subjects/Programming'
 import Science from './components/subjects/Science'
 import SocialScience from './components/subjects/SocialScience'
+import EditReviewModal from './components/reviews/EditReviewModal'
+import GiveReviewModal from './components/reviews/GiveReview'
+
+//tags
+import IndexOnlineCourses from './components/tag/OnlineCourse'
+import IndexCollegeCourses from './components/tag/CollegeCourses'
+import IndexNonCollegeCourses from './components/tag/NonCollegeCourses'
+import IndexInpersonCourses from './components/tag/InpersonCourses'
+import IndexMandatoryAttendence from './components/tag/MandatoryAttendence'
+import IndexLotsOfHomework from './components/tag/LotsOfHomework'
+import IndexTestHeavy from './components/tag/TestHeavy'
+import IndexGroupprojects from './components/tag/Groupprojects'
+import IndexGoodFeedback from './components/tag/GoodFeedback'
+import IndexMaterial from './components/tag/Material'
+import IndexCaring from './components/tag/Caring'
+import IndexTextbook from './components/tag/Textbook'
+import IndexToughGrader from './components/tag/ToughGrader'
+import IndexLectureHeavy from './components/tag/LectureHeavy'
+
 
 
 
@@ -169,9 +188,34 @@ const App = () => {
 				element={<SocialScience msgAlert={msgAlert} user={user} />}
 			/>	
 			{/* end of subjects */}
+
+			{/* tags */}
+			<Route
+				path='/tags/onlinecourses'
+				element={<IndexOnlineCourses msgAlert={msgAlert} user={user} />}
+			/>				
+			{/* end of tags */}
+
 			<Route
 				path='/courses/:id'
 				element={<ShowCourse msgAlert={msgAlert} user={user} />}
+			/>
+			<Route
+				path="/reviews/:courseId/:reviewId"
+				element={
+					<RequireAuth user={user}>
+						<ShowCourse msgAlert={msgAlert} user={user}/>
+					</RequireAuth>
+				}
+			/>
+
+			<Route
+				path="/reviews/:id/"
+				element={
+					<RequireAuth user={user}>
+						<GiveReviewModal msgAlert={msgAlert} user={user}/>
+					</RequireAuth>
+				}
 			/>
 				</Routes>
 				{msgAlerts.map((msgAlert) => (

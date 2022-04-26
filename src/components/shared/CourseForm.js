@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Container, Button } from 'react-bootstrap'
 
 const CourseForm = (props) => {
-    const {course, handleChange, handleSubmit, heading} = props
+    const {course, handleChange, handleSubmit, heading, tags} = props
 
     return (
         <Container className="justify-content-center">
@@ -41,16 +41,15 @@ const CourseForm = (props) => {
                             onChange={handleChange}
                     />
                     
-                    {/* <Form.Label>Monday</Form.Label>
+                    <Form.Label>    s:</Form.Label><br/>
                         <Form.Check
-                            placeholder="Days Of Courses"
-                            value={course.daysOfCourse}
-                            name='daysOfCourse'
-                            onChange={handleChange}
-                    >
-                    </Form.Check> */}
-
-
+                        inline
+                        label='Online Course'
+                        value={tags.details}
+                        name='details'
+                        />
+                    <br/>
+                    
                     <Form.Label>Submit a logo if desired </Form.Label>
                         <Form.Control
                             placeholder="Upload an Image"

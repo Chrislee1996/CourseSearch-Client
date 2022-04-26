@@ -53,7 +53,7 @@ const IndexCourses = (props) => {
     return (
         <div className='bg-dark'>
             <h3 className='text-primary'>Browse Some Courses</h3>
-            <Link to={`/courses/`}><Button variant='outline-light' className='viewI '>Online Courses</Button></Link>
+            <Link to={`/tags/onlinecourses`}><Button variant='outline-light' className='viewI '>Online Courses</Button></Link>
             <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>College Courses</Button></Link>
             <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>Non-College Courses</Button></Link>
             <Link to={`/courses/`}><Button variant='outline-light' className='viewI'>In person Courses</Button></Link>
@@ -83,7 +83,7 @@ const IndexCourses = (props) => {
                 <Dropdown.Item><Link to='/courses/literature' style={categoryLinks}>Literature</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/math' style={categoryLinks}>Math</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/medicine' style={categoryLinks}>Medicine</Link></Dropdown.Item>   
-                <Dropdown.Item><Link to='/courses/computerprogramming' style={categoryLinks}>Programming</Link></Dropdown.Item>                      
+                <Dropdown.Item><Link to='/courses/programming' style={categoryLinks}>Programming</Link></Dropdown.Item>                      
                 <Dropdown.Item><Link to='/courses/science' style={categoryLinks}>Science</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
 			</DropdownButton>
