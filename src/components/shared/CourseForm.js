@@ -41,13 +41,18 @@ const CourseForm = (props) => {
                             onChange={handleChange}
                     />
                     
-                    <Form.Label>    s:</Form.Label><br/>
+                    <Form.Label>Tags:</Form.Label><br/>
                         <Form.Check
                         inline
                         label='Online Course'
-                        value={tags.details}
-                        name='details'
+                        name='Online Courses'
                         />
+
+                       <Form.Check
+                        inline
+                        label='College Course'
+                        name='College Courses'
+                        />                        
                     <br/>
                     
                     <Form.Label>Submit a logo if desired </Form.Label>
