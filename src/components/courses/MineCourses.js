@@ -46,7 +46,6 @@ const MineCourses = (props) => {
                 <Card.Body>
                 <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
                 Subject: {course.courseSubject}<br/>
-
                         <Link to={`/courses/${course._id}`}>
                             <div className='imgIP'>
                                 <Card.Img 

@@ -34,6 +34,21 @@ const EditCourseModal = (props) => {
             .catch(console.error)
     }
     
+    const handleTagSelect = (e) => {
+        const courseTags = course.tags
+
+        let updatedTagDetails
+        const checked = e.target.checked
+        if (checked) {
+            updatedTagDetails = courseTags.push(e.target.value)
+        } else {
+            let courseIndex = courseTags.indexOf(e.target.value)
+            courseTags.splice(courseIndex,1)
+            updatedTagDetails=courseTags
+        }
+        return {...updatedTagDetails}
+    }
+
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>
@@ -42,6 +57,7 @@ const EditCourseModal = (props) => {
                     course={setCourse}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
+                    handleTagSelect={handleTagSelect}
                     heading="Edit Course!"
                 />
             </Modal.Body>
