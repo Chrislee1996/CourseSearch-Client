@@ -15,8 +15,8 @@ const ShowCourse = (props) => {
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
-    const [like, setLike] = useState(5)
-    const [dislike, setDislike] = useState(2)
+    const [like, setLike] = useState(0)
+    const [dislike, setDislike] = useState(0)
 
     const [likeActive, setLikeActive] = useState(false)
     const [dislikeActive, setDislikeActive] = useState(false)
@@ -145,8 +145,10 @@ const ShowCourse = (props) => {
                         <small><li>{tag.details} </li></small>
                         ))} 
                         <div className = 'likeButtons'>
-                            <Button onClick={liked}>Recommend Course: {like} </Button>
-                            <Button onClick={disliked}>Would not Recommend Course: {dislike} </Button>
+                            <div></div>
+                            <button onClick={liked} className = {[likeActive ?  'active-like': null, 'showButton'].join('')}>Recommend Course: {like} </button>
+                            <button onClick={disliked} className = {[dislikeActive ?  'active-dislike': null, 'showButton'].join('')}>Would not Recommend Course: {dislike} </button>
+                            <div></div>
                         </div>
                         </Card.Header>
                         <Card.Header style={{position:"absolute",top:100, right:0}} >Subject: {course.courseSubject}</Card.Header><br/>
