@@ -36,6 +36,8 @@ const GiveCommentModal = (props) => {
             .catch(console.error)
     }
 
+
+
     const addUsertoComment = () => {
         setComment(prevComment => {
             const updatedValue = {'owner': user._id}

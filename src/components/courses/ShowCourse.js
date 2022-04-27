@@ -12,7 +12,6 @@ const ShowCourse = (props) => {
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
-    // const [commentModalOpen, setCommentModalOpen] = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
@@ -109,15 +108,15 @@ const ShowCourse = (props) => {
                         <small><li>{tag.details} </li></small>
                         ))} 
                         </Card.Header>
-                        <Card.Header>Subject: {course.courseSubject}</Card.Header><br/>
-                        <Card.Header>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>
-                        <Card.Header>Location: {course.location}</Card.Header><br/>
-                        <Card.Header>Days of Course: {course.daysOfCourse}</Card.Header><br/>
-                        <Card.Header>Start Date of Course: {course.startDate}</Card.Header><br/>
-                        <Card.Header>End Date of Course: {course.endDate}</Card.Header><br/>
-                        <Card.Header>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
-                        <Card.Header>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
-                        <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:100, right:0}} >Subject: {course.courseSubject}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:150, right:0}}>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:200 , right:0}}>Location: {course.location}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:250 , right:0}}>Days of Course: {course.daysOfCourse}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:300 , right:0}}>Start Date of Course: {course.startDate}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:350 , right:0}}>End Date of Course: {course.endDate}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:400 , right:0}}>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:450 , right:0}}>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:500 , right:0}}>Credits if appliable : {course.offerCredits}</Card.Header><br/>
 
                         
                         <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>

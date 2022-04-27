@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Container, Button } from 'react-bootstrap'
+import { Form, Container, Button, Row, Col, FloatingLabel } from 'react-bootstrap'
 
 const CourseForm = (props) => {
     const {course, handleChange, handleSubmit, heading, tags, handleTagSelect} = props
 
     return (
-        <Container className="justify-content-center">
+        <Container className="justify-content-center" style={{padding:'50px'}}>
             <h3>{heading}</h3>
 
                 <Form onSubmit={handleSubmit}>
