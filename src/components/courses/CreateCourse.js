@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const CreateCourse = (props) => {
     const navigate = useNavigate()
-    const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg', 
+    const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'', 
     courseLink:"", courseSubject:'',teacher:'', location:'', startDate:'', 
     endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true, tags: [] })
     const {user} = props

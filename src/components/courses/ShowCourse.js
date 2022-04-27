@@ -5,6 +5,8 @@ import { Spinner,Container,Card, Button} from 'react-bootstrap'
 import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
+import Axios from 'axios'
+
 
 
 const ShowCourse = (props) => {
@@ -17,7 +19,6 @@ const ShowCourse = (props) => {
     const {user,msgAlert} = props
     const [like, setLike] = useState(0)
     const [dislike, setDislike] = useState(0)
-
     const [likeActive, setLikeActive] = useState(false)
     const [dislikeActive, setDislikeActive] = useState(false)
 
@@ -36,6 +37,8 @@ const ShowCourse = (props) => {
             }
         }
     }
+
+
 
     const disliked = () => {
         // console.log('disliked pressed')
@@ -123,7 +126,7 @@ const ShowCourse = (props) => {
             <Card className='text-info bg-dark'>
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
     
-                <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image}`} width='250' height='300'/></a></Card.Header>
+                <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
                 <Card.Body>
                     {
                         user && (course.owner._id === user._id)
@@ -139,15 +142,17 @@ const ShowCourse = (props) => {
                         :
                         null
                     }
+
                     <Card.Text>
                         <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
-                        <Card.Header>{course.tags.map(tag=> (
+                        <Card.Header>
+                        {course.tags.map(tag=> (
                         <small><li>{tag.details} </li></small>
-                        ))} 
+                        ))}
                         <div className = 'likeButtons'>
-                            <div></div>
-                            <button onClick={liked} className = {[likeActive ?  'active-like': null, 'showButton'].join('')}>Recommend Course: {like} </button>
-                            <button onClick={disliked} className = {[dislikeActive ?  'active-dislike': null, 'showButton'].join('')}>Would not Recommend Course: {dislike} </button>
+
+                            <Button size = 'sm' variant='outline-success'onClick={liked} className = {[likeActive ?  'active-like': null, 'showButton'].join('')}>Recommend Course: {like} </Button>
+                            <Button size ='sm' variant='outline-danger' onClick={disliked} className = {[dislikeActive ?  'active-dislike': null, 'showButton'].join('')}>Would not Recommend Course: {dislike} </Button>
                             <div></div>
                         </div>
                         </Card.Header>
