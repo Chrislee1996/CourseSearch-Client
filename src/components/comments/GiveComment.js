@@ -4,7 +4,7 @@ import CommentForm from '../shared/CommentForm'
 import {addComment} from '../../api/comments.js'
 
 const GiveCommentModal = (props) => {
-    const { user, course, show, handleClose, msgAlert, triggerRefresh } = props
+    const { user, course, show, handleClose, msgAlert, triggerRefresh, review } = props
     const [comment, setComment] = useState({})
 
     const handleChange = (e) => {
@@ -26,7 +26,7 @@ const GiveCommentModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        addComment(user, course._id, comment)
+        addComment(user, course._id, comment, review._id)
             // if create is successful, we should navigate to the show page
             .then(() => handleClose())
             

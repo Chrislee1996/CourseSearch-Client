@@ -4,8 +4,9 @@ import axios from 'axios'
 
 // POST -> create function
 export const addReview = (user, courseId, newReview) => {
-    console.log('user in review axios', user)
-    console.log('review in review axios', newReview)
+    // console.log('user in review axios', user)
+    // console.log(courseId,'course id in review')
+    // console.log('review in review axios', newReview)
     return axios({
         url: `${apiUrl}/reviews/${courseId}`,
         method: 'POST',
@@ -40,17 +41,3 @@ export const removeReview = (user, courseId, reviewId) => {
     })
 }
 
-
-export const addComment = (user, courseId, reviewId, newComment) => {
-    console.log('user in comment axios', user)
-    console.log('comment in comment axios', newComment)
-    console.log('our review Id', reviewId)
-    return axios({
-        url: `${apiUrl}/comments/${courseId}/${reviewId}`,
-        method: 'POST',
-        header: {
-            Authorization:`Token token=${user.token}`
-        },
-        data: { comment: newComment }
-    })
-}

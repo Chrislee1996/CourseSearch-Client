@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const CreateCourse = (props) => {
     const navigate = useNavigate()
-    const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop', 
+    const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg', 
     courseLink:"", courseSubject:'',teacher:'', location:'', startDate:'', 
     endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true, tag: Number })
     const {user} = props
@@ -29,6 +29,14 @@ const CreateCourse = (props) => {
         })
     }
 
+    // const handleTagSelect = (e) => {
+    //     const courseTags = course.tags
+    //     console.log(courseTags,'coursetags')
+    //     const checked = e.target.checked
+    //     const updatedTarget = courseTags.push(e.target.value)
+    //     return {...updatedTarget}
+    // }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         createCourse(user,course)
@@ -43,6 +51,7 @@ const CreateCourse = (props) => {
             course={course}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            // handleTagSelect={handleTagSelect}
             heading='Add a new Course'
         />
         </div>

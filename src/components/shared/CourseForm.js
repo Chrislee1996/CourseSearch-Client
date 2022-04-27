@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Container, Button } from 'react-bootstrap'
 
 const CourseForm = (props) => {
-    const {course, handleChange, handleSubmit, heading, tags} = props
+    const {course, handleChange, handleSubmit, heading, tags, handleTagSelect} = props
 
     return (
         <Container className="justify-content-center">
@@ -52,30 +52,13 @@ const CourseForm = (props) => {
                         />
 
 
-                       <Form.Check
-                        inline
-                        label='College Course'
-                        name='tags'
-                        value="626844ec0cc0b2149abd4291"
-                        onChange = {handleChange}
-                        />                        
-
-
-                    <Form.Check
-                        inline
-                        label='Non College Course'
-                        name='tags'
-                        value="626844ec0cc0b2149abd4292"
-                        onChange = {handleChange}
-                        />                        
-                    <br/>
-
                     <Form.Check
                         inline
                         label='In Person Course'
                         name='tags'
                         value="626844ec0cc0b2149abd4293"
-                        onChange = {handleChange}
+                        // onChange = {handleChange}
+                        onChange={handleChange}
                         />                        
 
 
@@ -198,7 +181,7 @@ const CourseForm = (props) => {
                         <option value="Literature">Literature</option>
                         <option value="Law">Law</option>
                         <option value="Math">Math</option>
-                        <option value="Programming">Physics</option>
+                        <option value="Programming">Programming</option>
                         <option value="Science">Science</option>
                         <option value="Social Science">Social Science</option>
                     </Form.Control>
@@ -242,7 +225,7 @@ const CourseForm = (props) => {
                     </Form.Group>
 
                     <Form.Group controlId="time">
-                    <Form.Label>Start Time of Course(if not applicable Please select 12:00 PM):</Form.Label>
+                    <Form.Label>Start Time of Course(if not applicable Please select 12:00 AM):</Form.Label>
                         <Form.Control
                             type= "time"
                             placeholder="Course start Time"

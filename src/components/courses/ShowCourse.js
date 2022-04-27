@@ -78,13 +78,6 @@ const ShowCourse = (props) => {
                 />
             ))
         }
-        // if(course.comments.length > 0){
-        //     comments = course.comments.map(comment=> (
-        //         <ShowComment key={comment._id} updated={updated} comment={comment} course={course} user={user}
-        //         triggerRefresh={()=> setUpdated(prev=> !prev)}
-        //         />  
-        //     ))
-        // }
     }  
     console.log(comments,'our comment')
 
@@ -129,10 +122,11 @@ const ShowCourse = (props) => {
                         <Card.Header>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header>Credits if appliable : {course.offerCredits}</Card.Header><br/>
 
+                        
                         <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
                         <h3 className class='text-primary'>Reviews:</h3> 
                         <p>{reviews}</p>
-                        <button className="comment" onClick={()=> setCommentModalOpen(true)}> Comment on Review Above</button>
+
                         <GiveReview
                             user={user}
                             show= {reviewModalOpen}
@@ -140,13 +134,13 @@ const ShowCourse = (props) => {
                             triggerRefresh={() => setUpdated(prev => !prev)}
                             handleClose={()=> setReviewModalOpen(false)}
                         />
-                        <GiveComment
+                        {/* <GiveComment
                             user={user}
                             show= {commentModalOpen}
                             course={course}
                             triggerRefresh={() => setUpdated(prev => !prev)}
                             handleClose={()=> setCommentModalOpen(false)}
-                        />
+                        /> */}
                     </Card.Text>
                 </Card.Body>
             </Card>
