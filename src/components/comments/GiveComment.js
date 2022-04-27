@@ -6,6 +6,8 @@ import {addComment} from '../../api/comments.js'
 const GiveCommentModal = (props) => {
     const { user, course, show, handleClose, msgAlert, triggerRefresh, review } = props
     const [comment, setComment] = useState({})
+    const [updated, setUpdated] = useState(false)
+
 
 
     const handleChange = (e) => {
@@ -52,6 +54,7 @@ const GiveCommentModal = (props) => {
                     heading="Comment on Review"
                     course={course}
                     review={review}
+                    triggerRefresh={() => setUpdated(prev => !prev)}
                 />
             </Modal.Body>
         </Modal>

@@ -4,13 +4,13 @@ import { removeComment } from '../../api/comments'
 
 const ShowComment = (props) => {
     // most of these are simply to pass to edit modal
-    const {comment, user, triggerRefresh, course, review} = props
+    const {course, comment, user, triggerRefresh, review} = props
     
     const destroyComment = () => {
-        removeComment(user, review._id)
-            .then(() => triggerRefresh())
-            // if there is an error, we'll send an error message
-            .catch(console.error)
+        removeComment(user, course._id , review._id, comment._id)
+        .then(() => triggerRefresh())
+        // if there is an error, we'll send an error message
+        .catch(console.error)
     }
 
 

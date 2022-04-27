@@ -23,14 +23,14 @@ const ShowReview = (props) => {
             .catch(console.error)
     }
 
-  
+
 
 
     let comments    
     if(review){
         if(review.comments.length > 0){
             comments = review.comments.map(comment=> (
-                <ShowComment key={comment._id} updated={updated} comment={comment} review={review} user={user}
+                <ShowComment key={comment._id} updated={updated} comment={comment} review={review} user={user} course={course}
                 triggerRefresh={()=> setUpdated(prev=> !prev)}
                 />  
             ))
@@ -70,7 +70,7 @@ const ShowReview = (props) => {
                 handleClose={() => setShowEditModal(false)}
                 msgAlert={msgAlert}
                 triggerRefresh={triggerRefresh}
-            />
+    />
     <GiveComment
         user={user}
         review={review}
