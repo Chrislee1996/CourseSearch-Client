@@ -5,9 +5,6 @@ import { Spinner,Container,Card, Button} from 'react-bootstrap'
 import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
-import ShowComment from '../comments/ShowComment'
-import GiveComment from '../comments/GiveComment'
-
 
 
 const ShowCourse = (props) => {
@@ -15,7 +12,7 @@ const ShowCourse = (props) => {
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
-    const [commentModalOpen, setCommentModalOpen] = useState(false)
+    // const [commentModalOpen, setCommentModalOpen] = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props

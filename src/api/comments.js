@@ -24,7 +24,7 @@ export const removeComment = (user, courseId, reviewId, commentId) => {
     console.log('our user in comments', user)
     console.log('our courseId in delete', courseId)
     console.log('our review Id in delete', reviewId)
-    console.log('our comment Id in delete', commentId)
+    console.log('our comment Id in delete', commentId``)
     return axios({
         url: `${apiUrl}/comments/${courseId}/${reviewId}/${commentId}`,
         method: 'DELETE',

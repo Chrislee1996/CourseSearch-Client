@@ -7,6 +7,7 @@ const GiveCommentModal = (props) => {
     const { user, course, show, handleClose, msgAlert, triggerRefresh, review } = props
     const [comment, setComment] = useState({})
 
+
     const handleChange = (e) => {
         // e === event
         e.persist()

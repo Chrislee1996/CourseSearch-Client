@@ -31,9 +31,9 @@ import Math from './components/subjects/Math'
 import Programming from './components/subjects/Programming'
 import Science from './components/subjects/Science'
 import SocialScience from './components/subjects/SocialScience'
-import EditReviewModal from './components/reviews/EditReviewModal'
+// import EditReviewModal from './components/reviews/EditReviewModal'
 import GiveReviewModal from './components/reviews/GiveReview'
-import GiveCommentModal from './components/comments/GiveComment'
+// import GiveCommentModal from './components/comments/GiveComment'
 
 //college and non college courses
 import College from './components/colleges/IndexCollegeCourses'
@@ -43,8 +43,6 @@ import NonCollegeCourses from './components/colleges/IndexNonCollegeCourses'
 
 //tags
 import IndexOnlineCourses from './components/tag/OnlineCourse'
-import IndexCollegeCourses from './components/tag/CollegeCourses'
-import IndexNonCollegeCourses from './components/tag/NonCollegeCourses'
 import IndexInpersonCourses from './components/tag/InpersonCourses'
 import IndexMandatoryAttendence from './components/tag/MandatoryAttendence'
 import IndexLotsOfHomework from './components/tag/LotsOfHomework'
@@ -210,14 +208,6 @@ const App = () => {
 			<Route
 				path='/tags/onlinecourses'
 				element={<IndexOnlineCourses msgAlert={msgAlert} user={user} />}
-			/>	
-			<Route
-				path='/tags/collegecourses'
-				element={<IndexCollegeCourses msgAlert={msgAlert} user={user} />}
-			/>	
-			<Route
-				path='/tags/noncollegecourses'
-				element={<IndexNonCollegeCourses msgAlert={msgAlert} user={user} />}
 			/>	
 			<Route
 				path='/tags/inpersoncourses'

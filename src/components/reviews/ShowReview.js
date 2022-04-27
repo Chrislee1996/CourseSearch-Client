@@ -17,7 +17,7 @@ const ShowReview = (props) => {
     
     
     const destroyReview = () => {
-        removeReview(user, comment._id, review._id)
+        removeReview(user, course._id, review._id)
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
             .catch(console.error)
