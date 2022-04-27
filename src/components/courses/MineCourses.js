@@ -45,6 +45,8 @@ const MineCourses = (props) => {
                 <Card.Title className='m-2'>{course.courseName}</Card.Title>
                 <Card.Body>
                 <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
+                Subject: {course.courseSubject}<br/>
+
                         <Link to={`/courses/${course._id}`}>
                             <div className='imgIP'>
                                 <Card.Img 
@@ -54,7 +56,6 @@ const MineCourses = (props) => {
                             </div>
                         </Link>
                     <Card.Text> 
-
                     </Card.Text>
                 </Card.Body>
             </Card>

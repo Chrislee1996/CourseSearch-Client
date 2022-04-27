@@ -37,8 +37,9 @@ const College = (props) => {
                 <Card.Body>
                     <Card.Text>
                     Subject: {course.courseSubject}<br/>
+                        Tags:
                         {course.tags.map(tag=> (
-                        <small>Tags: {tag.details} </small>
+                        <li>{tag.details}</li>
                         ))}
                         <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
                         <Link to ={`/courses/${course._id}`}><img src={`${course.image}`} width='250' height='300'/></Link>

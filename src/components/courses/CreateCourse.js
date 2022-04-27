@@ -8,7 +8,7 @@ const CreateCourse = (props) => {
     const navigate = useNavigate()
     const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg', 
     courseLink:"", courseSubject:'',teacher:'', location:'', startDate:'', 
-    endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true, tag: Number })
+    endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true, tags: [] })
     const {user} = props
 
     const handleChange = (e) => {
@@ -29,13 +29,20 @@ const CreateCourse = (props) => {
         })
     }
 
-    // const handleTagSelect = (e) => {
-    //     const courseTags = course.tags
-    //     console.log(courseTags,'coursetags')
-    //     const checked = e.target.checked
-    //     const updatedTarget = courseTags.push(e.target.value)
-    //     return {...updatedTarget}
-    // }
+    const handleTagSelect = (e) => {
+        const courseTags = course.tags
+
+        let updatedTagDetails
+        const checked = e.target.checked
+        if (checked) {
+            updatedTagDetails = courseTags.push(e.target.value)
+        } else {
+            let courseIndex = courseTags.indexOf(e.target.value)
+            courseTags.splice(courseIndex,1)
+            updatedTagDetails=courseTags
+        }
+        return {...updatedTagDetails}
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -51,7 +58,7 @@ const CreateCourse = (props) => {
             course={course}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
-            // handleTagSelect={handleTagSelect}
+            handleTagSelect={handleTagSelect}
             heading='Add a new Course'
         />
         </div>

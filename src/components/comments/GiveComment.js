@@ -45,6 +45,8 @@ const GiveCommentModal = (props) => {
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     heading="Comment on Review"
+                    course={course}
+                    review={review}
                 />
             </Modal.Body>
         </Modal>

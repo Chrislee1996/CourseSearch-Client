@@ -4,21 +4,26 @@ import { removeReview } from '../../api/reviews'
 import GiveComment from '../comments/GiveComment'
 import ShowComment from '../comments/ShowComment'
 import EditReviewModal from './EditReviewModal'
+// import { removeComment } from '../../api/comments'
+// import {addComment} from '../../api/comments.js'
+
 
 const ShowReview = (props) => {
     // most of these are simply to pass to edit modal
-    const {review, user, triggerRefresh, msgAlert, course} = props
+    const {review, user, triggerRefresh, msgAlert, course, comment, handleClose} = props
     const [commentModalOpen, setCommentModalOpen] = useState(false)
     const [showEditModal, setShowEditModal] = useState(false)
     const [updated, setUpdated] = useState(false)
     
+    
     const destroyReview = () => {
-        removeReview(user, course._id, review._id)
+        removeReview(user, comment._id, review._id)
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
             .catch(console.error)
     }
 
+  
 
 
     let comments    
@@ -35,7 +40,7 @@ const ShowReview = (props) => {
     return (
         <>
             <Card className="m-2">
-                <Card.Body>
+                <Card.Body class='bg-dark'>
                         <h4>Overall experience: {review.note}<br/></h4>
                         <h4>Course Rating: {review.courseRating}<br/></h4>
                         <h4>Professor Rating:{review.professorRating}<br/></h4>
@@ -46,22 +51,15 @@ const ShowReview = (props) => {
                                 <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
                                     Delete Review    
                                 </Button>
-                                <Button variant="outline-warning" onClick={() => setShowEditModal(true)}>
+                                <Button variant="outline-warning" size='sm' onClick={() => setShowEditModal(true)}>
                                     Edit Review
                                 </Button>
                             </>
                             :
                             null
                         }
-                        <small>{comments}</small>
+                        <p>{comments}</p>
                         <button className="comment" onClick={()=> setCommentModalOpen(true)}> Comment on Review Above</button>
-
-                        {/* <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
-                            Delete Review    
-                        </Button>
-                        <Button variant="outline-warning" onClick={() => setShowEditModal(true)}>
-                            Edit Review
-                        </Button> */}
         </Card.Body>
     </Card>
     <EditReviewModal 
@@ -78,8 +76,9 @@ const ShowReview = (props) => {
         review={review}
         show = {commentModalOpen}
         course={course}
-        triggerRefresh={() => setUpdated(prev => !prev)}
+        comment={comment}
         handleClose={()=> setCommentModalOpen(false)}
+        triggerRefresh={() => setUpdated(prev => !prev)}
     />
 
     </>

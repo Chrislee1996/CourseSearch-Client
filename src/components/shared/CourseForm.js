@@ -48,7 +48,7 @@ const CourseForm = (props) => {
                         label='Online Course'
                         name='tags'
                         value="626844ec0cc0b2149abd4290"
-                        onChange={handleChange}
+                        onChange = {handleTagSelect}
                         />
 
 
@@ -57,8 +57,7 @@ const CourseForm = (props) => {
                         label='In Person Course'
                         name='tags'
                         value="626844ec0cc0b2149abd4293"
-                        // onChange = {handleChange}
-                        onChange={handleChange}
+                        onChange = {handleTagSelect}
                         />                        
 
 
@@ -67,7 +66,7 @@ const CourseForm = (props) => {
                         label='Mandatory Attendence'
                         name='tags'
                         value="626844ec0cc0b2149abd4294"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
 
 
@@ -76,7 +75,7 @@ const CourseForm = (props) => {
                         label='Lots of Homework'
                         name='tags'
                         value="626844ec0cc0b2149abd4295"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
                     <br/>
 
@@ -85,7 +84,7 @@ const CourseForm = (props) => {
                         label='Test Heavy'
                         name='tags'
                         value="626844ec0cc0b2149abd4296"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
 
 
@@ -94,7 +93,7 @@ const CourseForm = (props) => {
                         label='Group Projects'
                         name='tags'
                         value="626844ec0cc0b2149abd4297"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
 
 
@@ -103,7 +102,7 @@ const CourseForm = (props) => {
                         label='Instructor provides good Feedback'
                         name='tags'
                         value="626844ec0cc0b2149abd4298"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
                     <br/>
 
@@ -112,7 +111,7 @@ const CourseForm = (props) => {
                         label='Cares about the Material'
                         name='tags'
                         value="626844ec0cc0b2149abd4299"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
 
 
@@ -121,7 +120,7 @@ const CourseForm = (props) => {
                         label='Professor is caring'
                         name='tags'
                         value="626844ec0cc0b2149abd429a"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
 
 
@@ -130,7 +129,7 @@ const CourseForm = (props) => {
                         label='Text book is Mandatory'
                         name='tags'
                         value="626844ec0cc0b2149abd429b"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
                     <br/>
 
@@ -139,7 +138,7 @@ const CourseForm = (props) => {
                         label='Tough Grader'
                         name='tags'
                         value="626844ec0cc0b2149abd429c"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
 
 
@@ -148,7 +147,7 @@ const CourseForm = (props) => {
                         label='Lecture Heavy'
                         name='tags'
                         value="626844ec0cc0b2149abd429d"
-                        onChange = {handleChange}
+                        onChange = {handleTagSelect}
                         />                        
                     <br/>
                     

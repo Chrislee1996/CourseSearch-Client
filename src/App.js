@@ -295,15 +295,6 @@ const App = () => {
 					</RequireAuth>
 				}
 			/>
-
-			{/* <Route
-				path="/comments/:courseId/:reviewId"
-				element={
-					<RequireAuth user={user}>
-						<GiveCommentModal msgAlert={msgAlert} user={user}/>
-					</RequireAuth>
-				}
-			/> */}
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert

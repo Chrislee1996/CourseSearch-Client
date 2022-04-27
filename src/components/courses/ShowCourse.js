@@ -134,13 +134,6 @@ const ShowCourse = (props) => {
                             triggerRefresh={() => setUpdated(prev => !prev)}
                             handleClose={()=> setReviewModalOpen(false)}
                         />
-                        {/* <GiveComment
-                            user={user}
-                            show= {commentModalOpen}
-                            course={course}
-                            triggerRefresh={() => setUpdated(prev => !prev)}
-                            handleClose={()=> setCommentModalOpen(false)}
-                        /> */}
                     </Card.Text>
                 </Card.Body>
             </Card>
