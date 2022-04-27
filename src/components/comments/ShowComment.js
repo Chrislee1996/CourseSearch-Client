@@ -7,7 +7,7 @@ const ShowComment = (props) => {
     const {comment, user, triggerRefresh, course, review} = props
     
     const destroyComment = () => {
-        removeComment(user, comment._id, review._id)
+        removeComment(user, comment._id, review._id, course._id)
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
             .catch(console.error)
@@ -21,9 +21,20 @@ const ShowComment = (props) => {
                 <Card.Body className='bg-dark'>
                         <p>Comments:</p>
                         <p>{comment.note}<br/></p>
-                        <Button onClick={()=> destroyComment()}variant="outline-danger" size='sm'>
+                        {
+                            user && (user._id === review.owner)
+                            ?
+                            <>
+                            <Button onClick={()=> destroyComment()}variant="outline-danger" size='sm'>
+                                Delete Comment    
+                            </Button>
+                            </>
+                            :
+                            null
+                        }
+                        {/* <Button onClick={()=> destroyComment()}variant="outline-danger" size='sm'>
                             Delete Comment    
-                        </Button>
+                        </Button> */}
                 </Card.Body>
             </Card>
     </>

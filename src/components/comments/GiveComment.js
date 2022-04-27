@@ -10,8 +10,8 @@ const GiveCommentModal = (props) => {
     const handleChange = (e) => {
         // e === event
         e.persist()
+        addUsertoComment()
 
-        
         setComment(prevComment => {
             const name = e.target.name
             let value = e.target.value
@@ -25,16 +25,20 @@ const GiveCommentModal = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        addComment(user, course._id, comment, review._id)
+        addComment(user, course._id, comment, review._id, comment._id)
             // if create is successful, we should navigate to the show page
             .then(() => handleClose())
-            
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
             .catch(console.error)
     }
 
+    const addUsertoComment = () => {
+        setComment(prevComment => {
+            const updatedValue = {'owner': user._id}
+            return {...prevComment , ...updatedValue}
+        })
+    }
 
     return (
         <Modal show={show} onHide={handleClose}>
