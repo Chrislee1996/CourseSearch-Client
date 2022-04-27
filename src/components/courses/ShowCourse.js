@@ -15,6 +15,43 @@ const ShowCourse = (props) => {
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
+    const [like, setLike] = useState(5)
+    const [dislike, setDislike] = useState(2)
+
+    const [likeActive, setLikeActive] = useState(false)
+    const [dislikeActive, setDislikeActive] = useState(false)
+
+    const liked = () => {
+        // console.log('liked pressed')
+        if (likeActive) {
+            setLikeActive(false)
+            setLike(like-1)
+        } else {
+            setLikeActive(true)
+            setLike(like+1)
+            if(dislikeActive){
+                setDislikeActive(false)
+                setLike(like+1)
+                setDislike(dislike-1)
+            }
+        }
+    }
+
+    const disliked = () => {
+        // console.log('disliked pressed')
+        if (dislikeActive) {
+            setDislikeActive(false)
+            setDislike(dislike-1)
+        } else {
+            setDislikeActive(true)
+            setDislike(like+1)
+            if(likeActive){
+                setLikeActive(false)
+                setDislike(dislike+1)
+                setLike(like-1)
+            }
+        }
+    }
 
     useEffect(() => {
         showCurrentCourse(id)
@@ -103,10 +140,14 @@ const ShowCourse = (props) => {
                         null
                     }
                     <Card.Text>
-                        <a href = {course.courseLink} target="_blank">Go to Course</a>
+                        <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
                         <Card.Header>{course.tags.map(tag=> (
                         <small><li>{tag.details} </li></small>
                         ))} 
+                        <div className = 'likeButtons'>
+                            <Button onClick={liked}>Recommend Course: {like} </Button>
+                            <Button onClick={disliked}>Would not Recommend Course: {dislike} </Button>
+                        </div>
                         </Card.Header>
                         <Card.Header style={{position:"absolute",top:100, right:0}} >Subject: {course.courseSubject}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:150, right:0}}>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>

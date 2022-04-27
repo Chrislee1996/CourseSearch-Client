@@ -40,7 +40,7 @@ const ShowReview = (props) => {
     return (
         <>
             <Card className="m-2">
-                <Card.Body class='bg-dark'>
+                <Card.Body className='reviews'>
                         <h4>Overall experience: {review.note}<br/></h4>
                         <h4>Course Rating: {review.courseRating}<br/></h4>
                         <h4>Professor Rating:{review.professorRating}<br/></h4>
