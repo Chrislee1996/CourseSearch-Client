@@ -36,7 +36,7 @@ const IndexLectureHeavy = (props) => {
                 <Card.Body>
                     <Card.Text>
                     Subject: {course.courseSubject}<br/>
-                        Tags:
+                    Tags:
                         {course.tags.map(tag=> (
                         <li>{tag.details}</li>
                         ))}

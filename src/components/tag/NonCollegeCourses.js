@@ -38,11 +38,12 @@ const IndexNonCollegeCourses = (props) => {
                 <Card.Body>
                     <Card.Text>
                     Subject: {course.courseSubject}<br/>
+                    Tags:
                         {course.tags.map(tag=> (
-                        <small>Tags: {tag.details} </small>
+                        <small>{tag.details} </small>
                         ))}
                         <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
-                        <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
+                        <Link to ={`/courses/${course._id}`}><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
                         <p>{course.subject}</p>
                     </Card.Text>
                 </Card.Body>
