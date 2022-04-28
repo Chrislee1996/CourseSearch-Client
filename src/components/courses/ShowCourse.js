@@ -5,7 +5,7 @@ import { Spinner,Container,Card, Button} from 'react-bootstrap'
 import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
-import Axios from 'axios'
+// import Axios from 'axios'
 
 
 
@@ -18,7 +18,7 @@ const ShowCourse = (props) => {
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
-    const [imageSelected, setImageSelected] = useState('')
+    // const [imageSelected, setImageSelected] = useState('')
 
     useEffect(() => {
         showCurrentCourse(id)
@@ -67,15 +67,16 @@ const ShowCourse = (props) => {
         return `${hours}:${minutes} ${amPM}`
     }
 
-    const uploadImage = () => {
-        const formData = new FormData()
-        formData.append('file', imageSelected)
-        formData.append('upload_preset', 'arcoel71')
 
-        Axios.post("https://api.cloudinary.com/v1_1/dzvdrlurd/image/upload", formData)
-        .then(response => setImageSelected(response.data.secure_url))
-        .catch(err => console.log(err))
-    }
+    // const uploadImage = () => {
+    //     const formData = new FormData()
+    //     formData.append('file', imageSelected)
+    //     formData.append('upload_preset', 'arcoel71')
+
+    //     Axios.post("https://api.cloudinary.com/v1_1/dzvdrlurd/image/upload", formData)
+    //     .then(response => setImageSelected(response.data.secure_url))
+    //     .catch(err => console.log(err))
+    // }
 
     let reviews
     let comments    
@@ -100,7 +101,9 @@ const ShowCourse = (props) => {
             <Card className='text-info' style={{backgroundImage:`url("https://wallpaperaccess.com/full/1092758.jpg")`}}>
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
     
-                <Card.Header> <a href = {course.courseLink} target="_blank"> <img src = {`${imageSelected ? imageSelected : `https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg`}`}  width='250' height='300' /></a> </Card.Header> 
+                {/* <Card.Header> <a href = {course.courseLink} target="_blank"> <img src = {`${imageSelected ? imageSelected : `https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg`}`}  width='250' height='300' /></a> </Card.Header>  */}
+                <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
+
                 
                 <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
                 <Card.Body>
@@ -109,11 +112,11 @@ const ShowCourse = (props) => {
                         ?
                         <>
 
-                            <input type ='file' onChange={(event)=> {
+                            {/* <input type ='file' onChange={(event)=> {
                                 setImageSelected(event.target.files[0])
                             }}/>
 
-                            <button onClick={uploadImage} >Update Photo</button>
+                            <button onClick={uploadImage} >Update Photo</button> */}
 
 
                             <Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
@@ -138,7 +141,7 @@ const ShowCourse = (props) => {
                         <Card.Header style={{position:"absolute",top:200 , right:0}}>Location: {course.location}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:250 , right:0}}>Days of Course: {course.daysOfCourse}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:300 , right:0}}>Start Date of Course: {course.startDate}</Card.Header><br/>
-                        <Card.Header style={{position:"absolute",top:350 , right:0}}>End Date of Course: {course.endDate}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:350 , right:0}}>End Date of Course: (course.endDate)</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:400 , right:0}}>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:450 , right:0}}>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:500 , right:0}}>Credits if appliable : {course.offerCredits}</Card.Header><br/>
