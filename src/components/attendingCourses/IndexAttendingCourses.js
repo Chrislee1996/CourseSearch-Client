@@ -58,39 +58,6 @@ const IndexAttendingCourses = (props) => {
     return (
         <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
             <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/1092758.jpg")`}}>
-            <h3 className='text-primary text-center'>Browse Some Courses</h3>
-            <Link to={`/tags/onlinecourses`}><Button variant='outline-light' className='viewI '>Online Courses</Button></Link>
-            <Link to={`/tags/inpersoncourses`}><Button variant='outline-light' className='viewI'>In person Courses</Button></Link>
-            <Link to={`/tags/mandatoryattendence`}><Button variant='outline-light' className='viewI'>Mandatory Attendence</Button></Link>
-            <Link to={`/tags/lotsofhomework`}><Button variant='outline-light' className='viewI'>Lots of Homework</Button></Link>
-            <Link to={`/tags/testheavy`}><Button variant='outline-light' className='viewI'>Test Heavy</Button></Link>
-            <Link to={`/tags/groupprojects`}><Button variant='outline-light' className='viewI'>Group Projects</Button></Link>
-            <Link to={`/tags/goodfeedback`}><Button variant='outline-light' className='viewI'>Good Feedback</Button></Link>
-            <Link to={`/tags/material`}><Button variant='outline-light' className='viewI'>Cares About the Material</Button></Link>
-            <Link to={`/tags/caring`}><Button variant='outline-light' className='viewI'>Caring</Button></Link>
-            <Link to={`/tags/textbook`}><Button variant='outline-light' className='viewI'>Text-book Mandatory</Button></Link>
-            <Link to={`/tags/toughgrader`}><Button variant='outline-light' className='viewI'>Tough Grader</Button></Link>
-            <Link to={`/tags/lectureheavy`}><Button variant='outline-light' className='viewI'>Lecture Heavy</Button></Link>
-            </div>
-            <div className = 'subjectSection'>
-            <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects" variant='outline-light'>  
-                <Dropdown.Item><Link to='/courses/art' style={categoryLinks}>Arts and Culture </Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/business' style={categoryLinks}>Business</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/dataanalysis' style={categoryLinks}>Data Analysis</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/design' style={categoryLinks}>Design</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/education' style={categoryLinks}>Education</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/engineering' style={categoryLinks}>Engineering</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/healthcare' style={categoryLinks}>Healthcare</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/history' style={categoryLinks}>History</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/language' style={categoryLinks}>Language</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/law' style={categoryLinks}>Law and Politics</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/literature' style={categoryLinks}>Literature</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/math' style={categoryLinks}>Math</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/medicine' style={categoryLinks}>Medicine</Link></Dropdown.Item>   
-                <Dropdown.Item><Link to='/courses/programming' style={categoryLinks}>Computer Science and Informations</Link></Dropdown.Item>                      
-                <Dropdown.Item><Link to='/courses/science' style={categoryLinks}>Science</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
-			</DropdownButton>
             </div>
             <h3 class='text-center text-info'>Courses</h3>
             <div style={cardContainerLayout}>

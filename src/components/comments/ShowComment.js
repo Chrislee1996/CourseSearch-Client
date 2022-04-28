@@ -17,6 +17,7 @@ const ShowComment = (props) => {
  
 
     let comments    
+
     if(review){
         if(review.comments.length > 0){
             comments = review.comments.map(comment=> (
