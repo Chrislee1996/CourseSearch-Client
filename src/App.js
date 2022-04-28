@@ -31,15 +31,7 @@ import Math from './components/subjects/Math'
 import Programming from './components/subjects/Programming'
 import Science from './components/subjects/Science'
 import SocialScience from './components/subjects/SocialScience'
-// import EditReviewModal from './components/reviews/EditReviewModal'
 import GiveReviewModal from './components/reviews/GiveReview'
-// import GiveCommentModal from './components/comments/GiveComment'
-
-//college and non college courses
-// import College from './components/colleges/IndexCollegeCourses'
-// import NonCollegeCourses from './components/colleges/IndexNonCollegeCourses'
-
-
 
 //tags
 import IndexOnlineCourses from './components/tag/OnlineCourse'
@@ -56,6 +48,9 @@ import IndexToughGrader from './components/tag/ToughGrader'
 import IndexLectureHeavy from './components/tag/LectureHeavy'
 import IndexCollege from './components/tag/CollegeCourses'
 import IndexNonCollegeCourses from './components/tag/NonCollegeCourses'
+
+// Users Attending Courses
+import IndexAttendingCourses from './components/attendingCourses/IndexAttendingCourses'
 
 
 const App = () => {
@@ -128,6 +123,15 @@ const App = () => {
 					</RequireAuth>
 				}
 			/>
+			<Route
+				path='/attendingcourses'
+				element={
+					<RequireAuth user={user}>
+						<IndexAttendingCourses msgAlert={msgAlert} user={user}/>
+					</RequireAuth>
+				}
+			/>
+
 {/* subjects */}
 
 			<Route

@@ -14,6 +14,11 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
+			<Link to='/attendingcourses' style={linkStyle}>
+				My List
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-2'>
 			<Link to={`/tags/collegecourses`} style={linkStyle} >College Courses </Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>

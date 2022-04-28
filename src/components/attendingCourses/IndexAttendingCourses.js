@@ -1,7 +1,9 @@
 import React, {useState, useEffect } from 'react'
-import { getAllCourses } from '../../api/courses'
+import { getAllAttendingCourses, removeAttendingCourse } from '../../api/attendingCourses'
 import { Link } from 'react-router-dom'
 import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
+import {useNavigate} from 'react-router-dom'
+
 
 const cardContainerLayout = {
     display: 'flex',
@@ -14,42 +16,39 @@ const categoryLinks = {
     textDecoration: 'none'
 }
 
-const IndexCourses = (props) => {
-    const [courses, setCourses] = useState(null)
+const IndexAttendingCourses = (props) => {
+    const [attendingcourses, setAttendingCourses] = useState(null)
+    const [updated, setUpdated] = useState(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
-        getAllCourses()
+        getAllAttendingCourses()
             .then(res=> {
-                setCourses(res.data.courses)
+                setAttendingCourses(res.data.attendingcourses)
             })
             .catch(console.error)
     },[])
 
 
-    if (!courses) {
+    if (!attendingcourses) {
         return <p>loading...</p>
-    } else if (courses.length === 0) {
+    } else if (attendingcourses.length === 0) {
         return <p>No courses to display. Go Create some!</p>
     }
 
+    console.log(attendingcourses, 'here is the attending course')
 
+    let attendingCourseCards
 
-
-    let courseCards
-
-    if (courses.length > 0) {
-        courseCards = courses.map(course => (
-            <Card key={course.id} style={{ width: '30%', border:"solid 1px"}} className="m-2 bg-dark text-info"  >
-                <Card.Header>{course.courseName}</Card.Header>
+    if (attendingcourses.length > 0) {
+        attendingCourseCards = attendingcourses.map(attendingcourse => (
+            <Card key={attendingcourse._id} style={{ width: '30%', border:"solid 1px"}} className="m-2 bg-dark text-info"  >
+                <Card.Header>{attendingcourse.course.courseName}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        Subject: {course.courseSubject}<br/>
-                        Tags:
-                        {course.tags.map(tag=> (
-                        <li>{tag.details}</li>
-                        ))}
-                        <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
-                        <Link to ={`/courses/${course._id}`}><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
+                        Subject: {attendingcourse.course.courseSubject}<br/>
+                        <Link to ={`/courses/${attendingcourse._id}`}> <h4> {attendingcourse.course.courseInstitute} </h4></Link>
+                        <Link to ={`/courses/${attendingcourse._id}`}><img src={`${attendingcourse.course.image ? attendingcourse.course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -95,11 +94,11 @@ const IndexCourses = (props) => {
             </div>
             <h3 class='text-center text-info'>Courses</h3>
             <div style={cardContainerLayout}>
-                {courseCards}
+                {attendingCourseCards}
             </div>
         </div>
     )
 }
 
 
-export default IndexCourses    
+export default IndexAttendingCourses    
