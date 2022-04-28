@@ -41,17 +41,23 @@ const CourseForm = (props) => {
                             onChange={handleChange}
                     />
 
-                    <Form.Group controlId="forBasicSelect">
-                    <Form.Label>Course Subject</Form.Label>
-                    <Form.Control as='select'
+            <Form.Label>Type of Course:</Form.Label><br/>
+                    <Form.Check
+                        inline
+                        label='College Course'
                         name='tags'
+                        value="6269f48a027c7f93d975500a"
                         onChange = {handleTagSelect}
-                        >
-                        <option >Type of Course</option>
-                        <option value="6269f48a027c7f93d975500a">College Course</option>
-                        <option value="6269f48a027c7f93d975500b">Non-College Course</option>
-                    </Form.Control>
-                    </Form.Group>
+                        />
+
+                    <Form.Check
+                        inline
+                        label='Non-College Course'
+                        name='tags'
+                        value="6269f48a027c7f93d975500b"
+                        onChange = {handleTagSelect}
+                        />
+                        <br/>
 
 
                     

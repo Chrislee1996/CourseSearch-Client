@@ -120,22 +120,23 @@ const ShowCourse = (props) => {
     console.log(reviews, 'our reviews')
     
     return (
-        <>
-        <Container className='fluid'>
+        <div className='bg-dark'>
+        <Container className='fluid bg-info'>
 
             <Card className='text-info bg-dark'>
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
     
                 <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
+                <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
                 <Card.Body>
                     {
                         user && (course.owner._id === user._id)
                         ?
                         <>
-                            <Button onClick={() => deleteCourse()} className="m-2" variant="danger">
+                            <Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
                                 Delete Course
                             </Button>
-                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="warning">
+                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="outline-warning">
                                 Edit Course
                             </Button>
                         </>
@@ -144,7 +145,6 @@ const ShowCourse = (props) => {
                     }
 
                     <Card.Text>
-                        <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
                         <Card.Header>
                         {course.tags.map(tag=> (
                         <small><li>{tag.details} </li></small>
@@ -189,7 +189,7 @@ const ShowCourse = (props) => {
                 updateCourse={updateCourse}
                 handleClose={() => setModalOpen(false)}
             />
-        </>
+        </div>
         
     )
 }

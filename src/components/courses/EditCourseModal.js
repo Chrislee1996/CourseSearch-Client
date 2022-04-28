@@ -47,7 +47,7 @@ const EditCourseModal = (props) => {
             updatedTagDetails=courseTags
             
         }
-        return {...updatedTagDetails, ...updatedTagDetails}
+        return {...updatedTagDetails}
     }
 
     return (

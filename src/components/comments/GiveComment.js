@@ -29,9 +29,8 @@ const GiveCommentModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         addComment(user, course._id, comment, review._id, comment._id)
-            // if create is successful, we should navigate to the show page
-            .then(() => handleClose())
             .then(() => triggerRefresh())
+            .then(() => handleClose())
             // if there is an error, we'll send an error message
             .catch(console.error)
     }
