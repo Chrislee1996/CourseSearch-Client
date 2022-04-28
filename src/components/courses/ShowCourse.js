@@ -9,6 +9,7 @@ import Axios from 'axios'
 
 
 
+
 const ShowCourse = (props) => {
     const [modalOpen, setModalOpen] = useState(false)
     const [updated, setUpdated] = useState(false)
@@ -17,44 +18,7 @@ const ShowCourse = (props) => {
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
-    const [like, setLike] = useState(0)
-    const [dislike, setDislike] = useState(0)
-    const [likeActive, setLikeActive] = useState(false)
-    const [dislikeActive, setDislikeActive] = useState(false)
-
-    const liked = () => {
-        // console.log('liked pressed')
-        if (likeActive) {
-            setLikeActive(false)
-            setLike(like-1)
-        } else {
-            setLikeActive(true)
-            setLike(like+1)
-            if(dislikeActive){
-                setDislikeActive(false)
-                setLike(like+1)
-                setDislike(dislike-1)
-            }
-        }
-    }
-
-
-
-    const disliked = () => {
-        // console.log('disliked pressed')
-        if (dislikeActive) {
-            setDislikeActive(false)
-            setDislike(dislike-1)
-        } else {
-            setDislikeActive(true)
-            setDislike(like+1)
-            if(likeActive){
-                setLikeActive(false)
-                setDislike(dislike+1)
-                setLike(like-1)
-            }
-        }
-    }
+    const [imageSelected, setImageSelected] = useState('')
 
     useEffect(() => {
         showCurrentCourse(id)
@@ -103,6 +67,16 @@ const ShowCourse = (props) => {
         return `${hours}:${minutes} ${amPM}`
     }
 
+    const uploadImage = () => {
+        const formData = new FormData()
+        formData.append('file', imageSelected)
+        formData.append('upload_preset', 'arcoel71')
+
+        Axios.post("https://api.cloudinary.com/v1_1/dzvdrlurd/image/upload", formData)
+        .then(response => setImageSelected(response.data.secure_url))
+        .catch(err => console.log(err))
+    }
+
     let reviews
     let comments    
 
@@ -126,13 +100,22 @@ const ShowCourse = (props) => {
             <Card className='text-info' style={{backgroundImage:`url("https://wallpaperaccess.com/full/1092758.jpg")`}}>
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
     
-                <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
+                <Card.Header> <a href = {course.courseLink} target="_blank"> <img src = {`${imageSelected ? imageSelected : `https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg`}`}  width='250' height='300' /></a> </Card.Header> 
+                
                 <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
                 <Card.Body>
                     {
                         user && (course.owner._id === user._id)
                         ?
                         <>
+
+                            <input type ='file' onChange={(event)=> {
+                                setImageSelected(event.target.files[0])
+                            }}/>
+
+                            <button onClick={uploadImage} >Update Photo</button>
+
+
                             <Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
                                 Delete Course
                             </Button>
@@ -149,11 +132,6 @@ const ShowCourse = (props) => {
                         {course.tags.map(tag=> (
                         <small><li>{tag.details} </li></small>
                         ))}
-                        <div className = 'likeButtons'>
-                            <Button size = 'sm' variant='outline-success'onClick={liked} className = {[likeActive ?  'active-like': null, 'showButton'].join('')}>Recommend Course: {like} </Button>
-                            <Button size ='sm' variant='outline-danger' onClick={disliked} className = {[dislikeActive ?  'active-dislike': null, 'showButton'].join('')}>Would not Recommend Course: {dislike} </Button><br/>
-                            <div></div>
-                        </div>
                         </Card.Header>
                         <Card.Header style={{position:"absolute",top:100, right:0}} >Subject: {course.courseSubject}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:150, right:0}}>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>
