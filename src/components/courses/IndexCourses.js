@@ -57,9 +57,6 @@ const IndexCourses = (props) => {
     return (
         <div className='bg-dark'>
             <h3 className='text-primary'>Browse Some Courses</h3>
-            <Link to={`/courses/collegecourses`}><Button variant='outline-light' className='viewI'>College Courses</Button></Link>
-            <Link to={`/courses/noncollegecourses`}><Button variant='outline-light' className='viewI'>Non-College Courses</Button></Link>
-
             <Link to={`/tags/onlinecourses`}><Button variant='outline-light' className='viewI '>Online Courses</Button></Link>
             <Link to={`/tags/inpersoncourses`}><Button variant='outline-light' className='viewI'>In person Courses</Button></Link>
             <Link to={`/tags/mandatoryattendence`}><Button variant='outline-light' className='viewI'>Mandatory Attendence</Button></Link>
@@ -67,7 +64,7 @@ const IndexCourses = (props) => {
             <Link to={`/tags/testheavy`}><Button variant='outline-light' className='viewI'>Test Heavy</Button></Link>
             <Link to={`/tags/groupprojects`}><Button variant='outline-light' className='viewI'>Group Projects</Button></Link>
             <Link to={`/tags/goodfeedback`}><Button variant='outline-light' className='viewI'>Good Feedback</Button></Link>
-            <Link to={`/tags/material'`}><Button variant='outline-light' className='viewI'>Cares About the Material</Button></Link>
+            <Link to={`/tags/material`}><Button variant='outline-light' className='viewI'>Cares About the Material</Button></Link>
             <Link to={`/tags/caring`}><Button variant='outline-light' className='viewI'>Caring</Button></Link>
             <Link to={`/tags/textbook`}><Button variant='outline-light' className='viewI'>Text-book Mandatory</Button></Link>
             <Link to={`/tags/toughgrader`}><Button variant='outline-light' className='viewI'>Tough Grader</Button></Link>
@@ -88,7 +85,7 @@ const IndexCourses = (props) => {
                 <Dropdown.Item><Link to='/courses/literature' style={categoryLinks}>Literature</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/math' style={categoryLinks}>Math</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/medicine' style={categoryLinks}>Medicine</Link></Dropdown.Item>   
-                <Dropdown.Item><Link to='/courses/programming' style={categoryLinks}>Programming</Link></Dropdown.Item>                      
+                <Dropdown.Item><Link to='/courses/programming' style={categoryLinks}>Computer Science and Informations</Link></Dropdown.Item>                      
                 <Dropdown.Item><Link to='/courses/science' style={categoryLinks}>Science</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
 			</DropdownButton>

@@ -36,8 +36,8 @@ import GiveReviewModal from './components/reviews/GiveReview'
 // import GiveCommentModal from './components/comments/GiveComment'
 
 //college and non college courses
-import College from './components/colleges/IndexCollegeCourses'
-import NonCollegeCourses from './components/colleges/IndexNonCollegeCourses'
+// import College from './components/colleges/IndexCollegeCourses'
+// import NonCollegeCourses from './components/colleges/IndexNonCollegeCourses'
 
 
 
@@ -54,6 +54,8 @@ import IndexCaring from './components/tag/Caring'
 import IndexTextbook from './components/tag/Textbook'
 import IndexToughGrader from './components/tag/ToughGrader'
 import IndexLectureHeavy from './components/tag/LectureHeavy'
+import IndexCollege from './components/tag/CollegeCourses'
+import IndexNonCollegeCourses from './components/tag/NonCollegeCourses'
 
 
 const App = () => {
@@ -193,7 +195,7 @@ const App = () => {
 			{/* end of subjects */}
 
 			{/* college vs non college */}
-			<Route
+			{/* <Route
 				path='/courses/collegecourses'
 				element={<College msgAlert={msgAlert} user={user} />}
 			/>	
@@ -201,10 +203,18 @@ const App = () => {
 			<Route
 				path='/courses/noncollegecourses'
 				element={<NonCollegeCourses msgAlert={msgAlert} user={user} />}
-			/>	
+			/>	 */}
 			
 
 			{/* tags */}
+			<Route
+				path='/tags/collegecourses'
+				element={<IndexCollege msgAlert={msgAlert} user={user} />}
+			/>	
+			<Route
+				path='/tags/noncollegecourses'
+				element={<IndexNonCollegeCourses msgAlert={msgAlert} user={user} />}
+			/>	
 			<Route
 				path='/tags/onlinecourses'
 				element={<IndexOnlineCourses msgAlert={msgAlert} user={user} />}

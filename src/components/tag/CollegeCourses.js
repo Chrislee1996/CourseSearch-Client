@@ -9,25 +9,27 @@ const cardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
-const IndexOnlineCourses = (props) => {
-    const [courses, setCourses]= useState(null)
+const IndexCollege = (props) => {
+    const [courses, setCourses] = useState(null)
 
-    useEffect(()=> {
-        getCourseTags('6269f48a027c7f93d9755009')
-            .then(res=>{
+
+    useEffect(() => {
+        getCourseTags('6269f48a027c7f93d975500a')
+            .then(res => {
                 setCourses(res.data.courses)
             })
             .catch(console.error)
-    },[])
-
+    }, [])
 
     if (!courses) {
         return <p>loading...</p>
-    } else if (courses.length === 0) {
-        return <p>No courses to display. Go Create some!</p>
+    }
+    else if (courses.length === 0) {
+        return <p>Add a Course!</p>
     }
 
     let courseCards
+
 
     if (courses.length > 0) {
         courseCards = courses.map(course => (
@@ -41,7 +43,7 @@ const IndexOnlineCourses = (props) => {
                         <li>{tag.details}</li>
                         ))}
                         <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
-                        <Link to ={`/courses/${course._id}`}><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
+                        <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
                         <p>{course.subject}</p>
                     </Card.Text>
                 </Card.Body>
@@ -51,8 +53,7 @@ const IndexOnlineCourses = (props) => {
 
     return (
         <div className='bg-dark'>
-            <h3 className='text-primary'>Browse Some Courses</h3>
-            <h3 class='text-center text-info'>Courses</h3>
+            <h3 class='text-center text-info'>College Courses</h3>
             <div style={cardContainerLayout}>
                 {courseCards}
             </div>
@@ -60,4 +61,4 @@ const IndexOnlineCourses = (props) => {
     )
 }
 
-export default IndexOnlineCourses
+export default IndexCollege
