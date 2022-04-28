@@ -120,10 +120,10 @@ const ShowCourse = (props) => {
     console.log(reviews, 'our reviews')
     
     return (
-        <div className='bg-dark'>
-        <Container className='fluid bg-info'>
+        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
+        <Container className='fluid'>
 
-            <Card className='text-info bg-dark'>
+            <Card className='text-info' style={{backgroundImage:`url("https://wallpaperaccess.com/full/1092758.jpg")`}}>
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
     
                 <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>

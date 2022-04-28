@@ -50,7 +50,7 @@ const IndexMandatoryAttendence = (props) => {
     }
 
     return (
-        <div className='bg-dark'>
+        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
             <h3 className='text-primary'>Browse Some Courses</h3>
             <h3 class='text-center text-info'>Courses</h3>
             <div style={cardContainerLayout}>

@@ -58,9 +58,10 @@ const MineCourses = (props) => {
     }
 
     return (
-        <div className='bg-dark'>
+        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
             <h3 className='titleText'>Browse My Courses</h3>
-            <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects">  
+            <div className = 'subjectSection'>
+            <DropdownButton id="dropdown-basic-button-2" variant ='outline-light'title="Browse By Subjects">  
                 <Dropdown.Item><Link to='/courses/art' style={categoryLinks}>Arts</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/business' style={categoryLinks}>Business</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/dataanalysis' style={categoryLinks}>Data Analysis</Link></Dropdown.Item>            
@@ -78,6 +79,7 @@ const MineCourses = (props) => {
                 <Dropdown.Item><Link to='/courses/science' style={categoryLinks}>Science</Link></Dropdown.Item>            
                 <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
 			</DropdownButton>
+            </div>
             <Dropdown>
             </Dropdown>
             <div style={cardContainerLayout}>

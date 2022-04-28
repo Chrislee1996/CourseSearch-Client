@@ -55,9 +55,10 @@ const SignIn = (props) => {
 	}
 
     return (
-        <container className='signinBox bg-dark'>
+
+        <container className='signinBox'>
             <div className='row '>
-                <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+                <div className='col-sm-10 col-md-8 mx-auto mt-5' >
                     <h3>Sign In</h3>
                     <Form onSubmit={onSignIn}>
                         <Form.Group controlId='email'>

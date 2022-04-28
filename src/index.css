@@ -22,6 +22,7 @@ code {
   color:wheat;
   border-radius: 20px;
   box-shadow: 0px 0px 1px #292639, 0px 0px 2px #292639;
+  background-image: url("https://wallpaperaccess.com/full/1092758.jpg");
 }
 
 
@@ -51,4 +52,12 @@ code {
   text-align: center;
   overflow: hidden;
   cursor: pointer;
+}
+
+
+
+.subjectSection {
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
