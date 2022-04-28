@@ -30,6 +30,7 @@ const NonCollegeCourses = (props) => {
 
     let courseCards
 
+
     if (courses.length > 0) {
         courseCards = courses.map(course => (
             <Card key={course.id} style={{ width: '30%', border:"solid 1px"}} className="m-2 bg-dark text-info"  >
@@ -41,7 +42,7 @@ const NonCollegeCourses = (props) => {
                         <small>Tags: {tag.details} </small>
                         ))} */}
                         <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
-                        <Link to ={`/courses/${course._id}`}><img src={`${course.image}`} width='250' height='300'/></Link>
+                        <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
                         <p>{course.subject}</p>
                     </Card.Text>
                 </Card.Body>

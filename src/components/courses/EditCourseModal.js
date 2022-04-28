@@ -45,8 +45,9 @@ const EditCourseModal = (props) => {
             let courseIndex = courseTags.indexOf(e.target.value)
             courseTags.splice(courseIndex,1)
             updatedTagDetails=courseTags
+            
         }
-        return {...updatedTagDetails}
+        return {...updatedTagDetails, ...updatedTagDetails}
     }
 
     return (

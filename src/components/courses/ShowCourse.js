@@ -150,9 +150,8 @@ const ShowCourse = (props) => {
                         <small><li>{tag.details} </li></small>
                         ))}
                         <div className = 'likeButtons'>
-
                             <Button size = 'sm' variant='outline-success'onClick={liked} className = {[likeActive ?  'active-like': null, 'showButton'].join('')}>Recommend Course: {like} </Button>
-                            <Button size ='sm' variant='outline-danger' onClick={disliked} className = {[dislikeActive ?  'active-dislike': null, 'showButton'].join('')}>Would not Recommend Course: {dislike} </Button>
+                            <Button size ='sm' variant='outline-danger' onClick={disliked} className = {[dislikeActive ?  'active-dislike': null, 'showButton'].join('')}>Would not Recommend Course: {dislike} </Button><br/>
                             <div></div>
                         </div>
                         </Card.Header>

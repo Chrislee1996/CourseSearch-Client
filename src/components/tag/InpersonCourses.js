@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react'
-import { getInpersonCourses } from '../../api/tag'
+import { getCourseTags } from '../../api/tag'
 import { Link } from 'react-router-dom'
 import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
 
@@ -13,7 +13,7 @@ const IndexInpersonCourses = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getInpersonCourses()
+        getCourseTags('626844ec0cc0b2149abd4293')
             .then(res=>{
                 setCourses(res.data.courses)
             })
