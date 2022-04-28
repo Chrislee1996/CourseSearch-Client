@@ -35,7 +35,7 @@ const ShowComment = (props) => {
                         <p>Comment:</p>
                         <p>{comment.note}<br/></p>
                         {
-                            user && (user._id === review.owner)
+                            user && (user._id === comment.owner)
                             ?
                             <>
                             <Button onClick={()=> destroyComment()}variant="outline-danger" size='sm'>
