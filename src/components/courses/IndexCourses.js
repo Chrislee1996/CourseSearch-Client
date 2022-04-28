@@ -61,8 +61,6 @@ const IndexCourses = (props) => {
             <Link to={`/courses/noncollegecourses`}><Button variant='outline-light' className='viewI'>Non-College Courses</Button></Link>
 
             <Link to={`/tags/onlinecourses`}><Button variant='outline-light' className='viewI '>Online Courses</Button></Link>
-            <Link to={`/tags/collegecourses`}><Button variant='outline-light' className='viewI'>College Courses</Button></Link>
-            <Link to={`/tags/noncollegecourses`}><Button variant='outline-light' className='viewI'>Non-College Courses</Button></Link>
             <Link to={`/tags/inpersoncourses`}><Button variant='outline-light' className='viewI'>In person Courses</Button></Link>
             <Link to={`/tags/mandatoryattendence`}><Button variant='outline-light' className='viewI'>Mandatory Attendence</Button></Link>
             <Link to={`/tags/lotsofhomework`}><Button variant='outline-light' className='viewI'>Lots of Homework</Button></Link>
