@@ -16,6 +16,7 @@ const ShowCourse = (props) => {
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
+    const [attendingButton, setAttendingButton] = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
@@ -25,6 +26,7 @@ const ShowCourse = (props) => {
         showCurrentCourse(id)
             .then(res => {
                 setCourse(res.data.course)
+                attendingCourseArray()
             })
             .then(()=> {
                 msgAlert({
@@ -81,6 +83,54 @@ const ShowCourse = (props) => {
         return `${hours}:${minutes} ${amPM}`
     }
 
+    const attendingCourseArray = () => {
+        let courseArray = []
+        getAllAttendingCourses()
+        .then(res => {
+            courseArray = res.data.attendingcourses
+            return courseArray
+        })
+        .then(courseArray => {
+            for (const i in courseArray) {
+                // console.log('course array id', courseArray[i].course._id)
+                // console.log('course id', id)
+                if (courseArray[i].course._id == id) {
+                    return setAttendingButton(true)
+                } else {
+                    setAttendingButton(false)
+                }
+            }
+        })
+        .catch(error => console.log(error))
+    }
+
+    const addCourse = () => {
+        const attendingCourse = {
+            owner:user._id,
+            course: course._id
+        }
+        console.log('attending courses', attendingCourse)
+        createAttendingCourses(user,attendingCourse)
+            .then(()=> {
+                msgAlert({
+                    heading:'Course added',
+                    message: 'Course Successfully Added',
+                    variant:'success'
+                })
+            })
+            .then(()=> {
+                setUpdated(prev => !prev)
+                navigate(`/courses/${course._id}`)
+            })
+            .catch(() => {
+                msgAlert({
+                    heading: 'Something Went Wrong',
+                    message: 'Unable to add course',
+                    variant: 'danger',
+                })
+            })
+    }
+
 
     // const uploadImage = () => {
     //     const formData = new FormData()
@@ -120,7 +170,11 @@ const ShowCourse = (props) => {
 
                 
                 <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
+
                 <Card.Body>
+                <Button onClick={() => addCourse()} variant="outline-success" style={{display: attendingButton ? 'none' : 'block'}}>
+                    Add Course
+                </Button>
                     {
                         user && (course.owner._id === user._id)
                         ?

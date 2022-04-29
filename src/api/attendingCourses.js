@@ -13,7 +13,7 @@ export const createAttendingCourses = (user, newAttendingCourses) => {
         headers: {
             Authorization:`Token token=${user.token}`
         },
-        data:{attendingCourse: newAttendingCourses}
+        data:{attendingcourse: newAttendingCourses}
     })
 }
 
