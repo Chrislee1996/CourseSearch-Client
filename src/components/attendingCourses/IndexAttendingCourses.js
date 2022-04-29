@@ -71,7 +71,6 @@ const IndexAttendingCourses = (props) => {
         return <p>No courses to display. Go add some!</p>
     }
 
-    console.log(attendingcourses, 'here is the attending course')
 
     let attendingCourseCards
 
@@ -89,6 +88,7 @@ const IndexAttendingCourses = (props) => {
                 </Card.Body>
             </Card>
         ))
+
     }
 
     return (
