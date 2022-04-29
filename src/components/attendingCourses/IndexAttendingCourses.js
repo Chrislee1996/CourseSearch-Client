@@ -45,7 +45,24 @@ const IndexAttendingCourses = (props) => {
 
     const deleteAttendingCourse = (courseId) => {
         removeAttendingCourse(user, courseId)
-
+        .then(()=> {
+            msgAlert({
+                heading:'Removed Course',
+                message: 'Course was successfully removed from list',
+                variant:'success'
+            })
+        })
+        .then(()=> {
+            setUpdated((prev)=> !prev)
+            navigate(`/attendingcourses`)
+        })
+        .catch(()=> {
+            msgAlert({
+                heading:'Attending Courses',
+                message: 'Something went wrong',
+                variant:'danger'
+            })
+        })
     }
 
     if (!attendingcourses) {
@@ -67,6 +84,7 @@ const IndexAttendingCourses = (props) => {
                         Subject: {attendingcourse.course.courseSubject}<br/>
                         <Link to ={`/courses/${attendingcourse.course._id}`}> <h4> {attendingcourse.course.courseInstitute} </h4></Link>
                         <Link to ={`/courses/${attendingcourse.course._id}`}><img src={`${attendingcourse.course.image ? attendingcourse.course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
+                        <Button variant='outline-danger' className='attendingCourse' onClick={()=> deleteAttendingCourse(attendingcourse._id)}>Remove Course from my List</Button>
                     </Card.Text>
                 </Card.Body>
             </Card>

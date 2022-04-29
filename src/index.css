@@ -75,3 +75,7 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.attendingCourse {
+  margin-top: 1em;
+}
