@@ -19,10 +19,10 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-			<Link to={`/tags/collegecourses`} style={linkStyle} >College Courses </Link>
+			<Link to={`/courses/collegecourses`} style={linkStyle} >College Courses </Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-        	<Link to={`/tags/noncollegecourses`} style={linkStyle} >Non-College Courses</Link>
+        	<Link to={`/courses/noncollegecourses`} style={linkStyle} >Non-College Courses</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
 			<Link to='addCourse' style={linkStyle}>

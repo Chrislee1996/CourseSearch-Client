@@ -97,6 +97,7 @@ export const getSocialScience = () => {
 }
 
 
+
 // routes for college and non college courses
 export const getCollegeCourses = () => {
     return axios(`${apiUrl}/courses/collegecourses`)

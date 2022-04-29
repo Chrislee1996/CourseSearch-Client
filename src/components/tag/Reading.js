@@ -9,12 +9,12 @@ const cardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
-const IndexCollege = (props) => {
+const IndexReading = (props) => {
     const [courses, setCourses] = useState(null)
 
 
     useEffect(() => {
-        getCourseTags('6269f48a027c7f93d975500a')
+        getCourseTags('626c65747a1265c141ec4aca')
             .then(res => {
                 setCourses(res.data.courses)
             })
@@ -61,4 +61,4 @@ const IndexCollege = (props) => {
     )
 }
 
-export default IndexCollege
+export default IndexReading

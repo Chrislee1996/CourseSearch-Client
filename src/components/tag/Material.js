@@ -13,7 +13,7 @@ const IndexMaterial = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('6269f48a027c7f93d9755012')
+        getCourseTags('626c65747a1265c141ec4ac5')
             .then(res=>{
                 setCourses(res.data.courses)
             })

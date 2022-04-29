@@ -13,7 +13,7 @@ const IndexInpersonCourses = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('6269f48a027c7f93d975500c')
+        getCourseTags('626c65747a1265c141ec4abf')
             .then(res=>{
                 setCourses(res.data.courses)
             })

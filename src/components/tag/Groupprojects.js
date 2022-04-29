@@ -13,7 +13,7 @@ const IndexGroupprojects = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('6269f48a027c7f93d9755010')
+        getCourseTags('626c65747a1265c141ec4ac3')
             .then(res=>{
                 setCourses(res.data.courses)
             })

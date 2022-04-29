@@ -74,6 +74,8 @@ const IndexAttendingCourses = (props) => {
 
     let attendingCourseCards
 
+    console.log(attendingcourses,'what the fuck')
+
     if (attendingcourses.length > 0) {
         attendingCourseCards = attendingcourses.map(attendingcourse => (
             <Card key={attendingcourse._id} style={{ width: '30%', border:"solid 1px"}} className="m-2 bg-dark text-info"  >

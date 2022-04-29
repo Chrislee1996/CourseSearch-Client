@@ -13,7 +13,7 @@ const IndexLectureHeavy = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('6269f48a027c7f93d9755016')
+        getCourseTags('626c65747a1265c141ec4acb')
             .then(res=>{
                 setCourses(res.data.courses)
             })

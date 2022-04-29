@@ -1,7 +1,7 @@
-import React, {useState, useEffect } from 'react'
-import { getCourseTags } from '../../api/tag'
+import React, { useState, useEffect } from 'react'
+import { getNonCollegeCourses } from '../../api/courses'
+import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
 
 const cardContainerLayout = {
     display: 'flex',
@@ -9,24 +9,25 @@ const cardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
-const IndexCaring = (props) => {
-    const [courses, setCourses]= useState(null)
+const NonCollegeCourses = (props) => {
+    const [courses, setCourses] = useState(null)
 
-    useEffect(()=> {
-        getCourseTags('626c65747a1265c141ec4ac6')
-            .then(res=>{
-                setCourses(res.data.courses)
+
+    useEffect(() => {
+        getNonCollegeCourses()
+            .then(res => {
+                setCourses(res.data.notcollege)
             })
             .catch(console.error)
-    },[])
-
+    }, [])
 
     if (!courses) {
         return <p>loading...</p>
-    } else if (courses.length === 0) {
-        return <p>No courses to display. Go Create some!</p>
     }
-
+    else if (courses.length === 0) {
+        return <p>Add a Course!</p>
+    }
+    
     let courseCards
 
     if (courses.length > 0) {
@@ -35,8 +36,8 @@ const IndexCaring = (props) => {
                 <Card.Header>{course.courseName}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                    Subject: {course.courseSubject}<br/>
-                    Tags:
+                        Subject: {course.courseSubject}<br/>
+                        Tags:
                         {course.tags.map(tag=> (
                         <li>{tag.details}</li>
                         ))}
@@ -49,9 +50,8 @@ const IndexCaring = (props) => {
     }
 
     return (
-        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
-            <h3 className='text-primary'>Browse Some Courses</h3>
-            <h3 class='text-center text-info'>Courses</h3>
+        <div className='bg-dark'>
+            <h3 class='text-center text-info'>College Courses</h3>
             <div style={cardContainerLayout}>
                 {courseCards}
             </div>
@@ -59,4 +59,4 @@ const IndexCaring = (props) => {
     )
 }
 
-export default IndexCaring
+export default NonCollegeCourses 

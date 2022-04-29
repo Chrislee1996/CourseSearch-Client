@@ -9,25 +9,27 @@ const cardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
-const IndexCaring = (props) => {
-    const [courses, setCourses]= useState(null)
+const IndexExtraCredit = (props) => {
+    const [courses, setCourses] = useState(null)
 
-    useEffect(()=> {
-        getCourseTags('626c65747a1265c141ec4ac6')
-            .then(res=>{
+
+    useEffect(() => {
+        getCourseTags('626c65747a1265c141ec4ac9')
+            .then(res => {
                 setCourses(res.data.courses)
             })
             .catch(console.error)
-    },[])
-
+    }, [])
 
     if (!courses) {
         return <p>loading...</p>
-    } else if (courses.length === 0) {
-        return <p>No courses to display. Go Create some!</p>
+    }
+    else if (courses.length === 0) {
+        return <p>Add a Course!</p>
     }
 
     let courseCards
+
 
     if (courses.length > 0) {
         courseCards = courses.map(course => (
@@ -42,6 +44,7 @@ const IndexCaring = (props) => {
                         ))}
                         <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
                         <Link to ={`/courses/${course._id}`}><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
+                        <p>{course.subject}</p>
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -50,8 +53,7 @@ const IndexCaring = (props) => {
 
     return (
         <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
-            <h3 className='text-primary'>Browse Some Courses</h3>
-            <h3 class='text-center text-info'>Courses</h3>
+            <h3 class='text-center text-info'>College Courses</h3>
             <div style={cardContainerLayout}>
                 {courseCards}
             </div>
@@ -59,4 +61,4 @@ const IndexCaring = (props) => {
     )
 }
 
-export default IndexCaring
+export default IndexExtraCredit
