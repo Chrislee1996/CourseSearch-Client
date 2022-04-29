@@ -6,6 +6,7 @@ import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
 import {createAttendingCourses , getAllAttendingCourses } from '../../api/attendingCourses'
+import {createLikedCourse} from '../../api/like'
 // import Axios from 'axios'
 
 
@@ -17,6 +18,8 @@ const ShowCourse = (props) => {
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
     const [attendingButton, setAttendingButton] = useState(false)
+    // const [like, setLike] = useState(null)
+    // const setLikedCourse = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
@@ -111,6 +114,22 @@ const ShowCourse = (props) => {
             })
     }
 
+//     const likePost = (like) => {
+//         createLikedCourse(user, course._id , like)
+//         let likedCourse = 0
+//         let dislikedCourse = 0
+
+//         if (like === 'like') {
+//             likedCourse +=1
+//         } else if (like === 'dislike') {
+//             dislikedCourse +=1
+//         }
+// console.log(likedCourse, '# of course')
+//         updateCourse(user, course, like)
+//         .then(() => setUpdated(true))
+//         .then(() => setLikedCourse(true))
+//     }
+
 
     // const uploadImage = () => {
     //     const formData = new FormData()
@@ -155,6 +174,10 @@ const ShowCourse = (props) => {
                 <Button onClick={() => addCourse()} variant="outline-success" style={{display: attendingButton ? 'none' : 'block'}}>
                     Add Course
                 </Button>
+
+                {/* <Button onClick={() => likePost('like')} className="m-2" variant="outline-danger" disabled={setLikedCourse}>Recommend course</Button> */}
+                {/* <Button onClick={() => likePost('dislike')} className="m-2" variant="outline-danger" disabled={setLikedCourse} >Would not Recommend</Button> */}
+
                     {
                         user && (course.owner._id === user._id)
                         ?

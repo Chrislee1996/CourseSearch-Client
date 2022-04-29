@@ -14,7 +14,7 @@ const ShowReview = (props) => {
     const [commentModalOpen, setCommentModalOpen] = useState(false)
     const [showEditModal, setShowEditModal] = useState(false)
     const [updated, setUpdated] = useState(false)
-    const [hidden, setHidden] = useState(true)
+    const [hidden, setHidden] = useState(false)
 
     
     const destroyReview = () => {

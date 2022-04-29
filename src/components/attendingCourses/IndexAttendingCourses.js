@@ -23,7 +23,7 @@ const IndexAttendingCourses = (props) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        getAllAttendingCourses()
+        getAllAttendingCourses(user)
             .then(res=> {
                 setAttendingCourses(res.data.attendingcourses)
             })
