@@ -57,7 +57,7 @@ const alwaysOptions = (
 	<>
 		<Nav.Item className='m-2'>
 			<Link to='/' style={linkStyle}>
-				Home
+			🏘️ Home 
 			</Link>
 		</Nav.Item>
 	</>
@@ -67,7 +67,7 @@ const Header = ({ user }) => (
 	<Navbar bg='secondary' variant='dark' expand='md'>
 		<Navbar.Brand className='m-2'>
             <Link to='/' style={linkStyle}>
-				CourseSearch
+				👨‍🏫 CourseSearch 👩‍🏫
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />

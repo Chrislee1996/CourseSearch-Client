@@ -56,6 +56,8 @@ const IndexCourses = (props) => {
         ))
     }
 
+
+
     return (
         <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
             <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/1092758.jpg")`}}>

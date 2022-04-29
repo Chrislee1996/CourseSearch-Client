@@ -17,6 +17,7 @@ const categoryLinks = {
 }
 
 const IndexAttendingCourses = (props) => {
+    const {user, msgAlert} = props
     const [attendingcourses, setAttendingCourses] = useState(null)
     const [updated, setUpdated] = useState(false)
     const navigate = useNavigate()
@@ -26,9 +27,26 @@ const IndexAttendingCourses = (props) => {
             .then(res=> {
                 setAttendingCourses(res.data.attendingcourses)
             })
-            .catch(console.error)
-    },[])
+            .then(()=> {
+                msgAlert({
+                    heading:'Attending Courses',
+                    message: 'Courses Retrieved',
+                    variant:'success'
+                })
+            })
+            .catch(()=> {
+                msgAlert({
+                    heading:'Attending Courses',
+                    message: 'Something went wrong',
+                    variant:'danger'
+                })
+            })
+    },[updated])
 
+    const deleteAttendingCourse = (courseId) => {
+        removeAttendingCourse(user, courseId)
+
+    }
 
     if (!attendingcourses) {
         return <p>loading...</p>
@@ -47,8 +65,8 @@ const IndexAttendingCourses = (props) => {
                 <Card.Body>
                     <Card.Text>
                         Subject: {attendingcourse.course.courseSubject}<br/>
-                        <Link to ={`/courses/${attendingcourse._id}`}> <h4> {attendingcourse.course.courseInstitute} </h4></Link>
-                        <Link to ={`/courses/${attendingcourse._id}`}><img src={`${attendingcourse.course.image ? attendingcourse.course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
+                        <Link to ={`/courses/${attendingcourse.course._id}`}> <h4> {attendingcourse.course.courseInstitute} </h4></Link>
+                        <Link to ={`/courses/${attendingcourse.course._id}`}><img src={`${attendingcourse.course.image ? attendingcourse.course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></Link>
                     </Card.Text>
                 </Card.Body>
             </Card>

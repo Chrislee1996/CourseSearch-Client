@@ -5,6 +5,7 @@ import { Spinner,Container,Card, Button} from 'react-bootstrap'
 import EditCourseModal from './EditCourseModal'
 import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
+import {createAttendingCourses , getAllAttendingCourses } from '../../api/attendingCourses'
 // import Axios from 'axios'
 
 
@@ -25,7 +26,20 @@ const ShowCourse = (props) => {
             .then(res => {
                 setCourse(res.data.course)
             })
-            .catch(console.error)
+            .then(()=> {
+                msgAlert({
+                    heading:'Course Retrieved',
+                    message: 'Course Successfully Retrieved',
+                    variant:'success'
+                })
+            })
+            .catch(()=> {
+                msgAlert({
+                    heading:'Unable to Retrieve Course',
+                    message: 'Something went wrong',
+                    variant:'danger'
+                })
+            })
     },[updated])
 
 
@@ -141,7 +155,7 @@ const ShowCourse = (props) => {
                         <Card.Header style={{position:"absolute",top:200 , right:0}}>Location: {course.location}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:250 , right:0}}>Days of Course: {course.daysOfCourse}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:300 , right:0}}>Start Date of Course: {course.startDate}</Card.Header><br/>
-                        <Card.Header style={{position:"absolute",top:350 , right:0}}>End Date of Course: (course.endDate)</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:350 , right:0}}>End Date of Course: {course.endDate}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:400 , right:0}}>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:450 , right:0}}>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:500 , right:0}}>Credits if appliable : {course.offerCredits}</Card.Header><br/>

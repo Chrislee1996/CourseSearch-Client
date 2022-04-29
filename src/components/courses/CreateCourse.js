@@ -9,7 +9,7 @@ const CreateCourse = (props) => {
     const[course, setCourse] = useState({courseName:'', courseInstitute:'', image:'', 
     courseLink:"", courseSubject:'',teacher:'', location:'', startDate:'', 
     endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true, tags: [] })
-    const {user} = props
+    const {user, msgAlert} = props
 
     const handleChange = (e) => {
         e.persist()
@@ -49,7 +49,20 @@ const CreateCourse = (props) => {
         createCourse(user,course)
             .then(res=> 
                 {navigate(`/courses/${res.data.course.id}`)})
-            .catch(console.error)
+            .then(()=> {
+                    msgAlert({
+                        heading:'Course Created!',
+                        message: 'Course Successfully Created',
+                        variant:'success'
+                    })
+                })
+                .catch(()=> {
+                    msgAlert({
+                        heading:'Unable to Create Course',
+                        message: 'Something went wrong',
+                        variant:'danger'
+                    })
+                })
     }
 
     return (

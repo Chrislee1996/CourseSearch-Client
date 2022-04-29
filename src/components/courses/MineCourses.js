@@ -16,7 +16,7 @@ const categoryLinks = {
 
 const MineCourses = (props) => {
     const [myCourses, setMyCourses] = useState(null)
-    const {user} = props
+    const {user, msgAlert} = props
     const [course, setCourse] = useState(null)
     
 
@@ -25,7 +25,20 @@ const MineCourses = (props) => {
             .then(res => {
                 setMyCourses(res.data.courses)
             })
-            .catch(console.error)
+                .then(()=> {
+                    msgAlert({
+                        heading:'List of Created Courses',
+                        message: 'Courses Retrieved',
+                        variant:'success'
+                    })
+                })
+                .catch(()=> {
+                    msgAlert({
+                        heading:'List of Created Courses',
+                        message: 'Something went wrong',
+                        variant:'danger'
+                    })
+                })
     }, [])
 
     if (!myCourses) {
