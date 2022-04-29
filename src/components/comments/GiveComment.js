@@ -32,7 +32,13 @@ const GiveCommentModal = (props) => {
             .then(() => triggerRefresh())
             .then(() => handleClose())
             // if there is an error, we'll send an error message
-            .catch(console.error)
+            .catch(() => {
+                msgAlert({
+                    heading: 'Something Went Wrong',
+                    message: 'Unable to add comment',
+                    variant: 'danger',
+                })
+            })
     }
 
 

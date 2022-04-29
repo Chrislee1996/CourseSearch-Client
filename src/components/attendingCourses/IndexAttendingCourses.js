@@ -68,7 +68,7 @@ const IndexAttendingCourses = (props) => {
     if (!attendingcourses) {
         return <p>loading...</p>
     } else if (attendingcourses.length === 0) {
-        return <p>No courses to display. Go Create some!</p>
+        return <p>No courses to display. Go add some!</p>
     }
 
     console.log(attendingcourses, 'here is the attending course')

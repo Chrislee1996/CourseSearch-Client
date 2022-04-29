@@ -14,13 +14,20 @@ const ShowReview = (props) => {
     const [commentModalOpen, setCommentModalOpen] = useState(false)
     const [showEditModal, setShowEditModal] = useState(false)
     const [updated, setUpdated] = useState(false)
-    
+    const [hidden, setHidden] = useState(true)
+
     
     const destroyReview = () => {
         removeReview(user, course._id, review._id)
             .then(() => triggerRefresh())
             // if there is an error, we'll send an error message
-            .catch(console.error)
+            .catch(() => {
+                msgAlert({
+                    heading: 'Something Went Wrong',
+                    message: 'Unable to Delete',
+                    variant: 'danger',
+                })
+            })
     }
 
 
@@ -38,6 +45,7 @@ const ShowReview = (props) => {
         }
     }  
 
+
     return (
         <>
             <Card className="m-2">
@@ -45,6 +53,7 @@ const ShowReview = (props) => {
                         <h4>Overall experience: {review.note}<br/></h4>
                         <h4>Course Rating: {review.courseRating}<br/></h4>
                         <h4>Professor Rating:{review.professorRating}<br/></h4>
+
                         {
                             user && (user._id === review.owner)
                             ?
@@ -58,9 +67,15 @@ const ShowReview = (props) => {
                             </>
                             :
                             null
+                        }<br/>
+
+                        {
+                            hidden?<p>{comments}</p>: null
                         }
-                        <p>{comments}</p>
-                        <button className="comment" onClick={()=> setCommentModalOpen(true)}> Comment on Review Above</button>
+                        <Button onClick ={()=>setHidden(!hidden)} variant="outline-light" size='sm'> Show {review.comments.length} Comments  </Button>
+
+
+                        <Button className="comment" onClick={()=> setCommentModalOpen(true)} variant="outline-primary" size='sm'> Comment on Review Above</Button>
         </Card.Body>
     </Card>
     <EditReviewModal 

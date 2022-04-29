@@ -28,20 +28,7 @@ const ShowCourse = (props) => {
                 setCourse(res.data.course)
                 attendingCourseArray()
             })
-            .then(()=> {
-                msgAlert({
-                    heading:'Course Retrieved',
-                    message: 'Course Successfully Retrieved',
-                    variant:'success'
-                })
-            })
-            .catch(()=> {
-                msgAlert({
-                    heading:'Unable to Retrieve Course',
-                    message: 'Something went wrong',
-                    variant:'danger'
-                })
-            })
+            .catch(console.error)
     },[updated])
 
 
@@ -111,13 +98,6 @@ const ShowCourse = (props) => {
         }
         console.log('attending courses', attendingCourse)
         createAttendingCourses(user,attendingCourse)
-            .then(()=> {
-                msgAlert({
-                    heading:'Course added',
-                    message: 'Course Successfully Added',
-                    variant:'success'
-                })
-            })
             .then(()=> {
                 setUpdated(prev => !prev)
                 navigate(`/courses/${course._id}`)
