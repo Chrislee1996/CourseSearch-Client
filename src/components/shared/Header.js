@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
+import {HouseFill, List, PersonDash, Mortarboard, MortarboardFill, Check2, Pen} from "react-bootstrap-icons"
+
 const linkStyle = {
     color: 'white',
     textDecoration: 'none'
@@ -10,23 +12,23 @@ const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
 			<Link to='/courses/mine' style={linkStyle}>
-				My Courses
+				My Courses <PersonDash></PersonDash>
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
 			<Link to='/attendingcourses' style={linkStyle}>
-				My List
+				My List<List></List>
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-			<Link to={`/courses/collegecourses`} style={linkStyle} >College Courses </Link>
+			<Link to={`/courses/collegecourses`} style={linkStyle} >College Courses  <Mortarboard></Mortarboard></Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-        	<Link to={`/courses/noncollegecourses`} style={linkStyle} >Non-College Courses</Link>
+        	<Link to={`/courses/noncollegecourses`} style={linkStyle} >Non-College Courses <MortarboardFill></MortarboardFill> </Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
 			<Link to='addCourse' style={linkStyle}>
-				Add a New Course
+				Add a New Course <Pen></Pen>
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
@@ -56,8 +58,8 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
 	<>
 		<Nav.Item className='m-2'>
-			<Link to='/' style={linkStyle}>
-			🏘️ Home 
+			<Link to='/' style={linkStyle}  >
+			  <HouseFill></HouseFill>Home
 			</Link>
 		</Nav.Item>
 	</>
@@ -74,7 +76,7 @@ const Header = ({ user }) => (
 		<Navbar.Collapse id='basic-navbar-nav'>
 			<Nav className='ml-auto'>
 				{user && (
-					<span className='navbar-text mr-2'>Welcome, {user.email}</span>
+					<span className='navbar-text mr-2'>Welcome, {user.email}<Check2></Check2></span>
 				)}
 				{alwaysOptions}
 				{user ? authenticatedOptions : unauthenticatedOptions}

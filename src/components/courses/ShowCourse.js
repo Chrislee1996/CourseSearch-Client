@@ -7,7 +7,7 @@ import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
 import {createAttendingCourses , getAllAttendingCourses } from '../../api/attendingCourses'
 import {createLikedCourse} from '../../api/like'
-import {HandThumbsUpFill, HandThumbsDownFill} from "react-bootstrap-icons"
+import {HandThumbsUpFill, HandThumbsDownFill, Cone, Pencil, Chat} from "react-bootstrap-icons"
 
 
 
@@ -179,10 +179,10 @@ const ShowCourse = (props) => {
                         <>
 
                             <Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
-                                Delete Course
+                                Delete Course <Cone></Cone>
                             </Button>
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="outline-warning">
-                                Edit Course
+                                Edit Course <Pencil></Pencil>
                             </Button>
                         </>
                         :
@@ -206,7 +206,7 @@ const ShowCourse = (props) => {
                         <Card.Header style={{position:"absolute",top:500 , right:0}}>Credits if appliable : {course.offerCredits}</Card.Header><br/>
 
                         
-                        <button className="reviewB" onClick={()=> setReviewModalOpen(true)}> Leave a Review</button>
+                        <Button className="reviewB" onClick={()=> setReviewModalOpen(true)} variant="outline-primary"> Leave a Review <Chat></Chat></Button>
                         <h3 className class='text-primary'>Reviews:</h3> 
                         <p>{reviews}</p>
 

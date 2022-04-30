@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Button, Container } from 'react-bootstrap'
 import { removeComment } from '../../api/comments'
+import {Cone} from "react-bootstrap-icons"
+
 
 const ShowComment = (props) => {
     // most of these are simply to pass to edit modal
@@ -45,7 +47,7 @@ const ShowComment = (props) => {
                             ?
                             <>
                             <Button onClick={()=> destroyComment()}variant="outline-danger" size='sm'>
-                                Delete Comment    
+                                Delete Comment <Cone></Cone>
                             </Button>
                             </>
                             :

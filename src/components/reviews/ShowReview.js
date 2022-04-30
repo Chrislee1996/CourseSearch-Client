@@ -4,8 +4,8 @@ import { removeReview } from '../../api/reviews'
 import GiveComment from '../comments/GiveComment'
 import ShowComment from '../comments/ShowComment'
 import EditReviewModal from './EditReviewModal'
-// import { removeComment } from '../../api/comments'
-// import {addComment} from '../../api/comments.js'
+import {Cone, Pencil, Reply, ArrowDown} from "react-bootstrap-icons"
+
 
 
 const ShowReview = (props) => {
@@ -59,10 +59,10 @@ const ShowReview = (props) => {
                             ?
                             <>
                                 <Button onClick={()=> destroyReview()}variant="outline-danger" size='sm'>
-                                    Delete Review    
+                                    Delete Review <Cone></Cone>
                                 </Button>
                                 <Button variant="outline-warning" size='sm' onClick={() => setShowEditModal(true)}>
-                                    Edit Review
+                                    Edit Review <Pencil></Pencil>
                                 </Button>
                             </>
                             :
@@ -72,10 +72,10 @@ const ShowReview = (props) => {
                         {
                             hidden?<p>{comments}</p>: null
                         }
-                        <Button onClick ={()=>setHidden(!hidden)} variant="outline-light" size='sm'> Show {review.comments.length} Comments  </Button>
+                        <Button onClick ={()=>setHidden(!hidden)} variant="outline-light" size='sm'> Show {review.comments.length} Comments<ArrowDown></ArrowDown> </Button>
 
 
-                        <Button className="comment" onClick={()=> setCommentModalOpen(true)} variant="outline-primary" size='sm'> Comment on Review Above</Button>
+                        <Button className="comment" onClick={()=> setCommentModalOpen(true)} variant="outline-primary" size='sm'> Comment on Review Above <Reply></Reply></Button>
         </Card.Body>
     </Card>
     <EditReviewModal 
