@@ -74,7 +74,6 @@ const IndexAttendingCourses = (props) => {
 
     let attendingCourseCards
 
-    console.log(attendingcourses,'what the fuck')
 
     if (attendingcourses.length > 0) {
         attendingCourseCards = attendingcourses.map(attendingcourse => (

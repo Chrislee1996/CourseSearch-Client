@@ -7,7 +7,7 @@ import ShowReview from '../reviews/ShowReview'
 import GiveReview from '../reviews/GiveReview'
 import {createAttendingCourses , getAllAttendingCourses } from '../../api/attendingCourses'
 import {createLikedCourse} from '../../api/like'
-// import Axios from 'axios'
+import {HandThumbsUpFill, HandThumbsDownFill} from "react-bootstrap-icons"
 
 
 
@@ -17,13 +17,11 @@ const ShowCourse = (props) => {
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
-    const [attendingButton, setAttendingButton] = useState(false)
-    // const [like, setLike] = useState(null)
-    // const setLikedCourse = useState(false)
+    const [like, setLike] = useState(null)
+    const setLiked = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert} = props
-    // const [imageSelected, setImageSelected] = useState('')
 
     useEffect(() => {
         showCurrentCourse(id)
@@ -54,6 +52,27 @@ const ShowCourse = (props) => {
             })
     }
 
+    const addLike = (like) => {
+        createLikedCourse(user, course._id , like)
+        console.log(like, 'here is the like')
+        let likeCourse = 0
+        let notLike = 0
+
+        if (like === 'like') {
+            likeCourse +=1
+        } else if (like === 'dislike' ) {
+            notLike +=1
+        }
+        console.log(likeCourse, 'liked course')
+        console.log(notLike, 'disliked course')
+        updateCourse(user, course, like)
+            .then(()=> setUpdated(true))
+    }
+
+    const recommend = <HandThumbsUpFill onClick = {()=> addLike('like')} variant="outline-success" > Recommend Course </HandThumbsUpFill>
+    const notRecommend = <HandThumbsDownFill onClick = {()=> addLike('dislike')} variant="outline-danger" >Not Recommended </HandThumbsDownFill>
+
+
     if(!course) {
         return (
             <Container>
@@ -73,27 +92,6 @@ const ShowCourse = (props) => {
         return `${hours}:${minutes} ${amPM}`
     }
 
-    const attendingCourseArray = () => {
-        let courseArray = []
-        getAllAttendingCourses()
-        .then(res => {
-            courseArray = res.data.attendingcourses
-            return courseArray
-        })
-        .then(courseArray => {
-            for (const i in courseArray) {
-                // console.log('course array id', courseArray[i].course._id)
-                // console.log('course id', id)
-                if (courseArray[i].course._id == id) {
-                    return setAttendingButton(true)
-                } else {
-                    setAttendingButton(false)
-                }
-            }
-        })
-        .catch(error => console.log(error))
-    }
-
     const addCourse = () => {
         const attendingCourse = {
             owner:user._id,
@@ -105,41 +103,36 @@ const ShowCourse = (props) => {
                 setUpdated(prev => !prev)
                 navigate(`/courses/${course._id}`)
             })
-            .catch(() => {
+            .then(() => {
                 msgAlert({
-                    heading: 'Something Went Wrong',
-                    message: 'Unable to add course',
-                    variant: 'danger',
+                    heading: 'Course Removed!',
+                    message: 'Course Successfully deleted',
+                    variant: 'success',
                 })
             })
+        .catch(error => console.log(error))
     }
 
-//     const likePost = (like) => {
-//         createLikedCourse(user, course._id , like)
-//         let likedCourse = 0
-//         let dislikedCourse = 0
-
-//         if (like === 'like') {
-//             likedCourse +=1
-//         } else if (like === 'dislike') {
-//             dislikedCourse +=1
-//         }
-// console.log(likedCourse, '# of course')
-//         updateCourse(user, course, like)
-//         .then(() => setUpdated(true))
-//         .then(() => setLikedCourse(true))
-//     }
 
 
-    // const uploadImage = () => {
-    //     const formData = new FormData()
-    //     formData.append('file', imageSelected)
-    //     formData.append('upload_preset', 'arcoel71')
+    const attendingCourseArray = () => {
+        let courseArray = []
+        getAllAttendingCourses()
+        .then(res => {
+            courseArray = res.data.attendingcourses
+            return courseArray
+        })
+        .catch(error => console.log(error))
+    }
 
-    //     Axios.post("https://api.cloudinary.com/v1_1/dzvdrlurd/image/upload", formData)
-    //     .then(response => setImageSelected(response.data.secure_url))
-    //     .catch(err => console.log(err))
-    // }
+    let likeCourse = 0
+    let notLike = 0
+    course ?.likes?.map(like => {
+        if (like.like === 'like') {
+            likeCourse +=1
+        } else if (like.like === 'dislike')
+        notLike +=1
+    })
 
     let reviews
     let comments    
@@ -171,24 +164,19 @@ const ShowCourse = (props) => {
                 <h4><a href = {course.courseLink} target="_blank">Go to Course</a></h4>
 
                 <Card.Body>
-                <Button onClick={() => addCourse()} variant="outline-success" style={{display: attendingButton ? 'none' : 'block'}}>
+                    
+
+                <Button onClick={() => addCourse()} variant="outline-success">
                     Add Course
-                </Button>
-
-                {/* <Button onClick={() => likePost('like')} className="m-2" variant="outline-danger" disabled={setLikedCourse}>Recommend course</Button> */}
-                {/* <Button onClick={() => likePost('dislike')} className="m-2" variant="outline-danger" disabled={setLikedCourse} >Would not Recommend</Button> */}
-
+                </Button><br/>
+{recommend}
+<p>{likeCourse} People recommend this course </p>
+{notRecommend}
+<p> {notLike} People do not Recommend this course</p>
                     {
                         user && (course.owner._id === user._id)
                         ?
                         <>
-
-                            {/* <input type ='file' onChange={(event)=> {
-                                setImageSelected(event.target.files[0])
-                            }}/>
-
-                            <button onClick={uploadImage} >Update Photo</button> */}
-
 
                             <Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
                                 Delete Course
