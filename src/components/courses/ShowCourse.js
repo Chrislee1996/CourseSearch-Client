@@ -8,6 +8,7 @@ import GiveReview from '../reviews/GiveReview'
 import {createAttendingCourses , getAllAttendingCourses } from '../../api/attendingCourses'
 import {createLikedCourse} from '../../api/like'
 import {HandThumbsUpFill, HandThumbsDownFill, Cone, Pencil, Chat} from "react-bootstrap-icons"
+import Moment from 'react-moment'
 
 
 
@@ -53,21 +54,25 @@ const ShowCourse = (props) => {
     }
 
     const addLike = (like) => {
-        createLikedCourse(user, course._id , like)
+        createLikedCourse(user, course._id)
         console.log(like, 'here is the like')
-        let likeCourse = 0
-        let notLike = 0
+        console.log(course._id, 'courseid')
+        // let likeCourse = 0
+        // let notLike = 0
 
-        if (like === 'like') {
-            likeCourse +=1
-        } else if (like === 'dislike' ) {
-            notLike +=1
-        }
+        // if (like === 'like') {
+        //     likeCourse +=1
+        // } else if (like === 'dislike' ) {
+        //     notLike +=1
+        // }
         console.log(likeCourse, 'liked course')
         console.log(notLike, 'disliked course')
         updateCourse(user, course, like)
             .then(()=> setUpdated(true))
     }
+
+    let likeCourse = 0
+    let notLike = 0
 
     const recommend = <HandThumbsUpFill onClick = {()=> addLike('like')} variant="outline-success" > Recommend Course </HandThumbsUpFill>
     const notRecommend = <HandThumbsDownFill onClick = {()=> addLike('dislike')} variant="outline-danger" >Not Recommended </HandThumbsDownFill>
@@ -125,15 +130,6 @@ const ShowCourse = (props) => {
         .catch(error => console.log(error))
     }
 
-    let likeCourse = 0
-    let notLike = 0
-    course ?.likes?.map(like => {
-        if (like.like === 'like') {
-            likeCourse +=1
-        } else if (like.like === 'dislike')
-        notLike +=1
-    })
-
     let reviews
     let comments    
 
@@ -149,6 +145,8 @@ const ShowCourse = (props) => {
     console.log(comments,'our comment')
 
     console.log(reviews, 'our reviews')
+
+    console.log('here is the date',course.startDate)
     
     return (
         <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
@@ -167,7 +165,7 @@ const ShowCourse = (props) => {
                     
 
                 <Button onClick={() => addCourse()} variant="outline-success">
-                    Add Course
+                    Save Course
                 </Button><br/>
 {recommend}
 <p>{likeCourse} People recommend this course </p>
@@ -199,8 +197,8 @@ const ShowCourse = (props) => {
                         <Card.Header style={{position:"absolute",top:150, right:0}}>Professor(s)/Teacher(s): {course.teacher}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:200 , right:0}}>Location: {course.location}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:250 , right:0}}>Days of Course: {course.daysOfCourse}</Card.Header><br/>
-                        <Card.Header style={{position:"absolute",top:300 , right:0}}>Start Date of Course: {course.startDate}</Card.Header><br/>
-                        <Card.Header style={{position:"absolute",top:350 , right:0}}>End Date of Course: {course.endDate}</Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:300 , right:0}}>Start Date of Course: <Moment format="MM/DD/YYYY">{course.startDate}</Moment> </Card.Header><br/>
+                        <Card.Header style={{position:"absolute",top:350 , right:0}}>End Date of Course: <Moment format="MM/DD/YYYY">{course.endDate}</Moment> </Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:400 , right:0}}>Start Time of Course: {timeDisplay(course.startTime)}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:450 , right:0}}>End Time of Course: {timeDisplay(course.endTime)}</Card.Header><br/>
                         <Card.Header style={{position:"absolute",top:500 , right:0}}>Credits if appliable : {course.offerCredits}</Card.Header><br/>
