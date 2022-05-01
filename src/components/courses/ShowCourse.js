@@ -57,24 +57,30 @@ const ShowCourse = (props) => {
 
     const addLike = (like) => {
         createLikedCourse(user, course._id)
-        console.log(like, 'here is the like')
-        console.log(course._id, 'courseid')
-        // let likeCourse = 0
-        // let notLike = 0
-
-        // if (like === 'like') {
-        //     likeCourse +=1
-        // } else if (like === 'dislike' ) {
-        //     notLike +=1
-        // }
         console.log(likeCourse, 'liked course')
         console.log(notLike, 'disliked course')
         updateCourse(user, course, like)
             .then(()=> setUpdated(true))
     }
 
-    let likeCourse = 0
-    let notLike = 0
+    let likeCourse
+    let notLike
+    // console.log(course.likes,'why is this crashing')
+    
+    if(course){
+        if(course.likes.length>0){
+            course.likes.map(like => {
+                console.log(like, 'will this hit???')
+                if (like === 'like') {
+                    console.log(like, 'will this hit the liked course wtf?')
+                    // likeCourse +=1
+                } else if (like === 'dislike')
+                console.log(notLike, 'will this hit? disliked course wtf')
+                // notLike +=1
+            })
+        }
+    }
+
 
     const recommend = <HandThumbsUpFill onClick = {()=> addLike('like')} variant="outline-success" > Recommend Course </HandThumbsUpFill>
     const notRecommend = <HandThumbsDownFill onClick = {()=> addLike('dislike')} variant="outline-danger" >Not Recommended </HandThumbsDownFill>

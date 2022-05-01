@@ -55,7 +55,7 @@ const MineCourses = (props) => {
 
     if(myCourses.length > 0) {
         courseCards = myCourses.map(course => (
-            <Card key={course._id} style={{ width: '30%', border:"solid 1px"}}   className="m-2" className ="m-2 bg-dark text-info"  >
+            <Card key={course._id} style={{ width: '30%', border:"solid 1px"}}  className ="m-2 bg-dark text-info"  >
                 <Card.Img variant="top" src="" />
                 <Card.Title className='m-2'>{course.courseName}</Card.Title>
                 <Card.Body>

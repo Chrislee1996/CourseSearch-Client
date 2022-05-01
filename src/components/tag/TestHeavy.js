@@ -15,7 +15,7 @@ const IndexTestHeavy = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('626c65747a1265c141ec4ac2')
+        getCourseTags('626dfee47dc35753c08973fe')
             .then(res=>{
                 setCourses(res.data.courses)
             })

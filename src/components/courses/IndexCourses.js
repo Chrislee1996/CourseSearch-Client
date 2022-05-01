@@ -64,8 +64,6 @@ const IndexCourses = (props) => {
         <div style={{backgroundImage: `url(${background})`}} >
             <div style={{backgroundImage: `url(${gradimage})`}} >
             <h3 className='text-primary text-center' >Browse Some Courses</h3>
-            <Link to={`/tags/onlinecourses`}><Button variant='outline-light' className='viewI ' style={{margin: '5px'}}>Online Courses</Button></Link>
-            <Link to={`/tags/inpersoncourses`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>In person Courses</Button></Link>
             <Link to={`/tags/mandatoryattendence`}><Button variant='outline-light' className='viewI'  style={{margin: '5px'}}>Mandatory Attendence</Button></Link>
             <Link to={`/tags/lotsofhomework`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>Lots of Homework</Button></Link>
             <Link to={`/tags/testheavy`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>Test Heavy</Button></Link>

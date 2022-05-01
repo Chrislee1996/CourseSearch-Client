@@ -15,7 +15,7 @@ const IndexGoodFeedback = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('626c65747a1265c141ec4ac4')
+        getCourseTags('626dfee47dc35753c0897400')
             .then(res=>{
                 setCourses(res.data.courses)
             })

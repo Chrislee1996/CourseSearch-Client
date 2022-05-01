@@ -16,7 +16,7 @@ const IndexExtraCredit = (props) => {
 
 
     useEffect(() => {
-        getCourseTags('626c65747a1265c141ec4ac9')
+        getCourseTags('626dfee47dc35753c0897405')
             .then(res => {
                 setCourses(res.data.courses)
             })

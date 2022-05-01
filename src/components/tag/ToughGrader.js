@@ -15,7 +15,7 @@ const IndexToughGrader = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('626c65747a1265c141ec4ac8')
+        getCourseTags('626dfee47dc35753c0897404')
             .then(res=>{
                 setCourses(res.data.courses)
             })

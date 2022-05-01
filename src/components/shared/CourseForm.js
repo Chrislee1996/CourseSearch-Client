@@ -43,29 +43,11 @@ const CourseForm = (props) => {
                     
                     <Form.Label>Tags:</Form.Label><br/>
 
-                        <Form.Check
-                        inline
-                        label='Online Course'
-                        name='tags'
-                        value="626c65747a1265c141ec4abe"
-                        onChange = {handleTagSelect}
-                        />
-
-
-                    <Form.Check
-                        inline
-                        label='In Person Course'
-                        name='tags'
-                        value="626c65747a1265c141ec4abf"
-                        onChange = {handleTagSelect}
-                        />                        
-
-
                     <Form.Check
                         inline
                         label='Mandatory Attendence'
                         name='tags'
-                        value="626c65747a1265c141ec4ac0"
+                        value="626dfee47dc35753c08973fc"
                         onChange = {handleTagSelect}
                         />                        
 
@@ -74,7 +56,7 @@ const CourseForm = (props) => {
                         inline
                         label='Lots of Homework'
                         name='tags'
-                        value="626c65747a1265c141ec4ac1"
+                        value="626dfee47dc35753c08973fd"
                         onChange = {handleTagSelect}
                         />                        
                     <br/>
@@ -83,7 +65,7 @@ const CourseForm = (props) => {
                         inline
                         label='Test Heavy'
                         name='tags'
-                        value="626c65747a1265c141ec4ac2"
+                        value="626dfee47dc35753c08973fe"
                         onChange = {handleTagSelect}
                         />                        
 
@@ -92,7 +74,7 @@ const CourseForm = (props) => {
                         inline
                         label='Group Projects'
                         name='tags'
-                        value="626c65747a1265c141ec4ac3"
+                        value="626dfee47dc35753c08973ff"
                         onChange = {handleTagSelect}
                         />                        
 
@@ -101,7 +83,7 @@ const CourseForm = (props) => {
                         inline
                         label='Instructor provides good Feedback'
                         name='tags'
-                        value="626c65747a1265c141ec4ac4"
+                        value="626dfee47dc35753c0897400"
                         onChange = {handleTagSelect}
                         />                        
                     <br/>
@@ -110,7 +92,7 @@ const CourseForm = (props) => {
                         inline
                         label='Cares about the Material'
                         name='tags'
-                        value="626c65747a1265c141ec4ac5"
+                        value="626dfee47dc35753c0897401"
                         onChange = {handleTagSelect}
                         />                        
 
@@ -119,7 +101,7 @@ const CourseForm = (props) => {
                         inline
                         label='Professor is caring'
                         name='tags'
-                        value="626c65747a1265c141ec4ac6"
+                        value="626dfee47dc35753c0897402"
                         onChange = {handleTagSelect}
                         />                        
 
@@ -128,7 +110,7 @@ const CourseForm = (props) => {
                         inline
                         label='Text book is Mandatory'
                         name='tags'
-                        value="626c65747a1265c141ec4ac7"
+                        value="626dfee47dc35753c0897403"
                         onChange = {handleTagSelect}
                         />                        
                     <br/>
@@ -137,7 +119,7 @@ const CourseForm = (props) => {
                         inline
                         label='Tough Grader'
                         name='tags'
-                        value="626c65747a1265c141ec4ac8"
+                        value="626dfee47dc35753c0897404"
                         onChange = {handleTagSelect}
                         /> 
 
@@ -145,7 +127,7 @@ const CourseForm = (props) => {
                         inline
                         label='Offers Extra Credit'
                         name='tags'
-                        value="626c65747a1265c141ec4ac9"
+                        value="626dfee47dc35753c0897405"
                         onChange = {handleTagSelect}
                         />    
 
@@ -153,7 +135,7 @@ const CourseForm = (props) => {
                         inline
                         label='Lots of Reading'
                         name='tags'
-                        value="626c65747a1265c141ec4aca"
+                        value="626dfee47dc35753c0897406"
                         onChange = {handleTagSelect}
                         />                        
 
@@ -162,7 +144,7 @@ const CourseForm = (props) => {
                         inline
                         label='Lecture Heavy'
                         name='tags'
-                        value="626c65747a1265c141ec4acb"
+                        value="626dfee47dc35753c0897407"
                         onChange = {handleTagSelect}
                         />                        
                     <br/>

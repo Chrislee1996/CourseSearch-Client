@@ -15,7 +15,7 @@ const IndexMandatoryAttendence = (props) => {
     const [courses, setCourses]= useState(null)
 
     useEffect(()=> {
-        getCourseTags('626c65747a1265c141ec4ac0')
+        getCourseTags('626dfee47dc35753c08973fc')
             .then(res=>{
                 setCourses(res.data.courses)
             })

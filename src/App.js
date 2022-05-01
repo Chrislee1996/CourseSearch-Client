@@ -34,8 +34,6 @@ import SocialScience from './components/subjects/SocialScience'
 import GiveReviewModal from './components/reviews/GiveReview'
 
 //tags
-import IndexOnlineCourses from './components/tag/OnlineCourse'
-import IndexInpersonCourses from './components/tag/InpersonCourses'
 import IndexMandatoryAttendence from './components/tag/MandatoryAttendence'
 import IndexLotsOfHomework from './components/tag/LotsOfHomework'
 import IndexTestHeavy from './components/tag/TestHeavy'
@@ -215,14 +213,6 @@ const App = () => {
 			/>	
 			
 {/* tags */}
-			<Route
-				path='/tags/onlinecourses'
-				element={<IndexOnlineCourses msgAlert={msgAlert} user={user} />}
-			/>	
-			<Route
-				path='/tags/inpersoncourses'
-				element={<IndexInpersonCourses msgAlert={msgAlert} user={user} />}
-			/>	
 			<Route
 				path='/tags/mandatoryattendence'
 				element={<IndexMandatoryAttendence msgAlert={msgAlert} user={user} />}
