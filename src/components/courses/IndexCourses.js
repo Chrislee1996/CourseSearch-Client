@@ -2,6 +2,9 @@ import React, {useState, useEffect } from 'react'
 import { getAllCourses } from '../../api/courses'
 import { Link } from 'react-router-dom'
 import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
+import background from '../images/backgroundproject4.png'
+import gradimage from '../images/gradimage.png'
+
 
 const cardContainerLayout = {
     display: 'flex',
@@ -57,10 +60,9 @@ const IndexCourses = (props) => {
     }
 
 
-
     return (
-        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}} >
-            <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/1092758.jpg")`}} >
+        <div style={{backgroundImage: `url(${background})`}} >
+            <div style={{backgroundImage: `url(${gradimage})`}} >
             <h3 className='text-primary text-center' >Browse Some Courses</h3>
             <Link to={`/tags/onlinecourses`}><Button variant='outline-light' className='viewI ' style={{margin: '5px'}}>Online Courses</Button></Link>
             <Link to={`/tags/inpersoncourses`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>In person Courses</Button></Link>

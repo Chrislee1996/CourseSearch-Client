@@ -3,7 +3,8 @@ import { getAllAttendingCourses, removeAttendingCourse } from '../../api/attendi
 import { Link } from 'react-router-dom'
 import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
-
+import background from '../images/backgroundproject4.png'
+import gradimage from '../images/gradimage.png'
 
 const cardContainerLayout = {
     display: 'flex',
@@ -93,8 +94,8 @@ const IndexAttendingCourses = (props) => {
     }
 
     return (
-        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
-            <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/1092758.jpg")`}}>
+        <div style={{backgroundImage: `url(${background})`}} >
+            <div style={{backgroundImage: `url(${gradimage})`}} >
             </div>
             <h3 class='text-center text-info'>Courses</h3>
             <div style={cardContainerLayout}>

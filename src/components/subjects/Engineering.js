@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { getEngineering } from '../../api/courses'
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import background from '../images/backgroundproject4.png'
+import gradimage from '../images/gradimage.png'
 
 const cardContainerLayout = {
     display: 'flex',
@@ -48,7 +50,7 @@ const Engineering = (props) => {
     }
 
     return (
-        <div className='bg-dark'>
+        <div style={{backgroundImage: `url(${background})`}} >
             <h3 class='text-center text-info'>Engineering Courses</h3>
             <div style={cardContainerLayout}>
                 {courseCards}

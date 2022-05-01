@@ -2,6 +2,8 @@ import React, {useState, useEffect } from 'react'
 import { getCourseTags } from '../../api/tag'
 import { Link } from 'react-router-dom'
 import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
+import background from '../images/backgroundproject4.png'
+import gradimage from '../images/gradimage.png'
 
 const cardContainerLayout = {
     display: 'flex',
@@ -50,7 +52,7 @@ const IndexLotsOfHomework = (props) => {
     }
 
     return (
-        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
+        <div style={{backgroundImage: `url(${background})`}} >
             <h3 className='text-primary'>Browse Some Courses</h3>
             <h3 class='text-center text-info'>Courses</h3>
             <div style={cardContainerLayout}>

@@ -9,6 +9,8 @@ import {createAttendingCourses , getAllAttendingCourses } from '../../api/attend
 import {createLikedCourse} from '../../api/like'
 import {HandThumbsUpFill, HandThumbsDownFill, Cone, Pencil, Chat} from "react-bootstrap-icons"
 import Moment from 'react-moment'
+import background from '../images/backgroundproject4.png'
+import gradimage from '../images/gradimage.png'
 
 
 
@@ -149,10 +151,10 @@ const ShowCourse = (props) => {
     console.log('here is the date',course.startDate)
     
     return (
-        <div style={{backgroundImage: `url("https://png.pngtree.com/background/20210714/original/pngtree-school-supplies-graduation-cap-border-blackboard-education-background-picture-image_1219927.jpg")`}}>
-        <Container className='fluid'>
+        <div style={{backgroundImage: `url(${background})`}} >
+            <Container className='fluid'>
 
-            <Card className='text-info' style={{backgroundImage:`url("https://wallpaperaccess.com/full/1092758.jpg")`}}>
+            <Card className='text-info' style={{backgroundImage: `url(${gradimage})`}} >
                 <Card.Header className="display-4">{course.courseName}</Card.Header>
     
                 {/* <Card.Header> <a href = {course.courseLink} target="_blank"> <img src = {`${imageSelected ? imageSelected : `https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg`}`}  width='250' height='300' /></a> </Card.Header>  */}
