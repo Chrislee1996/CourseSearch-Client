@@ -20,11 +20,11 @@ const ShowCourse = (props) => {
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
-    const [like, setLike] = useState(null)
-    const setLiked = useState(false)
+    // const [like, setLike] = useState(null)
+    // const setLiked = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
-    const {user,msgAlert} = props
+    const {user,msgAlert, triggerRefresh} = props
 
     useEffect(() => {
         showCurrentCourse(id)
@@ -55,35 +55,21 @@ const ShowCourse = (props) => {
             })
     }
 
+
     const addLike = (like) => {
         createLikedCourse(user, course._id)
-        console.log(likeCourse, 'liked course')
-        console.log(notLike, 'disliked course')
+        course.likes.map(like => {
+            console.log('something is hitting', course.likes )
+            course.likes.push('like')
+        })  
         updateCourse(user, course, like)
             .then(()=> setUpdated(true))
-    }
-
-    let likeCourse
-    let notLike
-    // console.log(course.likes,'why is this crashing')
-    
-    if(course){
-        if(course.likes.length>0){
-            course.likes.map(like => {
-                console.log(like, 'will this hit???')
-                if (like === 'like') {
-                    console.log(like, 'will this hit the liked course wtf?')
-                    // likeCourse +=1
-                } else if (like === 'dislike')
-                console.log(notLike, 'will this hit? disliked course wtf')
-                // notLike +=1
-            })
-        }
+            setUpdated(prev => !prev)
     }
 
 
-    const recommend = <HandThumbsUpFill onClick = {()=> addLike('like')} variant="outline-success" > Recommend Course </HandThumbsUpFill>
-    const notRecommend = <HandThumbsDownFill onClick = {()=> addLike('dislike')} variant="outline-danger" >Not Recommended </HandThumbsDownFill>
+
+    // const recommend = <HandThumbsUpFill onClick = {()=> addLike()} variant="outline-success" > Recommend Course </HandThumbsUpFill>
 
 
     if(!course) {
@@ -150,11 +136,11 @@ const ShowCourse = (props) => {
             ))
         }
     }  
-    console.log(comments,'our comment')
+    // console.log(comments,'our comment')
 
-    console.log(reviews, 'our reviews')
+    // console.log(reviews, 'our reviews')
 
-    console.log('here is the date',course.startDate)
+    // console.log('here is the date',course.startDate)
     
     return (
         <div style={{backgroundImage: `url(${background})`}} >
@@ -174,11 +160,12 @@ const ShowCourse = (props) => {
 
                 <Button onClick={() => addCourse()} variant="outline-success">
                     Save Course
-                </Button><br/>
-{recommend}
-<p>{likeCourse} People recommend this course </p>
-{notRecommend}
-<p> {notLike} People do not Recommend this course</p>
+                </Button><br/><br/>
+
+
+
+Recommend Course <HandThumbsUpFill onClick = {()=> addLike()} variant="outline-success" ></HandThumbsUpFill>
+<p>{course.likes.length} People recommend this course </p> 
                     {
                         user && (course.owner._id === user._id)
                         ?

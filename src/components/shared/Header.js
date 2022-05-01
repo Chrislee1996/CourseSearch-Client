@@ -12,7 +12,7 @@ const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
 			<Link to='/courses/mine' style={linkStyle}>
-				My Courses <PersonDash></PersonDash>
+				My Profile <PersonDash></PersonDash>
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>

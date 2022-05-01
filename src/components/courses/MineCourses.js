@@ -3,7 +3,7 @@ import { Card, Dropdown,DropdownButton, Button  } from 'react-bootstrap'
 import { Link, useParams } from 'react-router-dom'
 import { getMyCourses } from '../../api/courses'
 import background from '../images/backgroundproject4.png'
-import gradimage from '../images/gradimage.png'
+
 
 const cardContainerLayout = {
     display: 'flex',
@@ -20,6 +20,7 @@ const MineCourses = (props) => {
     const [myCourses, setMyCourses] = useState(null)
     const {user, msgAlert} = props
     const [course, setCourse] = useState(null)
+
     
 
     useEffect(() => {
@@ -47,11 +48,13 @@ const MineCourses = (props) => {
         return <p>loading...</p>
     }
     else if (myCourses.length === 0) {
-        return <Link to='/addCourse' > <h4 className="text-center"> Help others out! Go add a Course</h4> </Link>
+
+        return  <Link to='/addCourse' > <h4 className="text-center"> Welcome to your profile {user.email}. Seems like there is nothing to display.   Help others out! Go add a Course</h4> </Link>
     }
 
 
     let courseCards
+
 
     if(myCourses.length > 0) {
         courseCards = myCourses.map(course => (
@@ -78,27 +81,8 @@ const MineCourses = (props) => {
 
     return (
         <div style={{backgroundImage: `url(${background})`}} >
-            <h3 className='titleText'>Browse My Courses</h3>
-            <div className = 'subjectSection'>
-            <DropdownButton id="dropdown-basic-button-2" variant ='outline-light'title="Browse By Subjects">  
-                <Dropdown.Item><Link to='/courses/art' style={categoryLinks}>Arts</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/business' style={categoryLinks}>Business</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/dataanalysis' style={categoryLinks}>Data Analysis</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/design' style={categoryLinks}>Design</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/education' style={categoryLinks}>Education</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/engineering' style={categoryLinks}>Engineering</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/healthcare' style={categoryLinks}>Healthcare</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/history' style={categoryLinks}>History</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/language' style={categoryLinks}>Language</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/law' style={categoryLinks}>Law</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/literature' style={categoryLinks}>Literature</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/math' style={categoryLinks}>Math</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/medicine' style={categoryLinks}>Medicine</Link></Dropdown.Item>   
-                <Dropdown.Item><Link to='/courses/programming' style={categoryLinks}>Programming</Link></Dropdown.Item>                      
-                <Dropdown.Item><Link to='/courses/science' style={categoryLinks}>Science</Link></Dropdown.Item>            
-                <Dropdown.Item><Link to='/courses/socialscience' style={categoryLinks}>Social Science</Link></Dropdown.Item>            
-			</DropdownButton>
-            </div>
+            <h2 className='text-info text-center'>{user.email}'s Profile</h2>
+            <h3 className='titleText text-info text-center'> Created Courses</h3>
             <Dropdown>
             </Dropdown>
             <div style={cardContainerLayout}>

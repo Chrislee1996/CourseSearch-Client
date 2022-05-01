@@ -62,29 +62,7 @@ code {
   background-color: rgb(19, 19, 27);
 }
 
-.likeButtons {
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 10px;
-}
 
-.active-like {
-  background-color: blue;
-}
-
-.active-dislike {
-  background-color: red;
-}
-
-.showButton {
-  border-radius: 8px;
-  font-size: 10px;
-  color:black;
-  padding: 20px;
-  text-align: center;
-  overflow: hidden;
-  cursor: pointer;
-}
 
 
 
@@ -131,4 +109,5 @@ code {
 .signPage{
   border: solid red 10px;
 }
+
 

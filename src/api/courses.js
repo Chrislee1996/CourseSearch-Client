@@ -22,7 +22,7 @@ export const getMyCourses = (user) => {
     })
 }
 
-//POST -> create function
+
 export const createCourse = (user, newCourse) => {
     return axios({
         url:`${apiUrl}/courses`,
