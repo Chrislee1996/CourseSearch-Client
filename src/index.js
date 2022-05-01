@@ -4,10 +4,16 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from "./components/shared/Footer"
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+  <div className='page-container'>
+    <div className='content-wrap'>
+      <App />
+    </div>
+    <Footer/>
+  </div>
   </BrowserRouter>,
   document.getElementById('root')
 );

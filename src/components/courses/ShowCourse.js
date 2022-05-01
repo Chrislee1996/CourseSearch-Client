@@ -73,7 +73,12 @@ const ShowCourse = (props) => {
 
     let likeCourse = 0
     let notLike = 0
-
+    course?.likes?.map(like => {
+        if (like.like === 'like') {
+            likeCourse +=1
+        } else if (like.like === 'dislike')
+        notLike +=1
+    })
     const recommend = <HandThumbsUpFill onClick = {()=> addLike('like')} variant="outline-success" > Recommend Course </HandThumbsUpFill>
     const notRecommend = <HandThumbsDownFill onClick = {()=> addLike('dislike')} variant="outline-danger" >Not Recommended </HandThumbsDownFill>
 

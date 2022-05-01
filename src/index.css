@@ -14,29 +14,32 @@ code {
 
 .signinBox {
   margin: 0 auto;
-  position: absolute;
   top: 115px;
   left: 33%;
   width: 35%;
-  height: 539px;
-  color:wheat;
   border-radius: 20px;
   box-shadow: 0px 0px 1px #292639, 0px 0px 2px #292639;
-  background-image: url("https://wallpaperaccess.com/full/1092758.jpg");
+  padding-top: 9em;
+}
+
+.signupBox {
+  margin: 0 auto;
+  top: 115px;
+  left: 33%;
+  width: 35%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 1px #292639, 0px 0px 2px #292639;
+  padding-top: 4.2em;
 }
 
 .signoutBox {
   margin: 0 auto;
-  padding-left: 50px;
-  position: absolute;
   top: 115px;
   left: 33%;
   width: 35%;
-  height: 539px;
-  color:wheat;
   border-radius: 20px;
   box-shadow: 0px 0px 1px #292639, 0px 0px 2px #292639;
-  background-image: url("https://wallpaperaccess.com/full/1092758.jpg");
+  padding-top: 11.5em;
 }
 
 
@@ -78,4 +81,38 @@ code {
 
 .attendingCourse {
   margin-top: 1em;
+}
+
+
+
+
+.footer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  color: whitesmoke;
+  padding: 2em;
+  border-top: 0.1px solid var(--blue-theme);
+}
+
+
+.page-container{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap{
+  flex:1;
+}
+
+
+
+.signButton{
+  margin-top: 10px;
+}
+
+.signPage{
+  border: solid red 10px;
 }

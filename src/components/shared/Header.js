@@ -2,11 +2,11 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
-import {HouseFill, List, PersonDash, Mortarboard, MortarboardFill, Check2, Pen} from "react-bootstrap-icons"
+import {HouseFill, List, PersonDash, Mortarboard, MortarboardFill, Check2, Pen, Search, PersonPlusFill, PersonCircle, BoxArrowRight, Key} from "react-bootstrap-icons"
 
 const linkStyle = {
     color: 'white',
-    textDecoration: 'none'
+    textDecoration: 'none',
 }
 const authenticatedOptions = (
 	<>
@@ -33,12 +33,12 @@ const authenticatedOptions = (
 		</Nav.Item>
 		<Nav.Item className='m-2'>
 			<Link to='change-password' style={linkStyle}>
-				Change Password
+				Change Password <Key></Key>
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
 			<Link to='sign-out' style={linkStyle}>
-				Sign Out
+				Sign Out<BoxArrowRight></BoxArrowRight>
 			</Link>
 		</Nav.Item>
 	</>
@@ -47,10 +47,10 @@ const authenticatedOptions = (
 const unauthenticatedOptions = (
 	<>
         <Nav.Item className='m-2'>
-		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
+		    <Link to='sign-up' style={linkStyle}>Sign Up <PersonPlusFill></PersonPlusFill></Link> 
         </Nav.Item>
         <Nav.Item className='m-2'>
-		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
+		    <Link to='sign-in' style={linkStyle}>Sign In <PersonCircle></PersonCircle></Link>
         </Nav.Item>
 	</>
 )
@@ -66,10 +66,10 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar bg='secondary' variant='dark' expand='md'>
+	<Navbar bg='secondary' variant='dark' expand='md' style={{backgroundImage:`url("https://wallpaperaccess.com/full/1092758.jpg")`}}>
 		<Navbar.Brand className='m-2'>
             <Link to='/' style={linkStyle}>
-				👨‍🏫 CourseSearch 👩‍🏫
+				CourseSearch<Search></Search> 
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
