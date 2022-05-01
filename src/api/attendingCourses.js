@@ -2,11 +2,6 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 
-// index function
-// export const getAllAttendingCourses = () => {
-//     return axios(`${apiUrl}/attendingcourses`)
-// }
-
 export const getAllAttendingCourses = (user) => {
     console.log(user, 'here is the user')
     return axios({

@@ -20,8 +20,6 @@ const ShowCourse = (props) => {
     const [updated, setUpdated] = useState(false)
     const [course, setCourse] = useState(null)
     const [reviewModalOpen, setReviewModalOpen] = useState(false)
-    // const [like, setLike] = useState(null)
-    // const setLiked = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
     const {user,msgAlert, triggerRefresh} = props
@@ -59,7 +57,6 @@ const ShowCourse = (props) => {
     const addLike = (like) => {
         createLikedCourse(user, course._id)
         course.likes.map(like => {
-            console.log('something is hitting', course.likes )
             course.likes.push('like')
         })  
         updateCourse(user, course, like)
@@ -67,9 +64,6 @@ const ShowCourse = (props) => {
             setUpdated(prev => !prev)
     }
 
-
-
-    // const recommend = <HandThumbsUpFill onClick = {()=> addLike()} variant="outline-success" > Recommend Course </HandThumbsUpFill>
 
 
     if(!course) {
@@ -141,7 +135,6 @@ const ShowCourse = (props) => {
     // console.log(reviews, 'our reviews')
 
     // console.log('here is the date',course.startDate)
-console.log(user, 'who is user')
     
     return (
         <div style={{backgroundImage: `url(${background})`}} >
@@ -164,7 +157,6 @@ console.log(user, 'who is user')
                 </Button><br/><br/>
 
 
-{/* Like Course {recommend}  */}
 Recommend Course<HandThumbsUpFill onClick = {()=> addLike()} variant="outline-success" ></HandThumbsUpFill>
 <p>{course.likes.length} People recommend this course </p> 
                     {
