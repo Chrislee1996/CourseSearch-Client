@@ -141,6 +141,7 @@ const ShowCourse = (props) => {
     // console.log(reviews, 'our reviews')
 
     // console.log('here is the date',course.startDate)
+console.log(user, 'who is user')
     
     return (
         <div style={{backgroundImage: `url(${background})`}} >
@@ -163,8 +164,8 @@ const ShowCourse = (props) => {
                 </Button><br/><br/>
 
 
-
-Recommend Course <HandThumbsUpFill onClick = {()=> addLike()} variant="outline-success" ></HandThumbsUpFill>
+{/* Like Course {recommend}  */}
+Recommend Course<HandThumbsUpFill onClick = {()=> addLike()} variant="outline-success" ></HandThumbsUpFill>
 <p>{course.likes.length} People recommend this course </p> 
                     {
                         user && (course.owner._id === user._id)

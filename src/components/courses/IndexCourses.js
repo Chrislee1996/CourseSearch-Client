@@ -43,6 +43,7 @@ const IndexCourses = (props) => {
     if (courses.length > 0) {
         courseCards = courses.map(course => (
             <Card key={course.id} style={{ width: '30%', border:"solid 1px"}} className="m-2 bg-dark text-info"  >
+                <Card.Text>Posted By: {!course.owner ? null : course.owner.email}</Card.Text>
                 <Card.Header>{course.courseName}</Card.Header>
                 <Card.Body>
                     <Card.Text>
