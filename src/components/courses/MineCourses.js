@@ -64,13 +64,8 @@ const MineCourses = (props) => {
                 <Card.Body>
                 <Link to ={`/courses/${course._id}`}> <h4> {course.courseInstitute} </h4></Link>
                 Subject: {course.courseSubject}<br/>
-                Tags:
-                        {course.tags.map(tag=> (
-                        <li>{tag.details}</li>
-                        ))}
                         <Link to={`/courses/${course._id}`}>
                         <Card.Header> <a href = {course.courseLink} target="_blank"><img src={`${course.image ? course.image : "https://www.creativefabrica.com/wp-content/uploads/2020/02/16/Education-Logo-Graphics-1-2.jpg"}`} width='250' height='300'/></a></Card.Header>
-
                         </Link>
                     <Card.Text> 
                     </Card.Text>

@@ -26,6 +26,7 @@ export const createAttendingCourses = (user, newAttendingCourses) => {
 
 
 export const removeAttendingCourse = (user, courseId) => {
+    console.log(courseId, 'here is courseId')
     return axios({
         url:`${apiUrl}/attendingcourses/${courseId}`,
         method:'DELETE',
