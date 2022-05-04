@@ -53,10 +53,14 @@
 * Search bar that will filter courses by school
 
 
+# Installation Guide:
 
+* Fork and Clone this repo
 
-# ERD
-![](images/ERDimage.PNG)
+* Run npm install to install dependencies
+
+* Run npm seed for seeded data
+
 
 
 # Wire-frames
@@ -101,5 +105,3 @@
 
 * Bootstrap
 
-
-* Tailwind, bulma 
