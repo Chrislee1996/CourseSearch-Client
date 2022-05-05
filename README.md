@@ -63,6 +63,30 @@
 
 * Run npm seed for seeded data
 
+# Route Tables
+
+|   Endpoint   | Component | Authenticated Route? |
+|------------------|-------------------|--|
+|/sign-up           | SignUp           |No |
+|/sign-in           | SignIn           |No |  
+|/change-password    | ChangePassword           |Yes |  
+|/sign-out           | SignOut           |Yes |
+|/course           | IndexCourses           |No |  
+|/course/:id           | ShowCourse           |No |
+|/course/mine         | MineCourses           |Yes |  
+|/course/collegecourses           | IndexCollegeCourses           |No |
+|/course/subject           | input subject          |No |
+|/course/tag           | input tag           |No |  
+|/attendingcourses           | IndexAttendingCourses           |Yes |  
+|/addcourse           | CreateCourse           |Yes |  
+
+
+
+
+
+
+
+
 
 
 # Wire-frames
