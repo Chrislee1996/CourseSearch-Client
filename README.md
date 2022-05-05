@@ -1,5 +1,7 @@
 # CourseSearch-Frontend
 
+* Check-out the site here: https://go-course-search.herokuapp.com/
+
 > Back-end link of project can be found here: https://github.com/Chrislee1996/CourseSearch-API
 
 # User story
