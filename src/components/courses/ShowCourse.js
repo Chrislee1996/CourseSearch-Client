@@ -177,8 +177,13 @@ Recommend Course<HandThumbsUpFill onClick = {()=> addLike()} variant="outline-su
 
                     <Card.Text>
                         <Card.Header>
-                        {course.tags.map(tag=> (
+                        {/* {course.tags.map(tag=> (
                         <small><li>{tag.details} </li></small>
+                        ))} */}
+                        {course.tags.map(tag => (
+                        <li>
+                        <a style={{ textDecoration: 'none' }} href={`/tags/${tag.details.replace(/\s+/g, '')}`}>{tag.details.replace(/\s+/g, ' ')}&nbsp;</a>
+                        </li>
                         ))}
                         </Card.Header>
                         <Card.Header style={{position:"absolute",top:100, right:0}} >Subject: {course.courseSubject}</Card.Header><br/>
