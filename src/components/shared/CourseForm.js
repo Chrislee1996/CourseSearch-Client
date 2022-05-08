@@ -14,6 +14,7 @@ const CourseForm = (props) => {
             })
     }, [])
 
+    // const selectedTags = course.tags.map(tag => tag._id)
 
     return (
         <Container className="justify-content-center" style={{padding:'50px'}}>
@@ -63,116 +64,12 @@ const CourseForm = (props) => {
                             name="tags"
                             value={tag._id}
                             onChange={(e) => handleTagSelect(e, tag)}
+                            // defaultChecked={selectedTags.includes(tag._id)}
                         />
                     )
                 })}
                 <br />
 
-                    {/* <Form.Check
-                        inline
-                        label='Mandatory Attendence'
-                        name='tags'
-                        value="626dfee47dc35753c08973fc"
-                        onChange = {handleTagSelect}
-                        />                        
-
-
-                    <Form.Check
-                        inline
-                        label='Lots of Homework'
-                        name='tags'
-                        value="626dfee47dc35753c08973fd"
-                        onChange = {handleTagSelect}
-                        />                        
-                    <br/>
-
-                    <Form.Check
-                        inline
-                        label='Test Heavy'
-                        name='tags'
-                        value="626dfee47dc35753c08973fe"
-                        onChange = {handleTagSelect}
-                        />                        
-
-
-                        <Form.Check
-                        inline
-                        label='Group Projects'
-                        name='tags'
-                        value="626dfee47dc35753c08973ff"
-                        onChange = {handleTagSelect}
-                        />                        
-
-
-                    <Form.Check
-                        inline
-                        label='Instructor provides good Feedback'
-                        name='tags'
-                        value="626dfee47dc35753c0897400"
-                        onChange = {handleTagSelect}
-                        />                        
-                    <br/>
-
-                    <Form.Check
-                        inline
-                        label='Cares about the Material'
-                        name='tags'
-                        value="626dfee47dc35753c0897401"
-                        onChange = {handleTagSelect}
-                        />                        
-
-
-                    <Form.Check
-                        inline
-                        label='Professor is caring'
-                        name='tags'
-                        value="626dfee47dc35753c0897402"
-                        onChange = {handleTagSelect}
-                        />                        
-
-
-                    <Form.Check
-                        inline
-                        label='Text book is Mandatory'
-                        name='tags'
-                        value="626dfee47dc35753c0897403"
-                        onChange = {handleTagSelect}
-                        />                        
-                    <br/>
-
-                    <Form.Check
-                        inline
-                        label='Tough Grader'
-                        name='tags'
-                        value="626dfee47dc35753c0897404"
-                        onChange = {handleTagSelect}
-                        /> 
-
-                        <Form.Check
-                        inline
-                        label='Offers Extra Credit'
-                        name='tags'
-                        value="626dfee47dc35753c0897405"
-                        onChange = {handleTagSelect}
-                        />    
-
-                        <Form.Check
-                        inline
-                        label='Lots of Reading'
-                        name='tags'
-                        value="626dfee47dc35753c0897406"
-                        onChange = {handleTagSelect}
-                        />                        
-
-
-                    <Form.Check
-                        inline
-                        label='Lecture Heavy'
-                        name='tags'
-                        value="626dfee47dc35753c0897407"
-                        onChange = {handleTagSelect}
-                        />                        
-                    <br/> */}
                     
                     <Form.Label>Submit a logo if desired </Form.Label>
                         <Form.Control
