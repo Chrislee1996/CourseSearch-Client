@@ -44,8 +44,8 @@ import IndexCaring from './components/tag/Caring'
 import IndexTextbook from './components/tag/Textbook'
 import IndexToughGrader from './components/tag/ToughGrader'
 import IndexLectureHeavy from './components/tag/LectureHeavy'
-import IndexExtraCredit from './components/tag/LectureHeavy'
-import IndexReading from './components/tag/LectureHeavy'
+import IndexExtraCredit from './components/tag/ExtraCredit'
+import IndexReading from './components/tag/Reading'
 
 
 // Users Attending Courses

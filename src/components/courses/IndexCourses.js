@@ -75,6 +75,9 @@ const IndexCourses = (props) => {
             <Link to={`/tags/textbook`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>Text-book Mandatory</Button></Link>
             <Link to={`/tags/toughgrader`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>Tough Grader</Button></Link>
             <Link to={`/tags/lectureheavy`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>Lecture Heavy</Button></Link>
+            <Link to={`/tags/reading`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>Lots of Reading</Button></Link>
+            <Link to={`/tags/extracredit`}><Button variant='outline-light' className='viewI' style={{margin: '5px'}}>Extra Credit available</Button></Link>
+
             </div>
             <div className = 'subjectSection'>
             <DropdownButton id="dropdown-basic-button-2" title="Browse By Subjects" variant='outline-light'>  
