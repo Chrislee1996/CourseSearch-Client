@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import {Modal} from 'react-bootstrap'
-import { updateCourse } from '../../api/courses'
 import CourseForm from '../shared/CourseForm'
 
 const EditCourseModal = (props) => {
     const { user, show, handleClose, updateCourse, triggerRefresh } = props
     const [course, setCourse] = useState(props.course)
+
+    const [tag] = useState({
+        courses:[]
+    })
 
     const handleChange = (e) => {
         e.persist()
@@ -18,6 +21,12 @@ const EditCourseModal = (props) => {
             } else if (name === "credits" && !e.target.checked){
                 value = false
             }
+
+            if(name === "tags" && e.target.checked){
+                value = e.target.checked
+            } else if (name === "tags" && !e.target.checked){
+                value = false
+            }
     
             const updatedValue = { [name]: value }
     
@@ -28,22 +37,22 @@ const EditCourseModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
     
-        updateCourse(user,course)
+        updateCourse(user,course,tag)
             .then(() => handleClose())
             .then(()=> triggerRefresh())
             .catch(console.error)
     }
     
-    const handleTagSelect = (e) => {
+    const handleTagSelect = (e, tag) => {
         const courseTags = course.tags
 
         let updatedTagDetails
         const checked = e.target.checked
         if (checked) {
-            updatedTagDetails = courseTags.push(e.target.value)
+            updatedTagDetails = courseTags.push(tag)
         } else {
-            let courseIndex = courseTags.indexOf(e.target.value)
-            courseTags.splice(courseIndex,1)
+            let index = courseTags.indexOf(tag)
+            courseTags.splice(index,1)
             updatedTagDetails=courseTags
             
         }

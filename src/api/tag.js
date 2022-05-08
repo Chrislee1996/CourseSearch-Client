@@ -6,6 +6,7 @@ export const getCourseTags = (tagId) => {
 }
 
 
-
-
+export const getTags = () => {
+    return axios(`${apiUrl}/tags`)
+}
 

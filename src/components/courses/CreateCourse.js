@@ -11,6 +11,9 @@ const CreateCourse = (props) => {
     endDate:'',daysOfCourse:'',startTime:'', endTime:'',credits:true, tags: [] })
     const {user, msgAlert} = props
 
+    const [tag] = useState({
+        courses:[]
+    })
     const handleChange = (e) => {
         e.persist()
         setCourse(prevCourse => {

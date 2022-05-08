@@ -1,8 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Form, Container, Button, Row, Col, FloatingLabel } from 'react-bootstrap'
+import {getTags} from '../../api/tag'
+
 
 const CourseForm = (props) => {
-    const {course, handleChange, handleSubmit, heading, tags, handleTagSelect} = props
+    const {course, handleChange, handleSubmit, heading, handleTagSelect} = props
+    const [tags, setTags] = useState([])
+
+    useEffect(() => {
+        getTags()
+            .then(res => {
+                setTags(res.data.tags)
+            })
+    }, [])
+
 
     return (
         <Container className="justify-content-center" style={{padding:'50px'}}>
@@ -43,7 +54,21 @@ const CourseForm = (props) => {
                     
                     <Form.Label>Tags:</Form.Label><br/>
 
-                    <Form.Check
+                    {tags.map((tag, index) => {
+                    return (
+                        <Form.Check
+                            key={index}
+                            inline
+                            label={tag.details}
+                            name="tags"
+                            value={tag._id}
+                            onChange={(e) => handleTagSelect(e, tag)}
+                        />
+                    )
+                })}
+                <br />
+
+                    {/* <Form.Check
                         inline
                         label='Mandatory Attendence'
                         name='tags'
@@ -147,7 +172,7 @@ const CourseForm = (props) => {
                         value="626dfee47dc35753c0897407"
                         onChange = {handleTagSelect}
                         />                        
-                    <br/>
+                    <br/> */}
                     
                     <Form.Label>Submit a logo if desired </Form.Label>
                         <Form.Control
