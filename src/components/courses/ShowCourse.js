@@ -159,7 +159,7 @@ const ShowCourse = (props) => {
 
 Recommend Course<HandThumbsUpFill onClick = {()=> addLike()} variant="outline-success" ></HandThumbsUpFill>
 <p>{course.likes.length} People recommend this course </p> 
-                    {/* {
+                    {
                         user && (course.owner._id === user._id)
                         ?
                         <>
@@ -173,16 +173,8 @@ Recommend Course<HandThumbsUpFill onClick = {()=> addLike()} variant="outline-su
                         </>
                         :
                         null
-                    } */}
+                    }
 
-
-<Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
-                                Delete Course <Cone></Cone>
-                            </Button>
-                            <Button onClick={() => setModalOpen(true)} className="m-2" variant="outline-warning">
-                                Edit Course <Pencil></Pencil>
-                            </Button>
-                            
                     <Card.Text>
                         <Card.Header>
                         {course.tags.map(tag=> (
