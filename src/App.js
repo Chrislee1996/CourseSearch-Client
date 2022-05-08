@@ -47,7 +47,6 @@ import IndexLectureHeavy from './components/tag/LectureHeavy'
 import IndexExtraCredit from './components/tag/ExtraCredit'
 import IndexReading from './components/tag/Reading'
 
-
 // Users Attending Courses
 import IndexAttendingCourses from './components/attendingCourses/IndexAttendingCourses'
 
