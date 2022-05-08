@@ -174,13 +174,15 @@ Recommend Course<HandThumbsUpFill onClick = {()=> addLike()} variant="outline-su
                         :
                         null
                     } */}
-                                                <Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
+
+
+<Button onClick={() => deleteCourse()} className="m-2" variant="outline-danger">
                                 Delete Course <Cone></Cone>
                             </Button>
                             <Button onClick={() => setModalOpen(true)} className="m-2" variant="outline-warning">
                                 Edit Course <Pencil></Pencil>
                             </Button>
-
+                            
                     <Card.Text>
                         <Card.Header>
                         {course.tags.map(tag=> (

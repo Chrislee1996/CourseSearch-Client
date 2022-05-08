@@ -121,6 +121,7 @@ export const updateCourse = (user, updatedCourse) => {
 
 //DELETE -> Delete function
 export const removeCourse = (user, courseId) => {
+    
     return axios({
         url:`${apiUrl}/courses/${courseId}`,
         method:'DELETE',
